@@ -1,0 +1,1908 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sport &amp; Fitness B2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Condensed:wght@500;700&family=Roboto+Mono:wght@500;700&family=Noto+Sans:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #FBF9FC; --surface: #FFFFFF; --surface-2: #F4EEFA; --surface-3: #FBF5FF;
+    --ink: #241530; --ink-2: #5A4C68; --muted: #8B7C99;
+    --line: #E6DDF0; --line-strong: #CDB9E1;
+    --purple: #613087; --purple-ink: #4A2467; --purple-soft: #EFE4F7;
+    --orange: #DD5A28; --orange-ink: #B8471E; --orange-soft: #FCEBDD; --gold: #FCB715; --gold-soft: #FFF4D6;
+    --good: #2E7D4F; --good-soft: #DFF1E5; --bad: #B23B3B; --bad-soft: #F8E1E1;
+    --how: #A6740A; --result: #2A62C4; --eval: #7A3E9C;
+    --shadow: 0 1px 2px rgba(74,36,103,.06), 0 10px 28px rgba(74,36,103,.08);
+    --radius: 12px;
+    --font: "Roboto", "Segoe UI", Arial, sans-serif;
+    --font-cond: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    --font-mono: "Roboto Mono", "SF Mono", Menlo, Consolas, monospace;
+    --font-ipa: "Noto Sans", "Roboto", "Segoe UI", "Lucida Sans Unicode", Arial, sans-serif;
+    --rail-w: 296px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17101F; --surface: #201530; --surface-2: #291B3C; --surface-3: #241838;
+      --ink: #F1E9F8; --ink-2: #D2C2E0; --muted: #9C8BAC;
+      --line: #3B2A50; --line-strong: #533B6E;
+      --purple: #BB8FE6; --purple-ink: #D9BCF2; --purple-soft: #33234A;
+      --orange: #FCA453; --orange-ink: #FFC48A; --orange-soft: #402911; --gold: #FCB715; --gold-soft: #3E3010;
+      --good: #6FCF97; --good-soft: #1E3A2A; --bad: #EF7B7B; --bad-soft: #3F2323;
+      --how: #E0AB3D; --result: #7FA8FF; --eval: #C9A6E8;
+      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17101F; --surface: #201530; --surface-2: #291B3C; --surface-3: #241838;
+    --ink: #F1E9F8; --ink-2: #D2C2E0; --muted: #9C8BAC;
+    --line: #3B2A50; --line-strong: #533B6E;
+    --purple: #BB8FE6; --purple-ink: #D9BCF2; --purple-soft: #33234A;
+    --orange: #FCA453; --orange-ink: #FFC48A; --orange-soft: #402911; --gold: #FCB715; --gold-soft: #3E3010;
+    --good: #6FCF97; --good-soft: #1E3A2A; --bad: #EF7B7B; --bad-soft: #3F2323;
+    --how: #E0AB3D; --result: #7FA8FF; --eval: #C9A6E8;
+    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.3);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; display: flex; min-height: 100vh; align-items: stretch; }
+  @media (max-width: 900px) { body { display: block; font-size: 17px; } }
+
+  a { color: var(--purple-ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  strong, b { font-weight: 700; }
+  h1, h2, h3, h4 { margin: 0; line-height: 1.2; text-wrap: balance; letter-spacing: -0.01em; color: var(--ink); }
+  h2 { font-size: clamp(26px, 2.6vw, 33px); font-weight: 700; }
+  h3 { font-size: clamp(20px, 1.8vw, 23px); font-weight: 700; }
+  h4 { font-size: 1.05em; font-weight: 700; }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding-left: 1.35em; }
+  li { margin-block: .3em; }
+  li::marker { color: var(--purple); }
+  .ipa { font-family: var(--font-ipa); color: var(--purple-ink); }
+  .en { font-style: italic; }
+  q.tt { quotes: "“" "”"; font-style: italic; color: var(--purple-ink); }
+  q.tt::before, q.tt::after { color: var(--orange); font-style: normal; }
+
+  .eyebrow { font-family: var(--font-cond); font-weight: 700; text-transform: uppercase; letter-spacing: .09em; font-size: .76em; color: var(--orange-ink); }
+  .num, .t { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+  /* ---------- rail ---------- */
+  .rail { flex: none; width: var(--rail-w); background: linear-gradient(160deg, #4A2467 0%, #613087 62%, #7A3E9C 100%); color: #F4EAFB; position: sticky; top: 0; align-self: flex-start; height: 100vh; display: flex; flex-direction: column; overflow-y: auto; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rail { background: linear-gradient(160deg, #2A1440 0%, #3E2058 60%, #52296F 100%); } }
+  :root[data-theme="dark"] .rail { background: linear-gradient(160deg, #2A1440 0%, #3E2058 60%, #52296F 100%); }
+  .rail-brand { padding: 26px 24px 18px; border-bottom: 1px solid rgba(255,255,255,.14); }
+  .rail-kicker { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .12em; font-size: .74em; color: var(--gold); font-weight: 700; }
+  .rail-title { font-size: 1.5em; font-weight: 900; color: #fff; letter-spacing: -0.01em; line-height: 1.12; margin-top: 4px; }
+  .rail-sub { font-size: .84em; color: #D8C6EA; margin-top: 6px; }
+  .rail-nav { padding: 12px 12px 18px; flex: 1; }
+  .rail-item { margin-bottom: 2px; }
+  .rail-btn { width: 100%; appearance: none; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; gap: 12px; text-align: left; padding: 11px 12px; border-radius: 10px; color: #EADFF4; font-family: var(--font-cond); font-weight: 700; font-size: 1em; letter-spacing: .01em; border-left: 3px solid transparent; }
+  .rail-btn .idx { flex: none; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 7px; background: rgba(255,255,255,.1); font-family: var(--font-mono); font-size: .78em; color: #E3D2F0; }
+  .rail-btn:hover { background: rgba(255,255,255,.08); }
+  .rail-btn[aria-selected="true"] { background: rgba(255,255,255,.12); border-left-color: var(--gold); color: #fff; }
+  .rail-btn[aria-selected="true"] .idx { background: linear-gradient(135deg, var(--orange), var(--gold)); color: #3A1E00; }
+  .rail-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .rail-group { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .1em; font-size: .7em; color: #C9B3DF; padding: 12px 12px 4px; }
+  .sub-outline { list-style: none; margin: 0 0 0 38px; padding: 0; display: none; gap: 1px; border-left: 1px solid rgba(255,255,255,.16); }
+  .rail-item.active .sub-outline { display: grid; margin-bottom: 8px; margin-top: 2px; }
+  .sub-outline li { margin: 0; }
+  .sub-outline a { display: block; padding: 5px 0 5px 14px; font-size: .84em; color: #D2BCE6; text-decoration: none; border-left: 2px solid transparent; margin-left: -1px; }
+  .sub-outline a:hover { color: #fff; }
+  .rail-foot { padding: 12px 24px 18px; font-size: .78em; color: #B9A3CF; border-top: 1px solid rgba(255,255,255,.14); }
+  @media (max-width: 900px) {
+    .rail { position: sticky; top: 0; z-index: 30; width: 100%; height: auto; flex-direction: row; align-items: center; overflow: visible; }
+    .rail-brand, .rail-foot, .rail-group { display: none; }
+    .rail-nav { display: flex; padding: 8px 10px; flex: 1; overflow-x: auto; gap: 2px; }
+    .rail-item { margin-bottom: 0; flex: none; }
+    .rail-btn { white-space: nowrap; padding: 10px 12px; border-left: 0; border-bottom: 3px solid transparent; }
+    .rail-btn[aria-selected="true"] { border-left-color: transparent; border-bottom-color: var(--gold); }
+    .sub-outline, .rail-item.active .sub-outline { display: none; }
+  }
+
+  /* ---------- main ---------- */
+  main { flex: 1; min-width: 0; padding: 36px clamp(18px, 4vw, 60px) 90px; max-width: 1520px; }
+  .sheet[hidden] { display: none; }
+  .sheet-head { margin-bottom: 24px; padding-bottom: 18px; border-bottom: 2px solid var(--line); display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: flex-end; justify-content: space-between; }
+  .sheet-head .lead { color: var(--ink-2); max-width: 76ch; margin-top: 8px; font-size: 1.02em; }
+  .sheet-head .prog { font-family: var(--font-mono); font-size: .86em; color: var(--purple-ink); background: var(--purple-soft); padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+  section.block { margin-block: 36px; scroll-margin-top: 16px; }
+  section.block > h3 { margin-bottom: 14px; padding-left: 14px; border-left: 5px solid var(--orange); }
+  .prose { max-width: 72ch; }
+  .prose.full { max-width: none; }
+  .prose p + p { margin-top: .7em; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px 14px; box-shadow: var(--shadow); }
+  .stat .big { font-family: var(--font-mono); font-weight: 700; font-size: 1.9em; line-height: 1.1; color: var(--purple-ink); }
+  .stat .big small { font-family: var(--font); font-size: .5em; font-weight: 500; color: var(--ink-2); margin-left: 4px; }
+  .stat .lbl { margin-top: 6px; color: var(--ink-2); font-size: .9em; }
+
+  .kv { display: grid; grid-template-columns: max-content 1fr; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+  .kv > div { padding: 10px 16px; border-bottom: 1px solid var(--line); }
+  .kv > div:nth-last-child(-n+2) { border-bottom: 0; }
+  .kv .k { background: var(--surface-2); font-family: var(--font-cond); font-weight: 700; color: var(--ink-2); letter-spacing: .02em; }
+  @media (max-width: 560px) { .kv { grid-template-columns: 1fr; } .kv .k { border-bottom: 0; padding-bottom: 2px; } }
+
+  .note { border-radius: var(--radius); padding: 13px 16px; display: flex; gap: 12px; align-items: flex-start; margin-block: 12px; }
+  .note .tag { flex: none; font-family: var(--font-cond); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .72em; padding: 4px 9px; border-radius: 6px; margin-top: 4px; }
+  .note.warn { background: var(--orange-soft); } .note.warn .tag { background: var(--orange); color: #fff; }
+  .note.info { background: var(--purple-soft); } .note.info .tag { background: var(--purple); color: #fff; }
+  .note.good { background: var(--good-soft); } .note.good .tag { background: var(--good); color: #fff; }
+  .note p { font-size: .96em; }
+  .note ul { margin: 0; padding-left: 1.1em; font-size: .96em; }
+  .note li { margin-block: .25em; }
+
+  .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .flow5 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 760px) { .flow5 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 460px) { .flow5 { grid-template-columns: 1fr; } }
+  .flow .step { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 16px 14px; box-shadow: var(--shadow); }
+  .flow .step .k { display: inline-block; font-family: var(--font-cond); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .72em; color: #3A1E00; background: linear-gradient(135deg, var(--orange), var(--gold)); padding: 3px 9px; border-radius: 6px; margin-bottom: 8px; }
+  .flow .step h4 { margin-bottom: 4px; }
+  .flow .step ul { color: var(--ink-2); font-size: .9em; padding-left: 1.1em; margin: 2px 0 0; }
+  .flow .step li { margin-block: .15em; }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+  .card h4 { margin-bottom: 6px; }
+  .card .eyebrow { display: block; margin-bottom: 6px; }
+  .card ul, .card p { font-size: .95em; }
+  .card p { color: var(--ink-2); }
+
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: .94em; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 13px; border-bottom: 1px solid var(--line); }
+  thead th { background: var(--surface-2); font-family: var(--font-cond); font-weight: 700; letter-spacing: .03em; color: var(--purple-ink); font-size: .88em; text-transform: uppercase; }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.n, th.n { text-align: right; font-family: var(--font-mono); white-space: nowrap; }
+  td ul { margin: 0; padding-left: 1.05em; } td ul li { margin-block: .18em; }
+  @media (max-width: 720px) {
+    table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; width: 100%; }
+    table.stack thead { display: none; }
+    table.stack tr { border-bottom: 6px solid var(--surface-2); padding: 6px 0; }
+    table.stack tr:last-child { border-bottom: 0; }
+    table.stack td { border-bottom: 0; padding: 6px 14px; }
+    table.stack td[data-l]::before { content: attr(data-l); display: block; font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .76em; color: var(--muted); margin-bottom: 2px; }
+    table.stack td.n { text-align: left; }
+  }
+
+  /* source labels */
+  .lb { display: inline-block; font-family: var(--font-cond); font-weight: 700; letter-spacing: .08em; font-size: .68em; padding: 2px 7px; border-radius: 5px; vertical-align: middle; text-transform: uppercase; }
+  .lb.src { background: var(--purple-soft); color: var(--purple-ink); }
+  .lb.inf { background: var(--gold-soft); color: #7A4E00; }
+  .lb.ext { background: var(--orange-soft); color: var(--orange-ink); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .lb.inf { color: var(--gold); } }
+  :root[data-theme="dark"] .lb.inf { color: var(--gold); }
+  .chip { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line-strong); font-family: var(--font-cond); font-weight: 700; font-size: .8em; letter-spacing: .02em; color: var(--ink-2); white-space: nowrap; }
+  .chip.o { background: var(--orange-soft); border-color: transparent; color: var(--orange-ink); }
+  .chip.p { background: var(--purple-soft); border-color: transparent; color: var(--purple-ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+
+  /* ---------- lesson plan ---------- */
+  .lp-head { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+  .lp-head > div { padding: 12px 16px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); }
+  .lp-head .k { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .07em; font-size: .74em; color: var(--muted); font-weight: 700; }
+  .lp-head .v { margin-top: 2px; }
+  .aims { border-left: 5px solid var(--gold); background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 18px; }
+  .aims .k { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .07em; font-size: .74em; color: var(--orange-ink); font-weight: 700; }
+  .aims p { margin-top: 4px; }
+  .aims + .aims { margin-top: 10px; }
+
+  table.lp th:nth-child(1) { width: 21%; } table.lp th:nth-child(2) { width: 59%; } table.lp th:nth-child(3) { width: 8%; } table.lp th:nth-child(4) { width: 12%; }
+  table.lp td { font-size: .97em; }
+  table.lp .stage { font-weight: 700; color: var(--ink); }
+  table.lp .aim { display: block; color: var(--ink-2); font-size: .9em; margin-top: 4px; font-style: italic; }
+  table.lp .t { font-weight: 700; color: var(--purple-ink); white-space: nowrap; }
+  table.lp .t small { display: block; font-weight: 500; color: var(--muted); font-size: .8em; }
+  table.lp .ia { font-family: var(--font-cond); font-weight: 700; letter-spacing: .04em; color: var(--ink-2); font-size: .92em; }
+  table.lp ul { padding-left: 1.1em; } table.lp li { margin-block: .22em; }
+  tr.period td { background: linear-gradient(90deg, var(--gold-soft), var(--surface)); font-family: var(--font-cond); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--orange-ink); font-size: .9em; padding: 9px 13px; }
+  .ccq { background: var(--surface-3); border: 1px dashed var(--line-strong); border-radius: 8px; padding: 8px 12px; margin-top: 6px; font-size: .93em; }
+  .ccq b { color: var(--orange-ink); font-family: var(--font-cond); letter-spacing: .05em; font-size: .85em; text-transform: uppercase; margin-right: 6px; }
+  .board { background: var(--ink); color: #F5EDFA; border-radius: 8px; padding: 10px 14px; margin-top: 6px; font-family: var(--font-mono); font-size: .86em; line-height: 1.5; white-space: pre-wrap; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .board { background: #0F0916; } }
+  :root[data-theme="dark"] .board { background: #0F0916; }
+  .board .u { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; }
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 14px 0 18px; }
+  .timeline > div { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--purple); border-radius: 8px; padding: 10px 12px; font-size: .9em; }
+  .timeline > div:nth-child(2) { border-top-color: var(--orange); } .timeline > div:nth-child(3) { border-top-color: var(--gold); } .timeline > div:nth-child(4) { border-top-color: var(--purple-ink); }
+  .timeline b { display: block; font-family: var(--font-cond); letter-spacing: .05em; text-transform: uppercase; font-size: .84em; color: var(--muted); }
+  @media (max-width: 720px) { .timeline { grid-template-columns: 1fr 1fr; } }
+
+  /* ---------- exercises ---------- */
+  .ex { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); margin-block: 22px; overflow: hidden; scroll-margin-top: 16px; }
+  .ex-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+  .ex-no { font-family: var(--font-mono); font-weight: 700; color: #3A1E00; background: linear-gradient(135deg, var(--orange), var(--gold)); padding: 3px 10px; border-radius: 7px; font-size: .84em; }
+  .ex-head h4 { flex: 1 1 200px; font-size: 1.08em; }
+  .ex-type { font-family: var(--font-cond); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; font-size: .74em; color: var(--muted); }
+  .score { font-family: var(--font-mono); font-weight: 700; min-width: 3.2em; text-align: right; color: var(--purple-ink); }
+  .score.full { color: var(--good); }
+  .ex-note { padding: 12px 18px 0; color: var(--ink-2); font-size: .95em; }
+  .ex-note ul { margin: 4px 0 0; padding-left: 1.2em; }
+  .ex-note li { margin-block: .2em; }
+  #r-plan ~ .grid-2 ul.substeps { margin: 0; padding-left: 1.1em; }
+  #r-plan ~ .grid-2 ul.substeps li { margin-block: .3em; }
+  #r-plan ~ .grid-2 ul.substeps li::marker { color: var(--purple); }
+  .ex-body { padding: 14px 18px 6px; }
+  .ex-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 12px 18px 14px; border-top: 1px solid var(--line); }
+  .ex-foot .src { margin-left: auto; font-size: .8em; color: var(--muted); }
+  .btn { appearance: none; border: 0; border-radius: 9px; padding: 9px 16px; font: inherit; font-family: var(--font-cond); font-weight: 700; font-size: .95em; letter-spacing: .03em; cursor: pointer; background: var(--purple); color: #fff; }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: var(--surface); color: var(--purple-ink); border: 1px solid var(--line-strong); }
+  .btn.sm { padding: 5px 10px; font-size: .84em; }
+  .btn:focus-visible, .chip-w:focus-visible, .gap:focus-visible, .ev:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .btn.say { background: var(--orange); }
+  .btn.say::before { content: "▶ "; }
+  .btn.stop { background: var(--surface); color: var(--ink-2); border: 1px solid var(--line-strong); }
+
+  .items { display: grid; gap: 10px; }
+  .items.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .items.three { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+  .it { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  .it .lab { font-family: var(--font-mono); font-weight: 700; color: var(--orange-ink); min-width: 1.4em; }
+  .it .q { flex: 1 1 200px; }
+  .it .pic { font-size: 1.6em; line-height: 1; width: 1.4em; text-align: center; }
+  .scr { font-family: var(--font-mono); letter-spacing: .18em; font-weight: 700; color: var(--purple-ink); background: var(--purple-soft); padding: 4px 10px; border-radius: 7px; }
+  input.ans, select.ans, textarea.free { font: inherit; font-size: 1em; padding: 8px 12px; border: 2px solid var(--line-strong); border-radius: 9px; background: var(--bg); color: var(--ink); min-width: 9em; }
+  input.ans.w { min-width: 16em; flex: 1 1 260px; }
+  input.ans.xs { min-width: 5em; width: 7em; }
+  input.ans:focus, select.ans:focus, textarea.free:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 4px var(--purple-soft); }
+  textarea.free { width: 100%; min-height: 110px; resize: vertical; line-height: 1.5; }
+  .ok, .mcq.ok, .builder.ok, .gaps.ok, .evid.ok { border-color: var(--good) !important; background: var(--good-soft) !important; }
+  .bad, .mcq.bad, .builder.bad, .gaps.bad, .evid.bad { border-color: var(--bad) !important; background: var(--bad-soft) !important; }
+  .mcq { border: 2px solid var(--line); border-radius: 10px; padding: 10px 14px; }
+  .mcq .stem { font-weight: 700; margin-bottom: 6px; }
+  .mcq label { display: flex; gap: 10px; align-items: flex-start; padding: 5px 4px; border-radius: 6px; cursor: pointer; }
+  .mcq label:hover { background: var(--surface-2); }
+  .mcq input { width: 20px; height: 20px; margin-top: 4px; accent-color: var(--purple); flex: none; }
+  .mcq .o { font-family: var(--font-mono); font-weight: 700; color: var(--purple-ink); }
+
+  .chip-w { appearance: none; border: 2px solid var(--line-strong); background: var(--surface); color: var(--ink); border-radius: 9px; padding: 6px 12px; font: inherit; font-size: .98em; cursor: pointer; }
+  .chip-w:hover { border-color: var(--purple); }
+  .bank, .line { display: flex; flex-wrap: wrap; gap: 8px; min-height: 48px; padding: 8px; border-radius: 10px; }
+  .bank { background: var(--surface-2); }
+  .builder { border: 2px solid var(--line); border-radius: 12px; padding: 8px; margin-block: 8px; }
+  .builder .line { border: 2px dashed var(--line-strong); background: var(--bg); margin-bottom: 8px; }
+  .builder .line:empty::before { content: "Chạm vào từ bên dưới để xếp câu…"; color: var(--muted); font-size: .9em; }
+  .builder .hint { font-size: .86em; color: var(--muted); margin-bottom: 4px; }
+  .bins .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 10px; }
+  .bins .col { border: 2px dashed var(--line-strong); border-radius: 10px; padding: 8px; min-height: 90px; display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; background: var(--bg); cursor: pointer; transition: background-color .12s, border-color .12s; }
+  .bins .col:hover { border-color: var(--purple); background: var(--purple-soft); }
+  .bins.armed .col { border-color: var(--gold); border-style: solid; }
+  .bins .col-h { width: 100%; font-family: var(--font-cond); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--purple-ink); font-size: .88em; padding: 0 4px 4px; cursor: default; }
+  .bins .chip-w.sel { border-color: var(--gold); background: var(--gold-soft); box-shadow: 0 0 0 3px var(--gold-soft); }
+  .bins .chip-w.ok { border-color: var(--good); background: var(--good-soft); }
+  .bins .chip-w.bad { border-color: var(--bad); background: var(--bad-soft); }
+  .bins .col .chip-w { cursor: pointer; }
+  .bins .col .chip-w::after { content: " ↩"; opacity: .55; font-size: .9em; }
+  .gaps { border: 2px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-block: 6px; line-height: 2.2; }
+  .gaps .w { margin: 0 2px; }
+  .gaps .gap { appearance: none; border: 2px dashed var(--line-strong); background: var(--surface-2); border-radius: 6px; min-width: 22px; height: 30px; margin: 0 3px; cursor: pointer; vertical-align: middle; font: inherit; font-size: .9em; padding: 0 5px; color: var(--purple-ink); font-weight: 700; }
+  .gaps .gap.sel { border-style: solid; border-color: var(--purple); background: var(--purple-soft); }
+  .gaps .advsel { font: inherit; font-size: .9em; padding: 4px 8px; border-radius: 7px; border: 2px solid var(--line-strong); background: var(--bg); color: var(--ink); margin-right: 10px; }
+  .evid { border: 2px solid var(--line); border-radius: 10px; padding: 12px 14px; line-height: 2; }
+  .ev { cursor: pointer; padding: 3px 4px; border-radius: 5px; border-bottom: 2px dotted var(--line-strong); }
+  .ev:hover { background: var(--surface-2); }
+  .ev.sel { background: var(--gold-soft); border-bottom: 3px solid var(--orange); }
+  .sample { background: var(--surface-2); border-left: 4px solid var(--gold); border-radius: 8px; padding: 10px 14px; font-size: .95em; margin-top: 10px; }
+  .sample .eyebrow { display: block; margin-bottom: 4px; }
+  .sample p + p { margin-top: 6px; }
+
+  .msgs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .msg { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--surface-3); position: relative; font-size: .97em; }
+  .msg .no { position: absolute; top: -10px; left: 12px; font-family: var(--font-mono); font-weight: 700; font-size: .78em; background: var(--purple); color: #fff; padding: 1px 8px; border-radius: 6px; }
+  .msg.email { font-family: var(--font); } .msg.notice { text-align: center; font-weight: 700; font-size: 1.1em; border: 2px solid var(--ink-2); background: var(--surface); }
+  .msg.sms { font-family: var(--font-mono); font-size: .9em; background: var(--surface-2); border-radius: 18px; }
+  .msg.pad { font-family: "Comic Sans MS", "Segoe Print", cursive; background: repeating-linear-gradient(var(--surface) 0 30px, var(--line) 30px 31px); }
+  .msg.postit { background: var(--gold-soft); border-color: var(--gold); font-family: "Segoe Print", "Comic Sans MS", cursive; transform: rotate(-1deg); }
+  .msg.email .hdr { font-size: .8em; color: var(--muted); border-bottom: 1px solid var(--line); margin-bottom: 6px; padding-bottom: 4px; font-family: var(--font-cond); letter-spacing: .05em; }
+  .msg .sig { display: block; margin-top: 6px; font-weight: 700; }
+
+  .script { background: var(--surface-3); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin-top: 10px; }
+  .script .sp { font-family: var(--font-cond); font-weight: 700; color: var(--orange-ink); letter-spacing: .04em; }
+  .script p { margin-block: 6px; }
+  details { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); margin-top: 10px; }
+  summary { cursor: pointer; padding: 10px 14px; font-family: var(--font-cond); font-weight: 700; letter-spacing: .03em; color: var(--purple-ink); }
+  details > div { padding: 0 14px 12px; }
+
+  .vcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; }
+  .vc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: .93em; }
+  .vc .w { font-weight: 700; font-size: 1.12em; }
+  .vc .pos { color: var(--muted); font-size: .86em; margin-left: 6px; }
+  .vc .row { display: grid; grid-template-columns: 7.2em 1fr; gap: 2px 8px; margin-top: 4px; }
+  .vc .row .k { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .74em; color: var(--muted); font-weight: 700; padding-top: 4px; }
+  .vc .row .k.err { color: var(--bad); }
+  .sent { border-left: 4px solid var(--purple); background: var(--surface); border: 1px solid var(--line); border-left-width: 4px; border-radius: 8px; padding: 10px 14px; margin-top: 10px; font-size: .95em; }
+  .sent .o { font-weight: 700; } .sent .vi { color: var(--ink-2); } .sent .kl { margin-top: 4px; }
+  .sent .kl b { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .78em; color: var(--orange-ink); margin-right: 6px; }
+  .frame { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+  .frame > div { background: var(--surface-2); border-radius: 8px; padding: 8px 10px; font-size: .9em; }
+  .frame b { display: block; font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .78em; color: var(--purple-ink); }
+  .frame7 { grid-template-columns: repeat(7, 1fr); }
+  .frame7 .stepno { display: block; text-align: center; font-weight: 700; font-size: 1.25em; line-height: 1; color: var(--orange-ink); margin-bottom: 4px; }
+  .frame7 p { margin: 2px 0 0; color: var(--ink-2); }
+  @media (max-width: 980px) { .frame7 { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 640px) { .frame7 { grid-template-columns: repeat(2, 1fr); } }
+
+  .checklist { list-style: none; padding: 0; display: grid; gap: 4px; }
+  .checklist li { margin: 0; }
+  .checklist label { display: flex; gap: 11px; align-items: flex-start; padding: 7px 10px; border-radius: 8px; cursor: pointer; }
+  .checklist label:hover { background: var(--surface-2); }
+  .checklist input { width: 21px; height: 21px; margin: 3px 0 0; accent-color: var(--purple); flex: none; }
+  .checklist input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--line-strong); }
+
+  .letters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; min-height: 56px; }
+  .letter { display: grid; place-items: center; min-width: 58px; padding: 6px 8px; border-radius: 9px; background: var(--surface-2); border: 1px solid var(--line); }
+  .letter b { font-size: 1.3em; color: var(--purple-ink); } .letter i { font-style: normal; font-size: .8em; color: var(--ink-2); }
+  .abc { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 6px; }
+  .abc div { text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 6px 4px; font-size: .9em; }
+  .abc b { display: block; font-size: 1.25em; color: var(--purple-ink); }
+
+  .obs-grid { display: grid; grid-template-columns: 1.1fr 2fr 2fr; gap: 8px; }
+  .obs-grid textarea { min-height: 70px; }
+  @media (max-width: 720px) { .obs-grid { grid-template-columns: 1fr; } }
+  .obs-row-h { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .78em; color: var(--muted); font-weight: 700; }
+
+  @media print {
+    .rail { display: none; }
+    .sheet[hidden] { display: block !important; }
+    .sheet { break-before: page; }
+    body { display: block; font-size: 12pt; background: #fff; }
+    .btn { display: none; }
+  }
+
+  /* ---------- B2 output pack additions ---------- */
+  main { max-width: 1520px; }
+  .tiers { display: grid; gap: 10px; }
+  .tier { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
+  .tier-h { display: flex; align-items: center; gap: 10px; padding: 8px 14px; font-family: var(--font-cond); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .8em; }
+  .tier-h small { font-family: var(--font); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 1em; color: var(--ink-2); }
+  .tier.core .tier-h { background: var(--purple-soft); color: var(--purple-ink); }
+  .tier.adv .tier-h { background: var(--orange-soft); color: var(--orange-ink); }
+  .tier.col .tier-h { background: var(--gold-soft); color: #7A4E00; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tier.col .tier-h { color: var(--gold); } }
+  :root[data-theme="dark"] .tier.col .tier-h { color: var(--gold); }
+  .vt { width: 100%; border-collapse: collapse; font-size: .95em; }
+  .vt td { padding: 7px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  .vt td:first-child { width: 34%; font-weight: 600; }
+  .vt td:nth-child(2) { color: var(--ink-2); width: 24%; }
+  .vt .ipa { font-weight: 400; font-size: .9em; margin-left: 6px; }
+  .vt i { color: var(--ink-2); }
+  .vt tr.cluster td { background: var(--surface-2); font-family: var(--font-cond); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; font-size: .78em; color: var(--purple-ink); padding: 7px 14px; border-top: 1px solid var(--line-strong); }
+  .vt tr.cluster:first-child td { border-top: 0; }
+  .core-words { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 10px; padding: 10px 14px; }
+  .core-words > span { display: block; background: var(--surface-2); border-radius: 7px; padding: 6px 10px; line-height: 1.5; }
+  @media (max-width: 640px) { .core-words { grid-template-columns: 1fr; } }
+  .dot { color: var(--purple); font-weight: 700; margin-right: 3px; }
+  .rule-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 14px 12px; }
+  .rule-card { background: var(--surface-2); border-radius: 10px; padding: 12px 14px; text-align: center; }
+  .rule-card .ic { display: block; font-size: 1.9em; line-height: 1; margin-bottom: 6px; }
+  .rule-card b { font-family: var(--font-cond); letter-spacing: .06em; color: var(--purple-ink); font-size: 1.05em; }
+  .rule-card p { margin: 5px 0 3px; font-size: .87em; color: var(--ink-2); line-height: 1.35; }
+  .rule-card i { font-size: .85em; color: var(--ink); }
+  @media (max-width: 640px) { .rule-cards { grid-template-columns: 1fr; } }
+  .use { background: linear-gradient(90deg, var(--gold-soft), var(--surface)); border-left: 4px solid var(--gold); padding: 10px 14px; border-radius: 0 10px 10px 0; margin-top: 10px; }
+  .use b { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .78em; color: var(--orange-ink); margin-right: 8px; }
+  .group-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 10px; }
+  .group-head .why { color: var(--ink-2); font-size: .95em; }
+  .mind { display: none; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: center; margin: 10px 0 14px; }
+  .mind .c { grid-column: 2; grid-row: 2; background: var(--purple); color: #fff; border-radius: 14px; padding: 14px; text-align: center; font-weight: 700; line-height: 1.3; }
+  .mind .p { background: var(--surface); border: 2px solid var(--line-strong); border-radius: 999px; padding: 10px 14px; text-align: center; font-size: .92em; }
+  @media (max-width: 700px) { .mind { display: grid; grid-template-columns: 1fr 1fr; } .mind .c { grid-column: 1 / -1; grid-row: auto; } .cue-card { display: none; } }
+  /* VSTEP-style cue-card diagram: topic hub + 6 radiating prompts, drawn like the real Part 2 word cue card */
+  .cue-card { position: relative; width: 100%; padding-bottom: 52%; margin: 14px 0 18px; }
+  .cue-card svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .cue-card svg line { stroke: var(--line-strong); stroke-width: 2; }
+  .cue-node, .cue-topic { position: absolute; transform: translate(-50%, -50%); text-align: center; }
+  .cue-node { width: 21%; background: var(--surface); border: 2px solid var(--line-strong); border-radius: 999px; padding: 9px 12px; font-size: .82em; line-height: 1.25; box-shadow: var(--shadow); }
+  .cue-topic { width: 27%; background: var(--purple); color: #fff; border-radius: 16px; padding: 14px 16px; font-weight: 700; font-size: .92em; line-height: 1.28; box-shadow: var(--shadow); z-index: 1; }
+  .timer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+  .part-sticky { position: sticky; top: 0; z-index: 6; background: var(--bg); padding-top: 8px; padding-bottom: 6px; margin-bottom: 6px; }
+  @media (max-width: 900px) { .part-sticky { top: 54px; } }
+  .timer .tdisp { font-family: var(--font-mono); font-weight: 700; font-size: 1.6em; color: var(--purple-ink); min-width: 3.4em; }
+  .timer.done .tdisp { color: var(--bad); }
+  .model { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; line-height: 1.75; }
+  .model p + p { margin-top: .7em; }
+  .model mark { background: var(--gold-soft); color: inherit; padding: 0 3px; border-radius: 3px; font-weight: 600; }
+  .step-tag { display: inline-block; font-family: var(--font-cond); font-weight: 700; font-size: .68em; letter-spacing: .06em; text-transform: uppercase; color: #fff; padding: 2px 8px; border-radius: 5px; margin-right: 6px; vertical-align: 1px; white-space: nowrap; }
+  .step-tag.point { background: var(--purple); }
+  .step-tag.why { background: var(--orange); }
+  .step-tag.how { background: var(--how); }
+  .step-tag.example { background: var(--good); }
+  .step-tag.result { background: var(--result); }
+  .step-tag.limitation { background: var(--bad); }
+  .step-tag.counter { background: var(--bad); }
+  .step-tag.evaluation { background: var(--eval); }
+  .qa .a { line-height: 1.9; }
+  .model p.step { margin-block: 8px; }
+  .model .wcnt { display: block; margin-top: 8px; font-size: .82em; color: var(--muted); font-family: var(--font-mono); }
+  .fn { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 10px; }
+  .fn .card h4 { color: var(--purple-ink); font-size: 1em; }
+  .fn .card ul { padding-left: 1.1em; font-size: .93em; }
+  .fn .card p.ex { color: var(--orange-ink); margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); }
+  .qa { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); padding: 12px 16px; margin-top: 10px; }
+  .qa .q { font-weight: 700; color: var(--purple-ink); }
+  .qa .a { margin-top: 4px; color: var(--ink); font-size: .96em; }
+  .qa .a mark { background: var(--gold-soft); padding: 0 3px; border-radius: 3px; }
+  .upg td:first-child { color: var(--muted); }
+  .upg td:first-child s { text-decoration-color: var(--bad); }
+  .upg td:nth-child(2) { font-weight: 600; }
+  .upg mark { background: var(--gold-soft); color: inherit; padding: 0 3px; border-radius: 3px; font-weight: 700; }
+  .plan { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+  .plan textarea.free { min-height: 90px; }
+  .plan label { display: block; font-family: var(--font-cond); font-weight: 700; letter-spacing: .04em; font-size: .86em; color: var(--ink-2); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+
+<aside class="rail" aria-label="Mục lục">
+  <div class="rail-brand">
+    <div class="rail-kicker">Objective PET B1</div>
+    <div class="rail-title">Unit 1<br>A Question of Sport</div>
+  </div>
+  <nav class="rail-nav" id="rail-nav" role="tablist" aria-label="Sheets"></nav>
+</aside>
+
+<main>
+<!-- ================= SHEET 1: LỘ TRÌNH ================= -->
+<article class="sheet" id="route" role="tabpanel" data-title="Lộ trình">
+  <div class="sheet-head">
+    <div>
+      <span class="eyebrow">Sheet 1 / 7 · Sport · free time · fitness</span>
+    </div>
+  </div>
+
+  <section class="block">
+    <h3 id="r-goal">Mục tiêu đầu ra</h3>
+    <div class="grid-3">
+      <div class="card"><span class="eyebrow">Speaking · Part 1</span><p>Trả lời 10 câu hỏi về thể thao / thời gian rảnh bằng câu 2–3 mệnh đề, có 1 collocation B2 mỗi câu.</p></div>
+      <div class="card"><span class="eyebrow">Speaking · Part 2</span><p>Nói 2 phút theo sơ đồ gợi ý, đủ Point → Why → How → Example → Result → Limitation → Evaluation.</p></div>
+      <div class="card"><span class="eyebrow">Speaking · Part 3</span><p>Bảo vệ quan điểm về một vấn đề xã hội (PE bắt buộc, lương VĐV, chính sách y tế) với 2 lý do + 1 phản đề.</p></div>
+      <div class="card"><span class="eyebrow">Writing · Task 1</span><p>Email 120–150 từ đủ 3 ý, ngôn ngữ khuyên nhủ, 5+ collocation chủ đề.</p></div>
+      <div class="card"><span class="eyebrow">Writing · Task 2</span><p>Essay ≥ 250 từ dạng nguyên nhân – giải pháp, 4 đoạn, câu chủ đề rõ, 8+ collocation chủ đề, có câu nhượng bộ.</p></div>
+      <div class="card"><span class="eyebrow">Từ vựng</span><p>Chủ động dùng ≥ 60 cụm từ trong 10 nhóm; nhớ lại được sau 7 ngày (quiz Sheet 7).</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="r-vstep">Các kiến thức cần nhớ</h3>
+    <div class="grid-3">
+      <div class="card"><span class="eyebrow">Speaking Part 1 · giao tiếp xã hội</span><p>Thói quen, tần suất, sở thích, lý do ngắn.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 1 loại hình</span><span class="chip p">Group 2 động từ</span><span class="chip p">Group 7 tần suất</span><span class="chip p">Group 8 thái độ</span><span class="chip o">→ Sheet 4</span></div></div>
+      <div class="card"><span class="eyebrow">Speaking Part 2 · phát triển chủ đề theo sơ đồ</span><p>Mô tả một môn / một thói quen; lợi ích; kỷ niệm; đánh giá.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 2</span><span class="chip p">Group 4</span><span class="chip p">Group 5 lợi ích</span><span class="chip p">Group 8</span><span class="chip p">Group 9 thành tích</span><span class="chip o">→ Sheet 4</span></div></div>
+      <div class="card"><span class="eyebrow">Speaking Part 3 · thảo luận mở rộng</span><p>Nguyên nhân – hệ quả, so sánh, nhượng bộ, đề xuất.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 5</span><span class="chip p">Group 6 mặt trái</span><span class="chip p">Group 10 xã hội &amp; chính sách</span><span class="chip p">chunks Sheet 3</span></div></div>
+      <div class="card"><span class="eyebrow">Writing Task 1 · email</span><p>Khuyên bạn chọn môn, giải thích lợi ích, hướng dẫn bắt đầu.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 2</span><span class="chip p">Group 5</span><span class="chip p">Group 7</span><span class="chip p">ngôn ngữ đề xuất</span><span class="chip o">→ Sheet 5</span></div></div>
+      <div class="card"><span class="eyebrow">Writing Task 2 · essay</span><p>Lý do người ta ít vận động; giải pháp từ nhà nước – cơ quan – ngành y.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 5</span><span class="chip p">Group 6</span><span class="chip p">Group 10</span><span class="chip p">chunks nguyên nhân/giải pháp</span><span class="chip o">→ Sheet 5</span></div></div>
+      <div class="card"><span class="eyebrow">Reading · Listening</span><p>Nhận ra paraphrase của cùng cụm từ (<i>reduce the risk</i> = <i>lower the chance…</i>).</p><div class="chips" style="margin-top:8px"><span class="chip p">cột "Nghĩa / từ đồng nghĩa" mỗi nhóm</span><span class="chip p">Bài 7 Sheet 6</span></div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="r-plan">Lộ trình 2 buổi (8 tiết)</h3>
+    <div class="grid-2">
+      <div class="card"><span class="eyebrow">Buổi 1 · 4 tiết · nói được</span>
+        <div class="tablewrap" style="border:0"><table>
+          <tbody>
+            <tr><td class="t" style="width:14%">15'</td><td><ul class="substeps"><li>Brainstorm sơ đồ "sport" theo cặp</li><li>Đối chiếu với 10 nhóm</li><li>Chọn 3 nhóm mình yếu</li></ul></td></tr>
+            <tr><td class="t">60'</td><td><ul class="substeps"><li>Nhóm Group 1–Group 5: đọc tầng Core → Nâng cao → Collocations</li><li>Mỗi nhóm viết 1 câu về mình</li><li>Bài 1–4 Sheet 6</li></ul></td></tr>
+            <tr><td class="t">30'</td><td><ul class="substeps"><li>Sheet 3: chunks chức năng + bảng nâng cấp B1 → B2</li><li>Bài 5 (nâng cấp câu)</li></ul></td></tr>
+            <tr><td class="t">60'</td><td><ul class="substeps"><li>Speaking Part 1 theo cặp (bấm giờ 30"/câu)</li><li>Part 2: nói 2' theo sơ đồ, ghi âm, tự chấm checklist</li></ul></td></tr>
+            <tr><td class="t">15'</td><td><ul class="substeps"><li>Retrieval quiz 12 cụm (Sheet 7)</li><li>Ghi 5 cụm vào sổ cá nhân</li></ul></td></tr>
+          </tbody></table></div></div>
+      <div class="card"><span class="eyebrow">Buổi 2 · 4 tiết · viết được</span>
+        <div class="tablewrap" style="border:0"><table>
+          <tbody>
+            <tr><td class="t" style="width:14%">10'</td><td>Nhớ lại Group 1–Group 5 không nhìn sách (bạn hỏi – bạn đáp).</td></tr>
+            <tr><td class="t">50'</td><td><ul class="substeps"><li>Nhóm Group 6–Group 10 (mặt trái, tần suất, thái độ, thành tích, chính sách)</li><li>Bài 6–9 Sheet 6</li></ul></td></tr>
+            <tr><td class="t">40'</td><td>Speaking Part 3: tranh luận nhóm 3 về 3 câu hỏi, dùng khung Point – Why – Example – Counter – Evaluation.</td></tr>
+            <tr><td class="t">30' + 40'</td><td><ul class="substeps"><li>Task 1: viết email 120–150 từ theo planner → đổi bài chấm checklist</li><li>Task 2: lập dàn ý + viết 2 đoạn thân bài; hoàn thiện ở nhà</li></ul></td></tr>
+            <tr><td class="t">10'</td><td><ul class="substeps"><li>Bảng kiểm mastery</li><li>Lịch ôn 1‑3‑7 ngày</li></ul></td></tr>
+          </tbody></table></div></div>
+    </div>
+    </section>
+
+  <section class="block">
+    <h3 id="r-method">Cách học một nhóm từ</h3>
+    <div class="flow flow5">
+      <div class="step"><span class="k">1</span><h4>Đọc to tầng Core</h4><ul><li>Bạn đã biết những từ này — kiểm tra phát âm, trọng âm.</li></ul></div>
+      <div class="step"><span class="k">2</span><h4>Chọn 5 cụm Nâng cao</h4><ul><li>Không học tất cả. Chọn cụm bạn sẽ dùng khi nói về mình.</li></ul></div>
+      <div class="step"><span class="k">3</span><h4>Che cột nghĩa</h4><ul><li>Nhìn cụm tiếng Anh → nói nghĩa; nhìn nghĩa → nói cụm.</li></ul></div>
+      <div class="step"><span class="k">4</span><h4>Viết một câu về mình</h4><ul><li>Một câu thật về bạn / bệnh viện / bệnh nhân, có 2 cụm vừa học.</li></ul></div>
+      <div class="step"><span class="k">5</span><h4>Nói 30 giây</h4><ul><li>Bấm giờ, nói câu đó + 2 câu nữa. Ghi âm, nghe lại.</li></ul></div>
+    </div>
+  </section>
+</article>
+<!-- ================= SHEET 2: TỪ VỰNG THEO NHÓM ================= -->
+<article class="sheet" id="vocab" role="tabpanel" data-title="Từ vựng theo nhóm" hidden>
+  <div class="sheet-head">
+    <div>
+      <span class="eyebrow">Sheet 2 / 7 · 10 nhóm từ vựng · Sport &amp; Fitness</span>
+      <h2>Từ vựng chủ đề Sport &amp; Fitness</h2>
+    </div>
+  </div>
+
+  <!-- Group 1 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g1">Group 1 · Loại hình thể thao &amp; hoạt động</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
+        <div class="rule-cards">
+          <div class="rule-card"><span class="ic">🏀</span><b>PLAY</b><p>môn chơi với bóng/dụng cụ qua lại giữa hai bên</p><i>football · basketball · volleyball · tennis · table tennis · rugby · hockey</i></div>
+          <div class="rule-card"><span class="ic">🤸</span><b>DO</b><p>môn thể hiện kỹ năng cá nhân, không bóng</p><i>athletics · gymnastics</i></div>
+          <div class="rule-card"><span class="ic">🏊</span><b>GO</b><p>môn có đuôi <b>‑ing</b>, thường là di chuyển một mình</p><i>swimming · cycling · horse riding · sailing · surfing · windsurfing · skiing</i></div>
+        </div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Theo số người chơi</td></tr>
+          <tr><td>team sports</td><td>môn thể thao đồng đội</td><td><i>Football and volleyball are typical team sports.</i></td></tr>
+          <tr><td>individual sports</td><td>môn thể thao cá nhân</td><td><i>I'm more into individual sports like running.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Theo dụng cụ &amp; môi trường</td></tr>
+          <tr><td>racket sports</td><td>môn dùng vợt</td><td><i>Racket sports like badminton are hugely popular in Vietnam.</i></td></tr>
+          <tr><td>water sports</td><td>môn dưới nước</td><td><i>Swimming and surfing are my favourite water sports.</i></td></tr>
+          <tr><td>winter sports</td><td>môn mùa đông</td><td><i>Skiing and snowboarding are popular winter sports in Europe.</i></td></tr>
+          <tr><td>martial arts<span class="ipa">/ˌmɑːʃl ˈɑːts/</span></td><td>võ thuật</td><td><i>He's been doing martial arts since he was six.</i></td></tr>
+          <tr><td>combat sports</td><td>môn đối kháng</td><td><i>Boxing and wrestling are combat sports.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Theo mức độ &amp; tính chất</td></tr>
+          <tr><td>extreme sports</td><td>thể thao mạo hiểm</td><td><i>Extreme sports are thrilling but carry a real risk of injury.</i></td></tr>
+          <tr><td>adventure sports</td><td>thể thao phiêu lưu, mạo hiểm</td><td><i>Rock climbing is one of the most popular adventure sports.</i></td></tr>
+          <tr><td>endurance sports<span class="ipa">/ɪnˈdjʊərəns/</span></td><td>môn sức bền (marathon, triathlon)</td><td><i>Endurance sports test your stamina rather than your speed.</i></td></tr>
+          <tr><td>a contact sport</td><td>môn có va chạm</td><td><i>Rugby is a contact sport, so injuries are common.</i></td></tr>
+          <tr><td>a non‑contact sport</td><td>môn không va chạm</td><td><i>Badminton is a non‑contact sport, so it's safer for beginners.</i></td></tr>
+          <tr><td>a spectator sport<span class="ipa">/spekˈteɪtə/</span></td><td>môn để xem</td><td><i>Football is the biggest spectator sport in the world.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Hoạt động nói chung</td></tr>
+          <tr><td>recreational activities<span class="ipa">/ˌrekriˈeɪʃənl/</span></td><td>hoạt động giải trí</td><td><i>Hiking is one of my favourite recreational activities.</i></td></tr>
+          <tr><td>outdoor pursuits<span class="ipa">/pəˈsjuːts/</span></td><td>hoạt động ngoài trời</td><td><i>Camping and cycling are popular outdoor pursuits.</i></td></tr>
+          <tr><td>physical activity</td><td>vận động thể chất</td><td><i>Any physical activity is better than none.</i></td></tr>
+          <tr><td>exercise (U)</td><td>tập thể dục (không đếm được)</td><td><i>I try to get some exercise every day.</i></td></tr>
+          <tr><td>competitive</td><td>có tính thi đấu</td><td><i>I'm quite competitive when I play tennis.</i></td></tr>
+          <tr><td>non‑competitive</td><td>không thi đấu</td><td><i>I prefer non‑competitive activities like yoga.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>be into + sport</td><td>thích, mê (một môn)</td><td><i>I'm really into water sports.</i></td></tr>
+          <tr><td>be a big fan of</td><td>hâm mộ</td><td><i>I'm a big fan of Vietnamese football.</i></td></tr>
+          <tr><td>take up a martial art</td><td>bắt đầu học một môn võ</td><td><i>She took up a martial art last summer.</i></td></tr>
+          <tr><td>go in for extreme sports</td><td>thích/chơi các môn mạo hiểm</td><td><i>My brother really goes in for extreme sports.</i></td></tr>
+          <tr><td>do a bit of jogging</td><td>chạy bộ nhẹ</td><td><i>I do a bit of jogging most mornings.</i></td></tr>
+          <tr><td>a popular sport</td><td>môn phổ biến</td><td><i>Football is by far the most popular sport here.</i></td></tr>
+          <tr><td>a minority sport</td><td>môn ít người chơi</td><td><i>Rugby is still a minority sport in Vietnam.</i></td></tr>
+          <tr><td>a form of exercise</td><td>một hình thức tập luyện</td><td><i>Dancing is a fun form of exercise.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 2 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g2">Group 2 · Động từ &amp; cụm động từ chỉ việc tập luyện</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
+        <div class="core-words"><span><span class="dot">●</span>play / do / go + sport</span><span><span class="dot">●</span>watch sport on television</span><span><span class="dot">●</span>do any sport</span><span><span class="dot">●</span>play in a team</span><span><span class="dot">●</span>play against other teams</span><span><span class="dot">●</span>wear a helmet / special shoes</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Bắt đầu, duy trì, bỏ</td></tr>
+          <tr><td>take up (a sport)</td><td>bắt đầu chơi</td><td><i>I took up running last year.</i></td></tr>
+          <tr><td>give up</td><td>bỏ (một môn/thói quen)</td><td><i>I gave up football after my injury.</i></td></tr>
+          <tr><td>keep up</td><td>duy trì</td><td><i>Try to keep it up for at least a month.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Tập luyện &amp; khởi động</td></tr>
+          <tr><td>work out</td><td>tập luyện (ở phòng gym)</td><td><i>I work out three times a week.</i></td></tr>
+          <tr><td>do a workout</td><td>tập một buổi</td><td><i>I did a quick workout before breakfast.</i></td></tr>
+          <tr><td>keep fit</td><td>giữ dáng, giữ sức khoẻ</td><td><i>Cycling to work is an easy way to keep fit.</i></td></tr>
+          <tr><td>stay in shape</td><td>duy trì vóc dáng</td><td><i>She swims every day to stay in shape.</i></td></tr>
+          <tr><td>get into shape</td><td>lấy lại vóc dáng</td><td><i>I need to get into shape before the marathon.</i></td></tr>
+          <tr><td>get fit</td><td>trở nên khoẻ mạnh hơn</td><td><i>He joined a gym to get fit.</i></td></tr>
+          <tr><td>warm up</td><td>khởi động</td><td><i>Always warm up before you run.</i></td></tr>
+          <tr><td>cool down</td><td>thả lỏng sau khi tập</td><td><i>Don't forget to cool down after a hard session.</i></td></tr>
+          <tr><td>stretch</td><td>giãn cơ</td><td><i>I stretch for ten minutes after every run.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Thi đấu &amp; tham gia</td></tr>
+          <tr><td>train for (something)</td><td>tập luyện cho (một sự kiện)</td><td><i>She's training for the Hanoi marathon.</i></td></tr>
+          <tr><td>train hard</td><td>tập luyện chăm chỉ</td><td><i>The team trains hard every weekend.</i></td></tr>
+          <tr><td>compete in / against</td><td>thi đấu (trong/với)</td><td><i>He competes at national level.</i></td></tr>
+          <tr><td>take part in</td><td>tham gia</td><td><i>I took part in a 10 km race last month.</i></td></tr>
+          <tr><td>join a gym / a club</td><td>tham gia (phòng tập/câu lạc bộ)</td><td><i>I joined a gym near the hospital.</i></td></tr>
+          <tr><td>go to the gym</td><td>đi tập gym</td><td><i>I go to the gym every other day.</i></td></tr>
+          <tr><td>hit the gym <i>(informal)</i></td><td>đi tập (khẩu ngữ)</td><td><i>Let's hit the gym after work.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Vận động cụ thể</td></tr>
+          <tr><td>go for a run</td><td>đi chạy</td><td><i>Let's go for a run before breakfast.</i></td></tr>
+          <tr><td>go for a swim</td><td>đi bơi</td><td><i>I went for a swim to cool off.</i></td></tr>
+          <tr><td>go for a walk</td><td>đi bộ</td><td><i>We went for a walk in the park.</i></td></tr>
+          <tr><td>go jogging</td><td>đi chạy bộ nhẹ</td><td><i>She goes jogging every morning.</i></td></tr>
+          <tr><td>lift weights</td><td>tập tạ</td><td><i>I lift weights twice a week.</i></td></tr>
+          <tr><td>do sit‑ups</td><td>gập bụng</td><td><i>He does a hundred sit‑ups every night.</i></td></tr>
+          <tr><td>do press‑ups</td><td>chống đẩy</td><td><i>We did press‑ups during the warm‑up.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Nỗ lực &amp; mục tiêu</td></tr>
+          <tr><td>build up stamina<span class="ipa">/ˈstæmɪnə/</span></td><td>tăng sức bền</td><td><i>Start slowly and build up your stamina.</i></td></tr>
+          <tr><td>build up strength</td><td>tăng sức mạnh</td><td><i>Lifting weights helps build up strength.</i></td></tr>
+          <tr><td>push yourself</td><td>ép bản thân cố gắng</td><td><i>You need to push yourself in the last kilometre.</i></td></tr>
+          <tr><td>be out of breath</td><td>hụt hơi</td><td><i>I was completely out of breath after 2 km.</i></td></tr>
+          <tr><td>catch your breath</td><td>lấy lại hơi thở</td><td><i>She stopped to catch her breath at the top of the hill.</i></td></tr>
+          <tr><td>set a goal</td><td>đặt mục tiêu</td><td><i>I set a goal of running 5 km without stopping.</i></td></tr>
+          <tr><td>stick to a routine</td><td>giữ lịch tập đều</td><td><i>The hard part is sticking to a routine.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>take up running</td><td>bắt đầu chạy bộ</td><td><i>I took up running last year and never looked back.</i></td></tr>
+          <tr><td>work out regularly</td><td>tập luyện đều đặn</td><td><i>He works out regularly at the gym near his office.</i></td></tr>
+          <tr><td>train hard for</td><td>tập luyện chăm chỉ cho</td><td><i>She's training hard for the SEA Games trials.</i></td></tr>
+          <tr><td>compete at national level</td><td>thi đấu cấp quốc gia</td><td><i>My cousin competes at national level in swimming.</i></td></tr>
+          <tr><td>take part in a tournament</td><td>tham gia một giải đấu</td><td><i>Our hospital team took part in a charity tournament.</i></td></tr>
+          <tr><td>keep fit by + ‑ing</td><td>giữ dáng bằng cách</td><td><i>I keep fit by cycling to work every day.</i></td></tr>
+          <tr><td>exercise regularly</td><td>tập thể dục đều đặn</td><td><i>Doctors advise patients to exercise regularly.</i></td></tr>
+          <tr><td>burn off calories</td><td>đốt calo</td><td><i>A brisk walk is a great way to burn off calories.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 3 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g3">Group 3 · Con người &amp; vai trò</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
+        <div class="core-words"><span><span class="dot">●</span>player · goalkeeper · captain · team</span><span><span class="dot">●</span>cyclist · footballer · surfer · gymnast · athlete</span><span><span class="dot">●</span>champion racing driver</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Trình độ &amp; huấn luyện</td></tr>
+          <tr><td>amateur<span class="ipa">/ˈæmətə/</span></td><td>nghiệp dư</td><td><i>He plays at amateur level.</i></td></tr>
+          <tr><td>professional</td><td>chuyên nghiệp</td><td><i>She turned professional at eighteen.</i></td></tr>
+          <tr><td>coach</td><td>huấn luyện viên</td><td><i>A good coach pushes you without injuring you.</i></td></tr>
+          <tr><td>trainer</td><td>huấn luyện viên (thể hình)</td><td><i>My trainer designed a new programme for me.</i></td></tr>
+          <tr><td>personal trainer</td><td>huấn luyện viên cá nhân</td><td><i>I hired a personal trainer to prepare for the race.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Trọng tài &amp; đối thủ</td></tr>
+          <tr><td>referee<span class="ipa">/ˌrefəˈriː/</span> (football)</td><td>trọng tài (bóng đá)</td><td><i>The referee gave a penalty.</i></td></tr>
+          <tr><td>umpire<span class="ipa">/ˈʌmpaɪə/</span> (tennis)</td><td>trọng tài (quần vợt)</td><td><i>The umpire called the ball out.</i></td></tr>
+          <tr><td>opponent<span class="ipa">/əˈpəʊnənt/</span></td><td>đối thủ</td><td><i>My opponent was much taller than me.</i></td></tr>
+          <tr><td>rival</td><td>đối thủ cạnh tranh lâu năm</td><td><i>She beat her main rival in the final.</i></td></tr>
+          <tr><td>competitor</td><td>đối thủ, người dự thi</td><td><i>There were fifty competitors in the race.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Đồng đội &amp; khán giả</td></tr>
+          <tr><td>teammate</td><td>đồng đội</td><td><i>Good teammates support each other.</i></td></tr>
+          <tr><td>captain</td><td>đội trưởng</td><td><i>The captain talked to the referee about the decision.</i></td></tr>
+          <tr><td>spectator</td><td>khán giả</td><td><i>There were 40,000 spectators at the match.</i></td></tr>
+          <tr><td>supporter</td><td>cổ động viên</td><td><i>Local supporters travelled to every away match.</i></td></tr>
+          <tr><td>fan</td><td>người hâm mộ</td><td><i>I've been a fan of this team since I was a child.</i></td></tr>
+          <tr><td>the crowd</td><td>đám đông</td><td><i>The crowd went wild when the goal was scored.</i></td></tr>
+          <tr><td>sponsor</td><td>nhà tài trợ</td><td><i>A major bank sponsors the national team.</i></td></tr>
+          <tr><td>role model</td><td>hình mẫu</td><td><i>Athletes are role models for young people.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Chuyên gia &amp; mức độ đam mê</td></tr>
+          <tr><td>physiotherapist<span class="ipa">/ˌfɪziəʊˈθerəpɪst/</span> (physio)</td><td>chuyên gia vật lý trị liệu</td><td><i>The physio got him back on the pitch in two weeks.</i></td></tr>
+          <tr><td>sports doctor</td><td>bác sĩ thể thao</td><td><i>A sports doctor examined his injured knee.</i></td></tr>
+          <tr><td>a keen runner</td><td>người ham chạy</td><td><i>My father is a keen cyclist.</i></td></tr>
+          <tr><td>an avid<span class="ipa">/ˈævɪd/</span> runner</td><td>người mê chạy bộ</td><td><i>She's an avid runner who never misses a day.</i></td></tr>
+          <tr><td>a couch potato <i>(informal)</i></td><td>người lười vận động</td><td><i>I used to be a real couch potato.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>a professional athlete</td><td>vận động viên chuyên nghiệp</td><td><i>She's a professional athlete who trains twice a day.</i></td></tr>
+          <tr><td>a dedicated coach</td><td>huấn luyện viên tận tâm</td><td><i>He's a dedicated coach who never misses a training session.</i></td></tr>
+          <tr><td>a fierce rival</td><td>đối thủ quyết liệt</td><td><i>The two teams have been fierce rivals for decades.</i></td></tr>
+          <tr><td>a loyal supporter</td><td>cổ động viên trung thành</td><td><i>He's been a loyal supporter of the club since childhood.</i></td></tr>
+          <tr><td>a huge crowd</td><td>đám đông lớn</td><td><i>A huge crowd gathered outside the stadium.</i></td></tr>
+          <tr><td>act as a role model</td><td>làm hình mẫu</td><td><i>Doctors should act as role models for a healthy lifestyle.</i></td></tr>
+          <tr><td>turn professional</td><td>chuyển sang chuyên nghiệp</td><td><i>She turned professional at the age of nineteen.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 4 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g4">Group 4 · Địa điểm, dụng cụ, sự kiện</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
+        <div class="core-words"><span><span class="dot">●</span>equipment (U) · helmet · racket · bat · board · sail · stick · skis · net</span><span><span class="dot">●</span>field · swimming pool · indoors / outdoors</span><span><span class="dot">●</span>It's a kind of…</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Nơi tập &amp; thi đấu</td></tr>
+          <tr><td>pitch (football)</td><td>sân bóng đá</td><td><i>The players walked onto the pitch.</i></td></tr>
+          <tr><td>court (tennis, badminton)</td><td>sân (quần vợt, cầu lông)</td><td><i>We booked a court for seven o'clock.</i></td></tr>
+          <tr><td>track</td><td>đường chạy</td><td><i>She trains on the track every morning.</i></td></tr>
+          <tr><td>rink</td><td>sân băng</td><td><i>The rink was full of skaters.</i></td></tr>
+          <tr><td>stadium</td><td>sân vận động</td><td><i>The new stadium holds 40,000 people.</i></td></tr>
+          <tr><td>sports hall</td><td>nhà thi đấu</td><td><i>The badminton tournament was held in the sports hall.</i></td></tr>
+          <tr><td>fitness centre</td><td>trung tâm thể hình</td><td><i>There's a new fitness centre near the hospital.</i></td></tr>
+          <tr><td>gym membership</td><td>thẻ tập gym</td><td><i>Gym membership is expensive in the city centre.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Trang bị</td></tr>
+          <tr><td>kit</td><td>bộ đồ tập/thi đấu</td><td><i>Don't forget to bring your football kit.</i></td></tr>
+          <tr><td>gear</td><td>đồ dùng, trang bị</td><td><i>You'll need some warm gear for winter sports.</i></td></tr>
+          <tr><td>trainers</td><td>giày thể thao</td><td><i>I bought new trainers for running.</i></td></tr>
+          <tr><td>protective equipment</td><td>đồ bảo hộ</td><td><i>Wear protective equipment when you go karting.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Loại sự kiện thi đấu</td></tr>
+          <tr><td>match</td><td>trận đấu</td><td><i>We watched the match together.</i></td></tr>
+          <tr><td>game</td><td>ván / trận (bóng rổ, tennis)</td><td><i>It was a close game.</i></td></tr>
+          <tr><td>race</td><td>cuộc đua</td><td><i>She won the 100m race.</i></td></tr>
+          <tr><td>tournament</td><td>giải đấu (ngắn ngày)</td><td><i>We reached the semi‑final of the tournament.</i></td></tr>
+          <tr><td>championship</td><td>giải vô địch</td><td><i>He won the national championship last year.</i></td></tr>
+          <tr><td>league</td><td>giải đấu dài, theo mùa</td><td><i>Our team is top of the league.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Thành tích &amp; giải thưởng</td></tr>
+          <tr><td>the final</td><td>trận chung kết</td><td><i>They reached the final for the first time.</i></td></tr>
+          <tr><td>a gold medal</td><td>huy chương vàng</td><td><i>Vietnam won a gold medal in swimming.</i></td></tr>
+          <tr><td>a silver medal</td><td>huy chương bạc</td><td><i>He took the silver medal in the 200m.</i></td></tr>
+          <tr><td>a bronze medal</td><td>huy chương đồng</td><td><i>She won a bronze medal at the SEA Games.</i></td></tr>
+          <tr><td>a trophy</td><td>chiếc cúp</td><td><i>The winning team lifted the trophy.</i></td></tr>
+          <tr><td>a title</td><td>danh hiệu</td><td><i>He successfully defended his title.</i></td></tr>
+          <tr><td>a record</td><td>kỷ lục</td><td><i>She broke the national record.</i></td></tr>
+          <tr><td>a personal best (PB)</td><td>thành tích cá nhân tốt nhất</td><td><i>I set a personal best of 25 minutes for 5 km.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Diễn biến trận đấu</td></tr>
+          <tr><td>a home match</td><td>trận sân nhà</td><td><i>We won our last home match.</i></td></tr>
+          <tr><td>an away match</td><td>trận sân khách</td><td><i>The away match was postponed because of the weather.</i></td></tr>
+          <tr><td>a draw</td><td>trận hoà</td><td><i>The match ended in a draw.</i></td></tr>
+          <tr><td>extra time</td><td>hiệp phụ</td><td><i>The game went to extra time.</i></td></tr>
+          <tr><td>a penalty shoot‑out</td><td>loạt sút luân lưu</td><td><i>They lost on penalties in the shoot‑out.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Đại hội thể thao lớn</td></tr>
+          <tr><td>the Olympic Games</td><td>Thế vận hội</td><td><i>Athletes from all over the world compete in the Olympic Games.</i></td></tr>
+          <tr><td>the World Cup</td><td>Cúp Thế giới (bóng đá)</td><td><i>Millions watched the World Cup final.</i></td></tr>
+          <tr><td>the SEA Games</td><td>Đại hội Thể thao Đông Nam Á</td><td><i>Hosting the SEA Games boosted national pride.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>win a match</td><td>thắng một trận</td><td><i>We won the match 3–1.</i></td></tr>
+          <tr><td>lose a match</td><td>thua một trận</td><td><i>They lost the match despite playing well.</i></td></tr>
+          <tr><td>win a gold medal</td><td>giành huy chương vàng</td><td><i>She won a gold medal in her first Olympics.</i></td></tr>
+          <tr><td>break a world record</td><td>phá kỷ lục thế giới</td><td><i>She broke the world record in the 400m.</i></td></tr>
+          <tr><td>set a personal best</td><td>lập thành tích cá nhân tốt nhất</td><td><i>He set a personal best in yesterday's race.</i></td></tr>
+          <tr><td>reach the final</td><td>vào đến chung kết</td><td><i>The team reached the final for the second year in a row.</i></td></tr>
+          <tr><td>host the Olympics</td><td>đăng cai Olympic</td><td><i>Japan hosted the Olympics in 2021.</i></td></tr>
+          <tr><td>a packed stadium</td><td>sân vận động chật kín</td><td><i>They played in front of a packed stadium.</i></td></tr>
+          <tr><td>a home crowd</td><td>khán giả sân nhà</td><td><i>The home crowd cheered every pass.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 5 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g5">Group 5 · Lợi ích thể chất &amp; tinh thần</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1 <small>— thái độ đơn giản</small></div><div class="core-words"><span><span class="dot">●</span>It's fun / great / wonderful</span><span><span class="dot">●</span>It's good for you</span><span><span class="dot">●</span>It's not very dangerous</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Cường độ tập luyện</td></tr>
+          <tr><td>regular exercise</td><td>tập luyện đều đặn</td><td><i>Regular exercise is one of the best things you can do for your health.</i></td></tr>
+          <tr><td>moderate exercise<span class="ipa">/ˈmɒdərət/</span></td><td>tập vừa phải</td><td><i>Doctors recommend moderate exercise most days.</i></td></tr>
+          <tr><td>vigorous exercise<span class="ipa">/ˈvɪɡərəs/</span></td><td>tập mạnh, cường độ cao</td><td><i>Vigorous exercise burns more calories in less time.</i></td></tr>
+          <tr><td>aerobic exercise</td><td>tập ưa khí</td><td><i>Aerobic exercise like swimming is great for the heart.</i></td></tr>
+          <tr><td>cardiovascular fitness<span class="ipa">/ˌkɑːdiəʊˈvæskjələ/</span></td><td>thể lực tim mạch</td><td><i>Swimming improves cardiovascular fitness.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Lợi ích tim mạch &amp; cân nặng</td></tr>
+          <tr><td>lower blood pressure</td><td>hạ huyết áp</td><td><i>A daily walk can lower blood pressure.</i></td></tr>
+          <tr><td>improve heart health</td><td>cải thiện sức khoẻ tim</td><td><i>Cycling regularly improves heart health.</i></td></tr>
+          <tr><td>reduce the risk of heart disease</td><td>giảm nguy cơ bệnh tim</td><td><i>Exercise reduces the risk of heart disease.</i></td></tr>
+          <tr><td>reduce the risk of type 2 diabetes</td><td>giảm nguy cơ tiểu đường tuýp 2</td><td><i>Losing weight reduces the risk of type 2 diabetes.</i></td></tr>
+          <tr><td>reduce the risk of obesity<span class="ipa">/əʊˈbiːsəti/</span></td><td>giảm nguy cơ béo phì</td><td><i>Staying active reduces the risk of obesity in children.</i></td></tr>
+          <tr><td>control weight</td><td>kiểm soát cân nặng</td><td><i>Exercise helps you control your weight.</i></td></tr>
+          <tr><td>burn calories</td><td>đốt calo</td><td><i>Cycling burns a lot of calories.</i></td></tr>
+          <tr><td>lose weight</td><td>giảm cân</td><td><i>She started running to lose weight.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Thể chất khác</td></tr>
+          <tr><td>strengthen muscles and bones</td><td>tăng cường cơ và xương</td><td><i>Weight training strengthens muscles and bones.</i></td></tr>
+          <tr><td>improve flexibility</td><td>tăng độ dẻo dai</td><td><i>Yoga improves flexibility.</i></td></tr>
+          <tr><td>boost the immune system</td><td>tăng cường miễn dịch</td><td><i>Regular exercise boosts the immune system.</i></td></tr>
+          <tr><td>boost energy levels</td><td>tăng năng lượng</td><td><i>A short walk can boost your energy levels.</i></td></tr>
+          <tr><td>improve sleep quality</td><td>cải thiện chất lượng giấc ngủ</td><td><i>My sleep quality improved after I took up running.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Tinh thần &amp; cảm xúc</td></tr>
+          <tr><td>relieve stress</td><td>giảm căng thẳng</td><td><i>Swimming really helps me relieve stress.</i></td></tr>
+          <tr><td>reduce stress</td><td>giảm stress</td><td><i>Regular exercise can reduce stress at work.</i></td></tr>
+          <tr><td>release endorphins<span class="ipa">/ˈendɔːfɪnz/</span></td><td>giải phóng endorphin</td><td><i>Exercise releases endorphins, which improve mood.</i></td></tr>
+          <tr><td>mental well‑being</td><td>sức khoẻ tinh thần</td><td><i>Sport does wonders for mental well‑being.</i></td></tr>
+          <tr><td>improve mood</td><td>cải thiện tâm trạng</td><td><i>A short run always improves my mood.</i></td></tr>
+          <tr><td>take your mind off work</td><td>quên chuyện công việc</td><td><i>Playing badminton takes my mind off work.</i></td></tr>
+          <tr><td>build self‑confidence</td><td>xây dựng sự tự tin</td><td><i>Team sports help children build self‑confidence.</i></td></tr>
+          <tr><td>a sense of achievement</td><td>cảm giác thành tựu</td><td><i>Finishing a race gives you a real sense of achievement.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Kỹ năng sống &amp; phòng bệnh</td></tr>
+          <tr><td>develop teamwork</td><td>rèn tinh thần đồng đội</td><td><i>Team sports develop teamwork.</i></td></tr>
+          <tr><td>develop discipline</td><td>rèn kỷ luật</td><td><i>Martial arts develop discipline.</i></td></tr>
+          <tr><td>develop leadership</td><td>rèn khả năng lãnh đạo</td><td><i>Being team captain develops leadership skills.</i></td></tr>
+          <tr><td>prevent chronic disease<span class="ipa">/ˈkrɒnɪk/</span></td><td>phòng bệnh mạn tính</td><td><i>Regular exercise helps prevent chronic disease.</i></td></tr>
+          <tr><td>prolong life expectancy</td><td>kéo dài tuổi thọ</td><td><i>Active people tend to have a longer life expectancy.</i></td></tr>
+          <tr><td>a sedentary lifestyle<span class="ipa">/ˈsedntri/</span></td><td>lối sống ít vận động</td><td><i>A sedentary lifestyle is a major risk factor.</i></td></tr>
+          <tr><td>physical inactivity</td><td>sự ít vận động thể chất</td><td><i>Physical inactivity is linked to many chronic diseases.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>bring significant health benefits</td><td>mang lại nhiều lợi ích sức khoẻ</td><td><i>Regular exercise brings significant health benefits.</i></td></tr>
+          <tr><td>have significant health benefits</td><td>có nhiều lợi ích sức khoẻ</td><td><i>Swimming has significant health benefits for people of all ages.</i></td></tr>
+          <tr><td>be beneficial to</td><td>có lợi cho</td><td><i>Walking is beneficial to your heart.</i></td></tr>
+          <tr><td>be beneficial for</td><td>có lợi cho</td><td><i>Yoga is beneficial for both flexibility and stress.</i></td></tr>
+          <tr><td>do wonders for your health</td><td>rất tốt cho sức khoẻ</td><td><i>A daily walk does wonders for your health.</i></td></tr>
+          <tr><td>keep the heart healthy</td><td>giữ cho tim khoẻ mạnh</td><td><i>Cardio exercise keeps the heart healthy.</i></td></tr>
+          <tr><td>be good for both body and mind</td><td>tốt cho cả thể chất và tinh thần</td><td><i>Swimming is good for both body and mind.</i></td></tr>
+          <tr><td>at least 150 minutes of moderate activity a week <span class="lb ext">Ext · WHO</span></td><td>mức khuyến nghị của WHO</td><td><i>The WHO recommends at least 150 minutes of moderate activity a week.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 6 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g6">Group 6 · Rủi ro &amp; mặt trái</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
+        <div class="core-words"><span><span class="dot">●</span>dangerous · not very dangerous</span><span><span class="dot">●</span>fall · wear a helmet</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Chấn thương</td></tr>
+          <tr><td>injury<span class="ipa">/ˈɪndʒəri/</span></td><td>chấn thương</td><td><i>A knee injury can take months to heal.</i></td></tr>
+          <tr><td>get an injury</td><td>bị chấn thương</td><td><i>He got an injury during the warm‑up.</i></td></tr>
+          <tr><td>suffer an injury</td><td>chịu một chấn thương</td><td><i>She suffered a serious injury last season.</i></td></tr>
+          <tr><td>pick up an injury</td><td>gặp phải chấn thương</td><td><i>He picked up a knee injury in training.</i></td></tr>
+          <tr><td>sprain an ankle</td><td>bong gân mắt cá</td><td><i>She sprained her ankle on the court.</i></td></tr>
+          <tr><td>pull a muscle</td><td>căng cơ</td><td><i>He pulled a muscle while stretching.</i></td></tr>
+          <tr><td>break a bone</td><td>gãy xương</td><td><i>It's easy to break a bone if you fall awkwardly.</i></td></tr>
+          <tr><td>a fracture</td><td>vết gãy xương</td><td><i>The X‑ray showed a small fracture.</i></td></tr>
+          <tr><td>a minor injury</td><td>chấn thương nhẹ</td><td><i>Luckily, it was only a minor injury.</i></td></tr>
+          <tr><td>a serious injury</td><td>chấn thương nặng</td><td><i>A serious injury ended her season early.</i></td></tr>
+          <tr><td>recover from (an injury)</td><td>hồi phục sau (chấn thương)</td><td><i>It took him three months to recover from the injury.</i></td></tr>
+          <tr><td>be out of action</td><td>phải nghỉ thi đấu</td><td><i>He'll be out of action for six weeks.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Tập quá sức</td></tr>
+          <tr><td>overtraining</td><td>tập luyện quá sức</td><td><i>Overtraining can actually slow down your progress.</i></td></tr>
+          <tr><td>exhaustion</td><td>kiệt sức</td><td><i>She collapsed from exhaustion after the race.</i></td></tr>
+          <tr><td>burnout</td><td>kiệt sức, hết động lực</td><td><i>Overtraining leads to burnout.</i></td></tr>
+          <tr><td>dehydration</td><td>mất nước</td><td><i>Drink water regularly to avoid dehydration.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Phòng ngừa rủi ro</td></tr>
+          <tr><td>the risk of injury</td><td>nguy cơ chấn thương</td><td><i>Contact sports carry a real risk of injury.</i></td></tr>
+          <tr><td>take precautions</td><td>phòng ngừa, đề phòng</td><td><i>Always take precautions before extreme sports.</i></td></tr>
+          <tr><td>minimise the risk</td><td>giảm thiểu nguy cơ</td><td><i>Warming up minimises the risk of injury.</i></td></tr>
+          <tr><td>expensive membership fees</td><td>phí thành viên đắt đỏ</td><td><i>Expensive membership fees put many people off.</i></td></tr>
+          <tr><td>time‑consuming</td><td>tốn thời gian</td><td><i>Training for a marathon is very time‑consuming.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Áp lực &amp; tiêu cực trong thi đấu</td></tr>
+          <tr><td>the pressure to win</td><td>áp lực phải thắng</td><td><i>Young athletes often feel the pressure to win.</i></td></tr>
+          <tr><td>put pressure on (someone)</td><td>gây áp lực cho ai đó</td><td><i>Parents put too much pressure on young players.</i></td></tr>
+          <tr><td>cheating</td><td>gian lận</td><td><i>Cheating damages the spirit of the sport.</i></td></tr>
+          <tr><td>doping</td><td>dùng chất cấm (doping)</td><td><i>The athlete failed a doping test.</i></td></tr>
+          <tr><td>performance‑enhancing drugs</td><td>chất kích thích thành tích</td><td><i>Performance‑enhancing drugs are banned in professional sport.</i></td></tr>
+          <tr><td>commercialisation<span class="ipa">/kəˌmɜːʃəlaɪˈzeɪʃn/</span></td><td>thương mại hoá</td><td><i>Commercialisation has changed football.</i></td></tr>
+          <tr><td>sponsorship deals</td><td>hợp đồng tài trợ</td><td><i>Top clubs sign huge sponsorship deals.</i></td></tr>
+          <tr><td>aggressive behaviour</td><td>hành vi hung hăng</td><td><i>The referee punished his aggressive behaviour.</i></td></tr>
+          <tr><td>hooliganism<span class="ipa">/ˈhuːlɪɡənɪzəm/</span></td><td>hành vi quấy phá</td><td><i>Hooliganism is rare at Vietnamese matches.</i></td></tr>
+          <tr><td>the downside of</td><td>mặt trái của</td><td><i>The downside of professional sport is the pressure.</i></td></tr>
+          <tr><td>the drawback of</td><td>hạn chế của</td><td><i>The main drawback is the cost.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>carry a risk of injury</td><td>mang nguy cơ chấn thương</td><td><i>Contact sports carry a real risk of injury.</i></td></tr>
+          <tr><td>be sidelined by injury</td><td>phải ngồi ngoài vì chấn thương</td><td><i>He's been sidelined by injury for two months.</i></td></tr>
+          <tr><td>put a strain on your knees</td><td>gây áp lực lên đầu gối</td><td><i>Running on hard surfaces puts a strain on your knees.</i></td></tr>
+          <tr><td>a high‑impact sport</td><td>môn có tác động mạnh lên khớp</td><td><i>Basketball is a high‑impact sport.</i></td></tr>
+          <tr><td>a low‑impact sport</td><td>môn ít tác động lên khớp</td><td><i>Swimming is a low‑impact sport, so it's easier on the joints.</i></td></tr>
+          <tr><td>obsessed with winning</td><td>ám ảnh chuyện thắng thua</td><td><i>Some coaches are too obsessed with winning.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 7 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g7">Group 7 · Tần suất, thói quen, lịch tập</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1 <small>— trước động từ chính, sau <i>be</i></small></div><div class="core-words"><span><span class="dot">●</span>always · usually · often · sometimes · never</span><span><span class="dot">●</span>in my free time</span><span><span class="dot">●</span>Do you often…? — Yes, always! / No, never!</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Tần suất cao</td></tr>
+          <tr><td>on a regular basis</td><td>một cách đều đặn</td><td><i>I exercise on a regular basis.</i></td></tr>
+          <tr><td>regularly</td><td>đều đặn</td><td><i>She trains regularly, even on weekends.</i></td></tr>
+          <tr><td>every other day</td><td>cách một ngày</td><td><i>I go to the gym every other day.</i></td></tr>
+          <tr><td>twice a week</td><td>hai lần một tuần</td><td><i>We play badminton twice a week.</i></td></tr>
+          <tr><td>at weekends</td><td>vào cuối tuần</td><td><i>I usually cycle at weekends.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Tần suất thấp</td></tr>
+          <tr><td>hardly ever</td><td>hầu như không bao giờ</td><td><i>I hardly ever watch sport on TV.</i></td></tr>
+          <tr><td>rarely</td><td>hiếm khi</td><td><i>He rarely misses a training session.</i></td></tr>
+          <tr><td>seldom</td><td>hiếm khi (trang trọng)</td><td><i>She seldom has time to exercise during exams.</i></td></tr>
+          <tr><td>occasionally</td><td>thỉnh thoảng</td><td><i>I occasionally join a weekend football match.</i></td></tr>
+          <tr><td>from time to time</td><td>thỉnh thoảng</td><td><i>I play badminton from time to time.</i></td></tr>
+          <tr><td>now and then</td><td>thỉnh thoảng</td><td><i>We go swimming now and then.</i></td></tr>
+          <tr><td>once in a while</td><td>thỉnh thoảng, đôi khi</td><td><i>I treat myself to a rest day once in a while.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Thói quen</td></tr>
+          <tr><td>tend to + V</td><td>có xu hướng</td><td><i>I tend to exercise in the morning.</i></td></tr>
+          <tr><td>be in the habit of + ‑ing</td><td>có thói quen</td><td><i>She's in the habit of walking after dinner.</i></td></tr>
+          <tr><td>get into the habit of + ‑ing</td><td>tạo thói quen</td><td><i>Get into the habit of walking after dinner.</i></td></tr>
+          <tr><td>make a habit of + ‑ing</td><td>tập thói quen</td><td><i>Try to make a habit of stretching every day.</i></td></tr>
+          <tr><td>stick to a routine</td><td>giữ đúng lịch tập</td><td><i>It's hard to stick to a routine with shift work.</i></td></tr>
+          <tr><td>fit exercise into a busy schedule</td><td>chen tập luyện vào lịch bận</td><td><i>It's hard to fit exercise into a hospital schedule.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Sắp xếp thời gian bận</td></tr>
+          <tr><td>find time for</td><td>dành thời gian cho</td><td><i>I always try to find time for a walk.</i></td></tr>
+          <tr><td>whenever I get the chance</td><td>hễ có dịp</td><td><i>I go swimming whenever I get the chance.</i></td></tr>
+          <tr><td>as often as I can</td><td>thường xuyên nhất có thể</td><td><i>I try to exercise as often as I can.</i></td></tr>
+          <tr><td>a night shift</td><td>ca trực đêm</td><td><i>After a night shift I'm too exhausted to run.</i></td></tr>
+          <tr><td>be on call</td><td>trực, sẵn sàng khi được gọi</td><td><i>I can't plan exercise when I'm on call.</i></td></tr>
+          <tr><td>after a long shift</td><td>sau một ca dài</td><td><i>I just want to rest after a long shift.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>exercise on a regular basis</td><td>tập luyện đều đặn</td><td><i>I try to exercise on a regular basis.</i></td></tr>
+          <tr><td>stick to a strict routine</td><td>bám sát một lịch trình nghiêm ngặt</td><td><i>Professional athletes stick to a strict routine.</i></td></tr>
+          <tr><td>fit a 30‑minute walk into my day</td><td>chen 30 phút đi bộ vào ngày của mình</td><td><i>I always try to fit a 30‑minute walk into my day.</i></td></tr>
+          <tr><td>make time for exercise</td><td>dành thời gian cho việc tập luyện</td><td><i>It's important to make time for exercise, even when you're busy.</i></td></tr>
+          <tr><td>a busy timetable</td><td>lịch trình bận rộn</td><td><i>With such a busy timetable, exercise is often the first thing to go.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 8 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g8">Group 8 · Thái độ &amp; đánh giá</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
+        <div class="core-words"><span><span class="dot">●</span>fun · exciting · great · wonderful · easy</span><span><span class="dot">●</span>quite skilful · not very dangerous</span><span><span class="dot">●</span>boring · difficult</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Tích cực mạnh</td></tr>
+          <tr><td>rewarding</td><td>bổ ích, xứng đáng</td><td><i>Coaching kids is incredibly rewarding.</i></td></tr>
+          <tr><td>satisfying</td><td>thoả mãn</td><td><i>Finishing a marathon is deeply satisfying.</i></td></tr>
+          <tr><td>worthwhile</td><td>đáng công sức</td><td><i>Early morning training is worthwhile in the long run.</i></td></tr>
+          <tr><td>challenging</td><td>thử thách</td><td><i>Rock climbing is challenging but rewarding.</i></td></tr>
+          <tr><td>demanding</td><td>đòi hỏi cao</td><td><i>It's a physically demanding sport.</i></td></tr>
+          <tr><td>gruelling<span class="ipa">/ˈɡruːəlɪŋ/</span></td><td>vắt kiệt sức</td><td><i>A marathon is gruelling but worth it.</i></td></tr>
+          <tr><td>exhausting</td><td>làm kiệt sức</td><td><i>The training session was exhausting.</i></td></tr>
+          <tr><td>thrilling</td><td>hồi hộp, kịch tính</td><td><i>The final match was absolutely thrilling.</i></td></tr>
+          <tr><td>addictive</td><td>gây nghiện</td><td><i>Running can become surprisingly addictive.</i></td></tr>
+          <tr><td>exhilarating<span class="ipa">/ɪɡˈzɪləreɪtɪŋ/</span></td><td>phấn khích tột độ</td><td><i>Skiing down the mountain was exhilarating.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Thư giãn &amp; tiêu cực</td></tr>
+          <tr><td>relaxing</td><td>thư giãn</td><td><i>A gentle swim is very relaxing.</i></td></tr>
+          <tr><td>therapeutic<span class="ipa">/ˌθerəˈpjuːtɪk/</span></td><td>có tính chữa lành</td><td><i>Swimming is almost therapeutic after a shift.</i></td></tr>
+          <tr><td>sociable</td><td>có tính giao lưu</td><td><i>Badminton is a sociable way to stay active.</i></td></tr>
+          <tr><td>tedious</td><td>nhàm chán</td><td><i>I find long‑distance running a bit tedious.</i></td></tr>
+          <tr><td>overrated</td><td>được đánh giá quá cao</td><td><i>Some people think golf is overrated.</i></td></tr>
+          <tr><td>not my cup of tea</td><td>không hợp với tôi (thành ngữ)</td><td><i>Golf isn't really my cup of tea.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Mẫu câu diễn đạt cảm nhận</td></tr>
+          <tr><td>I find it + adj</td><td>tôi thấy nó…</td><td><i>I find it really relaxing.</i></td></tr>
+          <tr><td>What I love about … is …</td><td>điều tôi thích ở … là…</td><td><i>What I love about cycling is the freedom.</i></td></tr>
+          <tr><td>It gives me a (real) sense of …</td><td>nó mang lại cho tôi cảm giác…</td><td><i>It gives me a real sense of achievement.</i></td></tr>
+          <tr><td>a great way to + V</td><td>một cách hay để…</td><td><i>It's a great way to switch off after work.</i></td></tr>
+          <tr><td>be hooked on</td><td>nghiện, mê mẩn</td><td><i>I'm hooked on badminton.</i></td></tr>
+          <tr><td>can't get enough of</td><td>không bao giờ thấy chán</td><td><i>I can't get enough of morning swims.</i></td></tr>
+          <tr><td>be passionate about</td><td>đam mê</td><td><i>She's passionate about marathon running.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>a rewarding experience</td><td>trải nghiệm bổ ích</td><td><i>Finishing my first 10 km was a rewarding experience.</i></td></tr>
+          <tr><td>a demanding sport</td><td>môn đòi hỏi cao</td><td><i>Triathlon is an extremely demanding sport.</i></td></tr>
+          <tr><td>physically demanding</td><td>đòi hỏi thể lực cao</td><td><i>Rugby is physically demanding.</i></td></tr>
+          <tr><td>mentally demanding</td><td>đòi hỏi tinh thần cao</td><td><i>Chess‑boxing is both physically and mentally demanding.</i></td></tr>
+          <tr><td>hugely + adj</td><td>cực kỳ (+ tính từ)</td><td><i>The match was hugely exciting.</i></td></tr>
+          <tr><td>incredibly + adj</td><td>vô cùng (+ tính từ)</td><td><i>Coaching kids is incredibly rewarding.</i></td></tr>
+          <tr><td>take my mind off work</td><td>giúp quên chuyện công việc</td><td><i>Swimming takes my mind off work completely.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 9 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g9">Group 9 · Năng lực &amp; thành tích</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
+        <div class="core-words"><span><span class="dot">●</span>She can play volleyball well</span><span><span class="dot">●</span>champion · go very fast · get wet</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Năng khiếu &amp; thể trạng</td></tr>
+          <tr><td>be good at</td><td>giỏi (về)</td><td><i>She's good at tennis.</i></td></tr>
+          <tr><td>be a natural</td><td>có năng khiếu bẩm sinh</td><td><i>My son is a natural at football.</i></td></tr>
+          <tr><td>have a talent for</td><td>có năng khiếu</td><td><i>He has a real talent for swimming.</i></td></tr>
+          <tr><td>be gifted</td><td>có năng khiếu (trang trọng)</td><td><i>She's a gifted young athlete.</i></td></tr>
+          <tr><td>be in good shape</td><td>có thể trạng tốt</td><td><i>He's in good shape for his age.</i></td></tr>
+          <tr><td>be in bad shape</td><td>có thể trạng kém</td><td><i>After the injury, he was in bad shape for months.</i></td></tr>
+          <tr><td>be out of shape</td><td>mất phong độ, thể trạng kém</td><td><i>I'm a bit out of shape after the holidays.</i></td></tr>
+          <tr><td>be out of practice</td><td>lâu không luyện tập</td><td><i>I'm a bit out of practice.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Cải thiện &amp; phong độ</td></tr>
+          <tr><td>improve my technique</td><td>cải thiện kỹ thuật</td><td><i>A coach can help you improve your technique.</i></td></tr>
+          <tr><td>get the hang of <i>(informal)</i></td><td>dần quen với</td><td><i>I'm slowly getting the hang of it.</i></td></tr>
+          <tr><td>have a go at</td><td>thử làm</td><td><i>Why not have a go at rock climbing?</i></td></tr>
+          <tr><td>perform well</td><td>thi đấu tốt</td><td><i>The team performed well in the final.</i></td></tr>
+          <tr><td>perform badly</td><td>thi đấu kém</td><td><i>He performed badly because of the injury.</i></td></tr>
+          <tr><td>be on top form</td><td>có phong độ cao</td><td><i>She was on top form during the tournament.</i></td></tr>
+          <tr><td>be at the top of your game</td><td>đạt phong độ đỉnh cao</td><td><i>She's at the top of her game right now.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Kết quả trận đấu</td></tr>
+          <tr><td>beat (someone)</td><td>đánh bại</td><td><i>We beat the surgeons' team 3–1.</i></td></tr>
+          <tr><td>lose to (someone)</td><td>thua trước</td><td><i>We lost to the surgeons' team 3–1.</i></td></tr>
+          <tr><td>draw with (someone)</td><td>hoà với</td><td><i>We drew with our biggest rivals.</i></td></tr>
+          <tr><td>win by two goals</td><td>thắng cách biệt hai bàn</td><td><i>They won by two goals in the end.</i></td></tr>
+          <tr><td>come first</td><td>về nhất</td><td><i>She came first in the 100m.</i></td></tr>
+          <tr><td>finish third</td><td>về thứ ba</td><td><i>He finished third in the marathon.</i></td></tr>
+          <tr><td>be knocked out</td><td>bị loại</td><td><i>We were knocked out in the semi‑final.</i></td></tr>
+          <tr><td>a narrow defeat</td><td>thất bại sát nút</td><td><i>It was a narrow defeat, only one point.</i></td></tr>
+          <tr><td>hit a wall <i>(marathon)</i></td><td>đuối sức, hụt hơi</td><td><i>I hit a wall at 30 km but pushed through.</i></td></tr>
+          <tr><td>push through</td><td>cố gắng vượt qua</td><td><i>She pushed through the pain to finish the race.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>a personal best</td><td>thành tích cá nhân tốt nhất</td><td><i>I set a personal best of 25 minutes for 5 km.</i></td></tr>
+          <tr><td>a convincing win</td><td>chiến thắng thuyết phục</td><td><i>It was a convincing win, 4–0.</i></td></tr>
+          <tr><td>a well‑deserved victory</td><td>chiến thắng xứng đáng</td><td><i>After months of training, it was a well‑deserved victory.</i></td></tr>
+          <tr><td>a disappointing result</td><td>kết quả đáng thất vọng</td><td><i>A disappointing result after such a strong season.</i></td></tr>
+          <tr><td>make steady progress</td><td>tiến bộ đều đặn</td><td><i>I've made steady progress since I took up swimming.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- Group 10 -->
+  <section class="block">
+    <div class="group-head"><h3 id="g10">Group 10 · Xã hội &amp; chính sách</h3></div>
+    <div class="tiers">
+      <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
+        <div class="core-words"><span><span class="dot">●</span>sports centre · sports camp · swimming pool opens at…</span><span><span class="dot">●</span>fitness training · football practice</span></div></div>
+      <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
+        <table class="vt"><tbody>
+          <tr class="cluster"><td colspan="3">Chính sách &amp; đầu tư</td></tr>
+          <tr><td>promote physical activity</td><td>khuyến khích vận động</td><td><i>The campaign aims to promote physical activity among office workers.</i></td></tr>
+          <tr><td>a public health campaign</td><td>chiến dịch y tế công cộng</td><td><i>The ministry launched a public health campaign against obesity.</i></td></tr>
+          <tr><td>government funding</td><td>ngân sách nhà nước</td><td><i>The pool was built with government funding.</i></td></tr>
+          <tr><td>invest in sports facilities</td><td>đầu tư vào cơ sở thể thao</td><td><i>Councils should invest in free sports facilities.</i></td></tr>
+          <tr><td>free access to</td><td>tiếp cận miễn phí</td><td><i>Free access to public pools would help many families.</i></td></tr>
+          <tr><td>affordable access to</td><td>tiếp cận với giá phải chăng</td><td><i>Affordable access is the biggest barrier for many people.</i></td></tr>
+          <tr><td>sports facilities</td><td>cơ sở vật chất thể thao</td><td><i>The city needs more sports facilities.</i></td></tr>
+          <tr><td>compulsory PE<span class="ipa">/kəmˈpʌlsəri/</span> (physical education)</td><td>thể dục bắt buộc</td><td><i>PE should be compulsory up to the age of eighteen.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Khuyến khích cộng đồng</td></tr>
+          <tr><td>encourage people to</td><td>khuyến khích mọi người</td><td><i>Doctors can encourage people to exercise more.</i></td></tr>
+          <tr><td>motivate people to</td><td>tạo động lực cho mọi người</td><td><i>The campaign aims to motivate people to walk more.</i></td></tr>
+          <tr><td>raise awareness of</td><td>nâng cao nhận thức về</td><td><i>Doctors can raise awareness of the dangers of inactivity.</i></td></tr>
+          <tr><td>host major sporting events</td><td>đăng cai các sự kiện thể thao lớn</td><td><i>Vietnam has hosted several major sporting events.</i></td></tr>
+          <tr><td>national pride</td><td>niềm tự hào dân tộc</td><td><i>Winning the tournament brought huge national pride.</i></td></tr>
+          <tr><td>boost tourism</td><td>thúc đẩy du lịch</td><td><i>Major events boost tourism significantly.</i></td></tr>
+          <tr><td>generate revenue<span class="ipa">/ˈrevənjuː/</span></td><td>tạo doanh thu</td><td><i>Hosting the SEA Games generated revenue but cost taxpayers a lot.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Nguồn lực &amp; lối sống hiện đại</td></tr>
+          <tr><td>cost taxpayers</td><td>tốn tiền thuế của dân</td><td><i>The new stadium cost taxpayers a great deal.</i></td></tr>
+          <tr><td>allocate resources</td><td>phân bổ nguồn lực</td><td><i>The government must allocate resources carefully.</i></td></tr>
+          <tr><td>prioritise<span class="ipa">/praɪˈɒrətaɪz/</span></td><td>ưu tiên</td><td><i>Governments should prioritise grassroots sport.</i></td></tr>
+          <tr><td>sedentary jobs</td><td>công việc ít vận động</td><td><i>Sedentary jobs are becoming more common.</i></td></tr>
+          <tr><td>screen time</td><td>thời gian dùng màn hình</td><td><i>Screen time has replaced outdoor play.</i></td></tr>
+          <tr><td>modern lifestyles</td><td>lối sống hiện đại</td><td><i>Modern lifestyles leave little room for exercise.</i></td></tr>
+          <tr class="cluster"><td colspan="3">Y tế dự phòng</td></tr>
+          <tr><td>reduce healthcare costs</td><td>giảm chi phí y tế</td><td><i>Prevention can reduce healthcare costs significantly.</i></td></tr>
+          <tr><td>ease the burden on the health system</td><td>giảm gánh nặng cho hệ thống y tế</td><td><i>Prevention eases the burden on hospitals.</i></td></tr>
+          <tr><td>prescribe exercise</td><td>kê "đơn" vận động</td><td><i>Some doctors now prescribe exercise instead of pills.</i></td></tr>
+          <tr><td>treat exercise as medicine</td><td>coi vận động như thuốc</td><td><i>We should treat exercise as medicine, not an option.</i></td></tr>
+        </tbody></table></div>
+      <div class="tier col"><div class="tier-h">Collocations</div>
+        <table class="vt"><tbody>
+          <tr><td>launch a campaign</td><td>phát động một chiến dịch</td><td><i>The ministry launched a campaign to promote cycling.</i></td></tr>
+          <tr><td>tackle obesity</td><td>giải quyết vấn đề béo phì</td><td><i>Schools are trying to tackle obesity among children.</i></td></tr>
+          <tr><td>a growing trend</td><td>một xu hướng đang tăng</td><td><i>Home workouts are a growing trend.</i></td></tr>
+          <tr><td>an alarming trend</td><td>một xu hướng đáng báo động</td><td><i>Rising obesity rates are an alarming trend.</i></td></tr>
+          <tr><td>a major public health concern</td><td>mối lo ngại lớn về y tế công cộng</td><td><i>Physical inactivity is now a major public health concern.</i></td></tr>
+          <tr><td>in the long run</td><td>về lâu dài</td><td><i>Prevention is cheaper than treatment in the long run.</i></td></tr>
+          <tr><td>grassroots sport</td><td>thể thao cơ sở, phong trào</td><td><i>The money would be better spent on grassroots sport.</i></td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+</article>
+<!-- ================= SHEET 3: CHUNKS & MẪU CÂU ================= -->
+<article class="sheet" id="chunks" role="tabpanel" data-title="Chunks &amp; mẫu câu" hidden>
+  <div class="sheet-head">
+    <div>
+      <span class="eyebrow">Sheet 3 / 7 · Ngôn ngữ chức năng</span>
+      <h2>Chunks nối ý</h2>
+    </div>
+  </div>
+
+  <section class="block">
+    <h3 id="c-fn">10 chức năng · 30 chunks</h3>
+    <div class="fn">
+      <div class="card"><h4>1 · Nêu ý kiến</h4><ul><li>In my view, … / Personally, I think …</li><li>As far as I'm concerned, …</li><li>I'd say (that) …</li></ul><p class="ex"><i>In my view, exercise is the cheapest medicine we have.</i></p></div>
+      <div class="card"><h4>2 · Sở thích &amp; ưu tiên</h4><ul><li>I prefer X to Y. / I'd rather + V than + V.</li><li>I'm more into X than Y.</li><li>Given the choice, I'd …</li></ul><p class="ex"><i>I'd rather swim than run because it's easier on the knees.</i></p></div>
+      <div class="card"><h4>3 · Lý do</h4><ul><li>The main reason is that …</li><li>… , mainly because …</li><li>That's why …</li></ul><p class="ex"><i>I gave up football, mainly because of a knee injury.</i></p></div>
+      <div class="card"><h4>4 · Nguyên nhân – hệ quả</h4><ul><li>lead to / result in / contribute to</li><li>As a result, … / Consequently, …</li><li>… , which means (that) …</li></ul><p class="ex"><i>Sedentary jobs lead to weight gain, which in turn raises blood pressure.</i></p></div>
+      <div class="card"><h4>5 · So sánh – đối lập</h4><ul><li>whereas / while</li><li>compared to / in comparison with</li><li>On the other hand, …</li></ul><p class="ex"><i>Team sports build social skills, whereas individual sports build discipline.</i></p></div>
+      <div class="card"><h4>6 · Ví dụ</h4><ul><li>for instance / for example</li><li>such as</li><li>Take … , for example.</li></ul><p class="ex"><i>Take swimming, for example: it works every major muscle group.</i></p></div>
+      <div class="card"><h4>7 · Thêm ý</h4><ul><li>What's more, … / In addition, …</li><li>Not only … but also …</li><li>On top of that, …</li></ul><p class="ex"><i>Not only does exercise burn calories, but it also improves sleep.</i></p></div>
+      <div class="card"><h4>8 · Đề xuất – khuyên</h4><ul><li>should / ought to · It would be a good idea to …</li><li>I'd recommend + ‑ing · If I were you, I'd …</li><li>Why not + V? · The best way to … is to …</li></ul><p class="ex"><i>If I were you, I'd start with 20 minutes and build up gradually.</i></p></div>
+      <div class="card"><h4>9 · Giảm nhẹ (hedging)</h4><ul><li>tend to · It seems that …</li><li>to some extent · in most cases</li><li>generally speaking</li></ul><p class="ex"><i>Generally speaking, active people tend to sleep better.</i></p></div>
+      <div class="card"><h4>10 · Nhượng bộ – kết luận</h4><ul><li>Although / Even though … · Despite + N/‑ing</li><li>Admittedly, … However, …</li><li>On balance, … / All things considered, …</li></ul><p class="ex"><i>Admittedly, gym membership is expensive. However, walking costs nothing.</i></p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="c-upgrade">Nâng cấp câu B1 → B2 (12 mẫu)</h3>
+    <div class="tablewrap"><table class="upg stack">
+      <thead><tr><th style="width:38%">B1</th><th>B2</th></tr></thead>
+      <tbody>
+        <tr><td data-l="B1">I like sport <mark>very much</mark>.</td><td data-l="B2">I'm <mark>really into</mark> sport — badminton in particular.</td></tr>
+        <tr><td data-l="B1">Sport is <mark>good for health</mark>.</td><td data-l="B2">Regular exercise <mark>brings significant health benefits</mark>, from lower blood pressure to better sleep.</td></tr>
+        <tr><td data-l="B1">I do sport <mark>sometimes</mark>.</td><td data-l="B2">I exercise <mark>from time to time</mark>, but not as regularly as I should.</td></tr>
+        <tr><td data-l="B1">Football is <mark>exciting</mark>.</td><td data-l="B2"><mark>What I love about</mark> football is the excitement of a close match.</td></tr>
+        <tr><td data-l="B1">Many people don't exercise because they are <mark>busy</mark>.</td><td data-l="B2">Many people find it hard to <mark>fit exercise into a busy schedule</mark>.</td></tr>
+        <tr><td data-l="B1">I <mark>started</mark> running last year.</td><td data-l="B2">I <mark>took up</mark> running last year and I've kept it up ever since.</td></tr>
+        <tr><td data-l="B1">Sport can be <mark>dangerous</mark>.</td><td data-l="B2">Contact sports <mark>carry a real risk of injury</mark>, especially without proper warm‑ups.</td></tr>
+        <tr><td data-l="B1">The government should <mark>build more sports centres</mark>.</td><td data-l="B2">Governments should <mark>invest in affordable sports facilities</mark> so that cost is no longer a barrier.</td></tr>
+        <tr><td data-l="B1">I <mark>feel good</mark> after exercise.</td><td data-l="B2">Exercise <mark>releases endorphins</mark>, so I always feel calmer and more focused afterwards.</td></tr>
+        <tr><td data-l="B1">I am <mark>not fit</mark> now.</td><td data-l="B2">I'm a bit <mark>out of shape</mark> at the moment, so I'm easing back into it slowly.</td></tr>
+        <tr><td data-l="B1">Children <mark>should do sport</mark> at school.</td><td data-l="B2">PE <mark>should remain compulsory</mark> at school, because habits formed early tend to last.</td></tr>
+        <tr><td data-l="B1">Watching sport is <mark>a waste of time</mark>.</td><td data-l="B2"><mark>To some extent</mark> watching sport is passive, but it can also bring people together.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h3 id="c-frame">Khung trả lời B2 — 7 bước</h3>
+    <p class="prose full" style="margin-bottom:10px">Dùng cho Speaking Part 2, Part 3 và mỗi đoạn thân bài của essay. Câu hỏi mẫu: <b>"Why is exercise important for people who work in hospitals?"</b></p>
+    <div class="frame frame7">
+      <div><span class="stepno">1</span><b>Point</b><p>Exercise is essential for hospital staff.</p></div>
+      <div><span class="stepno">2</span><b>Why</b><p>because the job is both physically and mentally demanding.</p></div>
+      <div><span class="stepno">3</span><b>How</b><p>Even 30 minutes of moderate activity a day relieves stress and improves sleep.</p></div>
+      <div><span class="stepno">4</span><b>Example</b><p>For instance, I swim before my shift and I'm far calmer on the wards.</p></div>
+      <div><span class="stepno">5</span><b>Result</b><p>As a result, I make fewer mistakes and I'm a better role model for patients.</p></div>
+      <div><span class="stepno">6</span><b>Limitation</b><p>Admittedly, finding time after a night shift is a real challenge.</p></div>
+      <div><span class="stepno">7</span><b>Evaluation</b><p>On balance, though, the benefits far outweigh the effort.</p></div>
+    </div>
+    <div class="note info"><span class="tag">Mẹo</span><ul>
+      <li><b>Part 1:</b> chỉ cần Point + Why (+ Example).</li>
+      <li><b>Part 2:</b> đủ 7 bước trong 2 phút.</li>
+      <li><b>Part 3 và essay:</b> nhấn Limitation + Evaluation — đây là điểm phân biệt B1 và B2.</li>
+    </ul></div>
+  </section>
+
+  <section class="block">
+    <h3 id="c-errors">6 lỗi hay gặp khi nâng cấp</h3>
+    <div class="tablewrap"><table class="stack">
+      <thead><tr><th style="width:36%">Lỗi</th><th style="width:30%">Sửa</th><th>Ghi nhớ</th></tr></thead>
+      <tbody>
+        <tr><td data-l="Lỗi"><s>I'm interesting in extreme sports.</s></td><td data-l="Sửa">I'm <b>interested</b> in extreme sports.</td><td data-l="Ghi nhớ">‑ed = cảm xúc của người; ‑ing = tính chất của việc.</td></tr>
+        <tr><td data-l="Lỗi"><s>She is good in tennis.</s></td><td data-l="Sửa">She is good <b>at</b> tennis.</td><td data-l="Ghi nhớ">good at · bad at · keen on · into.</td></tr>
+        <tr><td data-l="Lỗi"><s>He took part at the marathon.</s></td><td data-l="Sửa">He took part <b>in</b> the marathon.</td><td data-l="Ghi nhớ">take part in · compete in · participate in.</td></tr>
+        <tr><td data-l="Lỗi"><s>Exercise reduces the risk from heart disease.</s></td><td data-l="Sửa">…the risk <b>of</b> heart disease.</td><td data-l="Ghi nhớ">risk of · benefit of · effect on.</td></tr>
+        <tr><td data-l="Lỗi"><s>Doing sport is benefit for health.</s></td><td data-l="Sửa">Doing sport is <b>beneficial to / good for</b> your health.</td><td data-l="Ghi nhớ">benefit (n/v) · beneficial (adj).</td></tr>
+        <tr><td data-l="Lỗi"><s>Not only exercise burns calories but also …</s></td><td data-l="Sửa"><b>Not only does exercise burn</b> calories, but it also …</td><td data-l="Ghi nhớ">Not only + đảo ngữ (trợ động từ lên trước chủ ngữ).</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+</article>
+<!-- ================= SHEET 4: SPEAKING ================= -->
+<article class="sheet" id="speaking" role="tabpanel" data-title="Speaking P1–P3" hidden>
+  <div class="sheet-head">
+    <div>
+      <span class="eyebrow">Sheet 4 / 7 · VSTEP Speaking</span>
+      <h2>Speaking</h2>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="part-sticky">
+      <h3 id="s-p1">Part 1 · Giao tiếp xã hội — 10 câu hỏi, mỗi câu 30 giây</h3>
+      <div class="timer"><span class="tdisp">0:30</span><button class="btn sm" type="button" data-sec="30">30"</button><button class="btn sm ghost" type="button" data-sec="45">45"</button><button class="btn sm stop tstop" type="button">⏹</button><span style="color:var(--muted);font-size:.9em">Trả lời = <span class="step-tag point">Point</span> + <span class="step-tag why">Why</span> (+ <span class="step-tag example">Example</span>).</span></div>
+    </div>
+    <div class="qa"><p class="q">1 · Do you do any sport? How often?</p><p class="a"><span class="step-tag point">Point</span>Yes, I do. I <mark>go swimming</mark> about three times a week, usually early in the morning before my shift. <span class="step-tag why">Why</span>It's the easiest way for me to <mark>stay in shape</mark> with a busy hospital timetable.</p></div>
+    <div class="qa"><p class="q">2 · What sports are popular in your country?</p><p class="a"><span class="step-tag point">Point</span>Football is by far the biggest <mark>spectator sport</mark> — when Vietnam plays, the whole country stops. <span class="step-tag example">Example</span>In terms of actually playing, <mark>racket sports</mark> like badminton are hugely popular because you can play almost anywhere.</p></div>
+    <div class="qa"><p class="q">3 · Did you play any sports at school?</p><p class="a"><span class="step-tag point">Point</span>I did, mainly volleyball. <span class="step-tag why">Why</span>I wasn't <mark>a natural</mark>, but I was on the school team for two years and it taught me a lot about <mark>teamwork</mark>.</p></div>
+    <div class="qa"><p class="q">4 · Do you prefer watching or playing sport?</p><p class="a"><span class="step-tag point">Point</span>Playing, definitely. <span class="step-tag why">Why</span>Watching is relaxing <mark>now and then</mark>, but I <mark>get a real sense of achievement</mark> from doing it myself — even a short run after work.</p></div>
+    <div class="qa"><p class="q">5 · Is there a sport you'd like to try?</p><p class="a"><span class="step-tag point">Point</span>I'd love to <mark>have a go at</mark> rock climbing. <span class="step-tag why">Why</span>It looks <mark>physically demanding</mark> but also quite mental — you have to plan every move.</p></div>
+    <div class="qa"><p class="q">6 · What do you do to keep fit?</p><p class="a"><span class="step-tag point">Point</span>Apart from swimming, I try to <mark>fit a 30‑minute walk into my day</mark> and I take the stairs at the hospital instead of the lift. <span class="step-tag example">Example</span>It's not much, but it adds up.</p></div>
+    <div class="qa"><p class="q">7 · How do you usually spend your free time?</p><p class="a"><span class="step-tag point">Point</span>Honestly, I don't have a lot of it. <span class="step-tag why">Why</span>When I do, I <mark>tend to</mark> spend it outdoors — cycling by the river or playing badminton with colleagues, which is a good way to <mark>switch off</mark>.</p></div>
+    <div class="qa"><p class="q">8 · Is it easy to find time for exercise with your job?</p><p class="a"><span class="step-tag point">Point</span>Not really. <span class="step-tag why">Why</span>After a <mark>night shift</mark> I'm too exhausted to do anything. <span class="step-tag example">Example</span>So I've <mark>got into the habit of</mark> exercising before work rather than after — it's the only slot that survives.</p></div>
+    <div class="qa"><p class="q">9 · Do you think you are a competitive person?</p><p class="a"><span class="step-tag point">Point</span>To some extent, yes. <span class="step-tag why">Why</span>I don't mind losing a match, but I'm quite <mark>competitive</mark> with myself — I'm always trying to <mark>set a new personal best</mark>.</p></div>
+    <div class="qa"><p class="q">10 · What's your favourite way to relax?</p><p class="a"><span class="step-tag point">Point</span>Swimming, without a doubt. <span class="step-tag why">Why</span>It's almost <mark>therapeutic</mark> <span class="step-tag example">Example</span>— twenty minutes in the water completely <mark>takes my mind off</mark> the wards.</p></div>
+    <div class="ex" id="b2-p1">
+      <div class="ex-head"><span class="ex-no">Luyện</span><h4>Viết câu trả lời của bạn cho 3 câu bất kỳ — mỗi câu 2–3 mệnh đề, ít nhất 1 collocation</h4><span class="ex-type">Free</span></div>
+      <div class="ex-body">
+        <div class="plan">
+          <div><label>Câu số …</label><textarea class="free" id="b2p1-1" placeholder="Yes, I do. I … about … a week, mainly because …"></textarea></div>
+          <div><label>Câu số …</label><textarea class="free" id="b2p1-2" placeholder="…"></textarea></div>
+          <div><label>Câu số …</label><textarea class="free" id="b2p1-3" placeholder="…"></textarea></div>
+        </div>
+      </div>
+      <div class="ex-foot"><button class="btn ghost reset" type="button">Làm lại</button><span class="src">Tự chấm: Point + Why? · 1 collocation?</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="part-sticky">
+      <h3 id="s-p2">Part 2 · Phát triển chủ đề theo sơ đồ — 1 phút chuẩn bị, 2 phút nói</h3>
+      <div class="timer"><span class="tdisp">2:00</span><button class="btn sm ghost" type="button" data-sec="60">Chuẩn bị 1'</button><button class="btn sm" type="button" data-sec="120">Nói 2'</button><button class="btn sm stop tstop" type="button">⏹</button></div>
+    </div>
+    <h4 style="margin:10px 0 4px">Đề A</h4>
+    <div class="cue-card">
+      <svg viewBox="0 0 1000 520" preserveAspectRatio="none">
+        <line x1="500" y1="260" x2="500" y2="62"></line>
+        <line x1="500" y1="260" x2="860" y2="161"></line>
+        <line x1="500" y1="260" x2="860" y2="359"></line>
+        <line x1="500" y1="260" x2="500" y2="458"></line>
+        <line x1="500" y1="260" x2="140" y2="359"></line>
+        <line x1="500" y1="260" x2="140" y2="161"></line>
+      </svg>
+      <div class="cue-topic" style="left:50%;top:50%">Talk about a sport or physical activity you do (or would like to do)</div>
+      <div class="cue-node" style="left:14%;top:31%">What it is · when you started</div>
+      <div class="cue-node" style="left:50%;top:12%">How often · where</div>
+      <div class="cue-node" style="left:86%;top:31%">Why you enjoy it</div>
+      <div class="cue-node" style="left:86%;top:69%">Benefits for you</div>
+      <div class="cue-node" style="left:50%;top:88%">A memory</div>
+      <div class="cue-node" style="left:14%;top:69%">Would you recommend it?</div>
+    </div>
+    <div class="mind">
+      <div class="p">What it is · when you started</div><div class="p">How often · where</div><div class="p">Why you enjoy it</div>
+      <div class="c">Talk about a sport or physical activity you do (or would like to do)</div>
+      <div class="p">Benefits for you</div><div class="p">A memory</div><div class="p">Would you recommend it?</div>
+    </div>
+    <details open><summary>Câu trả lời mẫu — đề A (≈ 230 từ, 2 phút)</summary><div class="model">
+      <p class="step"><span class="step-tag point">Point</span>The activity I'd like to talk about is swimming, which I <mark>took up</mark> about two years ago. <span class="step-tag how">How</span>I usually go to the pool near the hospital three times a week, early in the morning before my shift starts, and I swim for around forty minutes.</p>
+      <p class="step"><span class="step-tag why">Why</span>There are several reasons why I enjoy it. First of all, it's a <mark>low‑impact sport</mark>, so unlike running it doesn't <mark>put pressure on my knees</mark>. Secondly, it's incredibly relaxing — when I'm in the water I completely switch off and it <mark>takes my mind off work</mark>. <mark>What I love most about it is</mark> the <mark>sense of achievement</mark> I get when I <mark>set a new personal best</mark>.</p>
+      <p class="step"><span class="step-tag result">Result</span>In terms of benefits, swimming has <mark>done wonders for my health</mark>. My <mark>cardiovascular fitness</mark> has improved, my <mark>sleep quality</mark> is much better, and I've noticed that I'm far less stressed on the wards. As a doctor, I also think it makes me a better <mark>role model</mark> for my patients, because I can honestly say that <mark>regular exercise</mark> works.</p>
+      <p class="step"><span class="step-tag example">Example</span>One memory that stands out is the first time I managed to swim a full kilometre without stopping. <span class="step-tag limitation">Limitation</span>I was exhausted but absolutely thrilled. <span class="step-tag evaluation">Evaluation</span><mark>All in all</mark>, swimming is the one habit I'd never <mark>give up</mark>, and I'd recommend it to anyone who wants to <mark>get into shape</mark> without <mark>risking injury</mark>.</p>
+      <span class="wcnt">Point → Why → How → Example → Result → Limitation (exhausted) → Evaluation · 16 collocations</span>
+    </div></details>
+    <h4 style="margin:18px 0 4px">Đề B</h4>
+    <div class="cue-card">
+      <svg viewBox="0 0 1000 520" preserveAspectRatio="none">
+        <line x1="500" y1="260" x2="500" y2="62"></line>
+        <line x1="500" y1="260" x2="860" y2="161"></line>
+        <line x1="500" y1="260" x2="860" y2="359"></line>
+        <line x1="500" y1="260" x2="500" y2="458"></line>
+        <line x1="500" y1="260" x2="140" y2="359"></line>
+        <line x1="500" y1="260" x2="140" y2="161"></line>
+      </svg>
+      <div class="cue-topic" style="left:50%;top:50%">Talk about why sport is important for people's health</div>
+      <div class="cue-node" style="left:14%;top:31%">Physical health</div>
+      <div class="cue-node" style="left:50%;top:12%">Mental health</div>
+      <div class="cue-node" style="left:86%;top:31%">Social benefits</div>
+      <div class="cue-node" style="left:86%;top:69%">Your job / your patients</div>
+      <div class="cue-node" style="left:50%;top:88%">Problems if people don't exercise</div>
+      <div class="cue-node" style="left:14%;top:69%">Your recommendation</div>
+    </div>
+    <div class="mind">
+      <div class="p">Physical health</div><div class="p">Mental health</div><div class="p">Social benefits</div>
+      <div class="c">Talk about why sport is important for people's health</div>
+      <div class="p">Your job / your patients</div><div class="p">Problems if people don't exercise</div><div class="p">Your recommendation</div>
+    </div>
+    <details><summary>Câu trả lời mẫu — đề B (≈ 200 từ)</summary><div class="model">
+      <p class="step"><span class="step-tag point">Point</span>I'd like to explain why I believe sport is essential for health, and I'll look at it from three angles. <span class="step-tag why">Why</span>Physically, <mark>regular exercise</mark> <mark>lowers blood pressure</mark>, <mark>strengthens muscles and bones</mark> and significantly <mark>reduces the risk of heart disease</mark> and <mark>type 2 diabetes</mark>. Mentally, it <mark>releases endorphins</mark>, which <mark>improve mood</mark> and <mark>relieve stress</mark>; many of my colleagues say a short run after a shift is the best therapy they know. Socially, <mark>team sports</mark> bring people together and <mark>develop discipline</mark> and <mark>teamwork</mark>.</p>
+      <p class="step"><span class="step-tag example">Example</span>In my own work, I see the other side every day. Patients with <mark>sedentary lifestyles</mark> are far more likely to develop <mark>chronic diseases</mark>, and treating them <mark>puts a huge burden on the health system</mark>. That's why some doctors now <mark>prescribe exercise</mark> rather than medication.</p>
+      <p class="step"><span class="step-tag limitation">Limitation</span><mark>Admittedly</mark>, not everyone can join a gym, but walking costs nothing. <span class="step-tag evaluation">Evaluation</span><mark>On balance</mark>, I'd recommend at least <mark>150 minutes of moderate activity a week</mark> — for patients and for doctors too.</p>
+    </div></details>
+    <div class="ex" id="b2-p2">
+      <div class="ex-head"><span class="ex-no">Luyện</span><h4>Lập dàn ý 7 bước cho đề A hoặc B, rồi bấm giờ nói 2 phút</h4><span class="ex-type">Planner</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="plan">
+          <div><label>Point — what / which</label><textarea class="free" id="b2p2-1" placeholder="The activity I'd like to talk about is …"></textarea></div>
+          <div><label>Why · How</label><textarea class="free" id="b2p2-2" placeholder="I enjoy it mainly because … I usually …"></textarea></div>
+          <div><label>Example · Result</label><textarea class="free" id="b2p2-3" placeholder="For instance, … As a result, …"></textarea></div>
+          <div><label>Limitation · Evaluation</label><textarea class="free" id="b2p2-4" placeholder="Admittedly, … On balance, …"></textarea></div>
+        </div>
+        <ul class="checklist" style="margin-top:12px">
+          <li><label><input type="checkbox" id="b2p2-c1"><span>Nói đủ 2 phút, không dừng quá 3 giây</span></label></li>
+          <li><label><input type="checkbox" id="b2p2-c2"><span>Chạm đủ 5–6 nhánh của sơ đồ</span></label></li>
+          <li><label><input type="checkbox" id="b2p2-c3"><span>≥ 8 collocation chủ đề</span></label></li>
+          <li><label><input type="checkbox" id="b2p2-c4"><span>Có 1 câu nhượng bộ (Admittedly / Although) và 1 câu kết (On balance / All in all)</span></label></li>
+          <li><label><input type="checkbox" id="b2p2-c5"><span>Có ví dụ cụ thể từ đời thật (bệnh viện, bệnh nhân, một kỷ niệm)</span></label></li>
+        </ul>
+      </div>
+      <div class="ex-foot"><button class="btn ghost reset" type="button">Làm lại</button><span class="src">Ghi âm bằng điện thoại · nghe lại · đếm collocation</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="part-sticky">
+      <h3 id="s-p3">Part 3 · Thảo luận mở rộng — 6 câu hỏi xã hội</h3>
+      <div class="timer"><span class="tdisp">1:00</span><button class="btn sm" type="button" data-sec="60">1' / câu</button><button class="btn sm stop tstop" type="button">⏹</button><span style="color:var(--muted);font-size:.9em">Khung: <span class="step-tag point">Point</span> <span class="step-tag why">Why</span> <span class="step-tag example">Example</span> <span class="step-tag counter">Counter</span> <span class="step-tag evaluation">Evaluation</span></span></div>
+    </div>
+    <div class="qa"><p class="q">1 · Should PE be compulsory at university?</p><p class="a"><span class="step-tag point">Point</span>I think it should, at least in the first year. <span class="step-tag why">Why</span>The main reason is that students <mark>lead increasingly sedentary lives</mark> — long lectures, long hours at a screen — and habits formed at that age <mark>tend to</mark> last. <span class="step-tag counter">Counter</span><mark>Admittedly</mark>, adults don't like being forced to do anything, so the classes should be flexible: yoga, swimming or team sports rather than one fixed activity. <span class="step-tag evaluation">Evaluation</span><mark>On balance</mark>, though, a compulsory minimum would do far more good than harm.</p></div>
+    <div class="qa"><p class="q">2 · Do professional athletes deserve their high salaries?</p><p class="a"><span class="step-tag point">Point</span><mark>To some extent</mark>, yes. <span class="step-tag why">Why</span>Top athletes <mark>train hard</mark> for years, their careers are short and they <mark>carry a real risk of injury</mark>. <span class="step-tag counter">Counter</span>On the other hand, the gap between a footballer's salary and a nurse's is hard to justify, and I'd say the <mark>commercialisation</mark> of sport has gone too far. <span class="step-tag evaluation">Evaluation</span>So they deserve to be well paid, but not <em>that</em> well paid.</p></div>
+    <div class="qa"><p class="q">3 · How can hospitals encourage staff to stay active?</p><p class="a"><span class="step-tag point">Point</span>Small, practical things work best. <span class="step-tag why">Why</span>Hospitals could offer <mark>free or subsidised gym membership</mark>, organise lunchtime walking groups and, above all, protect rest time after <mark>night shifts</mark>. <span class="step-tag example">Example</span>For instance, my department started a five‑a‑side football league and it <mark>did wonders for morale</mark>. <span class="step-tag evaluation">Evaluation</span><mark>In the long run</mark>, healthier staff means fewer sick days, so it pays for itself.</p></div>
+    <div class="qa"><p class="q">4 · Is watching sport a waste of time?</p><p class="a"><span class="step-tag point">Point</span>Not entirely. <span class="step-tag counter">Counter</span><mark>Admittedly</mark>, sitting in front of the TV for hours is passive, and it's no substitute for actually <mark>exercising</mark>. <span class="step-tag why">Why</span>However, watching sport brings people together — think of the whole country watching Vietnam in the SEA Games — and it can inspire people, especially children, to <mark>take up</mark> a sport themselves. <span class="step-tag evaluation">Evaluation</span>So it's fine <mark>in moderation</mark>.</p></div>
+    <div class="qa"><p class="q">5 · Should governments spend money hosting major sporting events?</p><p class="a"><span class="step-tag point">Point</span>It depends on the country. <span class="step-tag why">Why</span>Hosting the SEA Games <mark>boosted national pride</mark> and <mark>generated revenue</mark> from tourism, <span class="step-tag counter">Counter</span>but it also <mark>cost taxpayers</mark> a great deal, and some of the stadiums are rarely used now. <span class="step-tag evaluation">Evaluation</span><mark>In my view</mark>, that money would be better spent on <mark>grassroots sport</mark> — local pools, cycle lanes and school facilities — which benefit far more people.</p></div>
+    <div class="qa"><p class="q">6 · Why are people less active than in the past?</p><p class="a"><span class="step-tag point">Point</span>There are two main causes. <span class="step-tag why">Why</span>Firstly, work has changed: most jobs are now <mark>sedentary</mark>, and a long commute leaves little energy for exercise. Secondly, <mark>screen time</mark> has replaced outdoor play — children in particular spend hours on phones. <span class="step-tag evaluation">Evaluation</span><mark>As a result</mark>, <mark>obesity</mark> and <mark>type 2 diabetes</mark> are rising even among young people, which is <mark>a major public health concern</mark>.</p></div>
+    <div class="ex" id="b2-p3">
+      <div class="ex-head"><span class="ex-no">Luyện</span><h4>Chọn 1 câu hỏi, viết dàn ý 5 bước rồi nói 1 phút</h4><span class="ex-type">Planner</span></div>
+      <div class="ex-body">
+        <div class="plan">
+          <div><label>Point</label><textarea class="free" id="b2p3-1" placeholder="I think … / It depends on …"></textarea></div>
+          <div><label>Why + Example</label><textarea class="free" id="b2p3-2" placeholder="The main reason is that … For instance, …"></textarea></div>
+          <div><label>Counter</label><textarea class="free" id="b2p3-3" placeholder="Admittedly, … / On the other hand, …"></textarea></div>
+          <div><label>Evaluation</label><textarea class="free" id="b2p3-4" placeholder="On balance, … / So …"></textarea></div>
+        </div>
+      </div>
+      <div class="ex-foot"><button class="btn ghost reset" type="button">Làm lại</button><span class="src">Nhóm 3: A hỏi – B trả lời – C đếm collocation và câu nhượng bộ</span></div>
+    </div>
+  </section>
+</article>
+<!-- ================= SHEET 5: WRITING ================= -->
+<article class="sheet" id="writing" role="tabpanel" data-title="Writing T1–T2" hidden>
+  <div class="sheet-head">
+    <div>
+      <span class="eyebrow">Sheet 5 / 7 · VSTEP Writing</span>
+      <h2>Writing</h2>
+    </div>
+  </div>
+
+  <section class="block">
+    <h3 id="w-t1">Task 1 · Email</h3>
+    <div class="card" style="margin-bottom:14px"><span class="eyebrow">Đề</span>
+      <p style="color:var(--ink)">Your friend Mark has written to say he wants to get fit but doesn't know which sport to take up.</p>
+      <p style="color:var(--ink);margin-top:8px"><b>Write an email to Mark. In your email:</b></p>
+      <ul style="margin:4px 0 0"><li>recommend a sport</li><li>explain why it would be good for him</li><li>suggest how he can start</li></ul>
+      <p style="color:var(--ink);margin-top:8px">Write <b>120–150 words</b>. Do not include any addresses.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card"><span class="eyebrow">Bố cục 4 phần</span><ul>
+        <li><b>Mở:</b> phản hồi tin của bạn (<i>Great to hear you want to get into shape!</i>)</li><li><b>Ý 1 — đề xuất:</b> <i>If I were you, I'd take up … / I'd recommend …</i></li><li><b>Ý 2 — lợi ích:</b> 2–3 collocation (<i>low‑impact, lowers blood pressure, does wonders for</i>)</li><li><b>Ý 3 — cách bắt đầu:</b> <i>The best way to start is to … / Why not …? / build up gradually</i></li><li><b>Kết:</b> đề nghị đi cùng, <i>Let me know how it goes</i>.</li></ul></div>
+      <div class="card"><span class="eyebrow">Ngôn ngữ khuyên nhủ (thân mật)</span><ul><li>If I were you, I'd … · You could always … · Why not + V?</li><li>The great thing about X is (that) … · It's ideal for people who …</li><li>Start with … and build up gradually · Don't overdo it.</li><li>I'm sure you'll be hooked after a month.</li><li>Let me know how it goes · We could even go together.</li></ul></div>
+    </div>
+    <details open style="margin-top:14px"><summary>Bài mẫu Task 1 (≈ 135 từ)</summary><div class="model">
+      <p>Hi Mark,</p>
+      <p>Great to hear you want to <mark>get into shape</mark>! If I were you, I'd <mark>take up swimming</mark>. It's a <mark>low‑impact sport</mark>, so there's very little <mark>risk of injury</mark>, and it works every muscle in the body. As a doctor, I can tell you it also <mark>lowers blood pressure</mark> and <mark>does wonders for your sleep</mark>.</p>
+      <p>The best way to start is to <mark>join the pool</mark> near your office and go twice a week, early in the morning. Begin with twenty minutes and <mark>build up your stamina</mark> gradually. Why not book a couple of lessons to <mark>improve your technique</mark>? After a month I'm sure you'll be <mark>hooked</mark>.</p>
+      <p>Let me know how it goes — we could even go together at the weekend.</p>
+      <p>All the best,<br>Hoa</p>
+      <span class="wcnt">3 ý đủ · 9 collocation · giọng thân mật · 135 từ</span>
+    </div></details>
+    <div class="ex" id="b2-w1">
+      <div class="ex-head"><span class="ex-no">Viết</span><h4>Email của bạn — đổi môn thể thao và lý do theo chuyên khoa của bạn</h4><span class="ex-type">120–150 từ</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <textarea class="free" id="b2w1-text" style="min-height:220px" placeholder="Hi Mark,&#10;&#10;Great to hear …"></textarea>
+        <p style="margin-top:6px;font-size:.9em;color:var(--muted)">Số từ: <span class="wc" data-for="b2w1-text">0</span> / 120–150</p>
+        <ul class="checklist" style="margin-top:10px">
+          <li><label><input type="checkbox" id="b2w1-c1"><span>Đủ 3 ý: đề xuất · lợi ích · cách bắt đầu</span></label></li>
+          <li><label><input type="checkbox" id="b2w1-c2"><span>≥ 5 collocation chủ đề</span></label></li>
+          <li><label><input type="checkbox" id="b2w1-c3"><span>Có <i>If I were you</i> / <i>Why not</i> / <i>The best way to</i></span></label></li>
+          <li><label><input type="checkbox" id="b2w1-c4"><span>Mở – kết đúng giọng email thân mật; không có địa chỉ</span></label></li>
+        </ul>
+      </div>
+      <div class="ex-foot"><button class="btn ghost reset" type="button">Làm lại</button><span class="src">Đổi bài với bạn: chấm 4 ô trên</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="w-t2">Task 2 · Essay — nguyên nhân &amp; giải pháp</h3>
+    <div class="card" style="margin-bottom:14px"><span class="eyebrow">Đề</span>
+      <p style="color:var(--ink)">In many countries, people are doing less physical exercise than in the past.</p>
+      <p style="color:var(--ink);margin-top:8px"><b>What are the causes of this trend, and what measures could be taken to encourage people to be more active?</b></p>
+      <p style="color:var(--ink);margin-top:8px">Give reasons and examples. Write at least <b>250 words</b>.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card"><span class="eyebrow">Dàn ý 4 đoạn</span><ul>
+        <li><b>Mở (40–50 từ):</b> paraphrase đề + <i>This essay will examine … and suggest …</i></li><li><b>Thân 1 — nguyên nhân (80–90):</b> sedentary jobs → screen‑based leisure → lack of facilities; mỗi ý 1 ví dụ.</li><li><b>Thân 2 — giải pháp (90–100):</b> government (invest, facilities) → employers (flexible hours, gym membership) → doctors (prescribe exercise, 150 min/week).</li><li><b>Kết (40–50):</b> tóm 2 vế + đánh giá <i>the benefits would be considerable</i>.</li></ul></div>
+      <div class="card"><span class="eyebrow">Ngôn ngữ nguyên nhân – giải pháp</span><ul>
+        <li>The most obvious cause is …</li>
+        <li>… has made the problem worse</li>
+        <li>In addition, there is a shortage of …</li>
+        <li>Several measures could …</li>
+        <li>Firstly, governments should … since …</li>
+        <li>Secondly, employers could play a role by …</li>
+        <li>Finally, …</li>
+        <li>… rather than simply …</li>
+        <li>for instance</li>
+        <li>in the long run</li>
+        <li>the benefits would be considerable</li>
+      </ul></div>
+    </div>
+    <details open style="margin-top:14px"><summary>Bài mẫu Task 2 (≈ 290 từ)</summary><div class="model">
+      <p>Across the world, levels of <mark>physical activity</mark> have fallen sharply in recent decades, and <mark>sedentary lifestyles</mark> are now <mark>a major public health concern</mark>. This essay will examine the main causes of this trend and suggest some measures that could reverse it.</p>
+      <p>The most obvious cause is the nature of modern work. Millions of people spend eight hours a day sitting at a desk, and after a long commute they have neither the time nor the energy to exercise. Technology has made the problem worse: leisure time that was once spent outdoors is now spent in front of a screen. In addition, in many cities there is a shortage of safe, <mark>affordable sports facilities</mark>, so even those who want to <mark>keep fit</mark> find it difficult to do so.</p>
+      <p>Several measures could encourage people to become more active. Firstly, governments should <mark>invest in</mark> free or low‑cost facilities such as parks, cycle lanes and public swimming pools, since cost and access are major barriers. Secondly, employers could play a role by offering flexible hours or <mark>gym membership</mark>, which would allow staff to <mark>fit exercise into a busy schedule</mark>. Finally, doctors should <mark>treat physical activity as a form of medicine</mark> and give patients clear, realistic advice — for instance, <mark>150 minutes of moderate exercise a week</mark> — rather than simply telling them to "do more sport".</p>
+      <p>In conclusion, inactivity is largely the result of <mark>sedentary jobs</mark>, screen‑based leisure and poor access to facilities. However, with investment from governments, support from employers and practical guidance from health professionals, this trend can be reversed, and the benefits — for both individuals and <mark>the health system</mark> — would be considerable.</p>
+      <span class="wcnt">4 đoạn · câu chủ đề rõ · 3 nguyên nhân – 3 giải pháp · 290 từ</span>
+    </div></details>
+    <div class="ex" id="b2-w2">
+      <div class="ex-head"><span class="ex-no">Viết</span><h4>Dàn ý và bài essay của bạn</h4><span class="ex-type">≥ 250 từ</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="plan">
+          <div><label>Mở — paraphrase + mục đích</label><textarea class="free" id="b2w2-1" placeholder="In recent years, … This essay will …"></textarea></div>
+          <div><label>Thân 1 — 3 nguyên nhân + ví dụ</label><textarea class="free" id="b2w2-2" placeholder="The most obvious cause is … In addition, …"></textarea></div>
+          <div><label>Thân 2 — 3 giải pháp (ai làm gì)</label><textarea class="free" id="b2w2-3" placeholder="Several measures could … Firstly, governments … Secondly, … Finally, …"></textarea></div>
+          <div><label>Kết — tóm + đánh giá</label><textarea class="free" id="b2w2-4" placeholder="In conclusion, … However, … the benefits would be …"></textarea></div>
+        </div>
+        <p style="margin-top:12px"><b>Bài hoàn chỉnh</b></p>
+        <textarea class="free" id="b2w2-text" style="min-height:300px" placeholder="Across the world, …"></textarea>
+        <p style="margin-top:6px;font-size:.9em;color:var(--muted)">Số từ: <span class="wc" data-for="b2w2-text">0</span> / ≥ 250</p>
+        <ul class="checklist" style="margin-top:10px">
+          <li><label><input type="checkbox" id="b2w2-c1"><span>Trả lời cả 2 vế của đề (causes + measures)</span></label></li>
+          <li><label><input type="checkbox" id="b2w2-c2"><span>Mỗi đoạn thân có câu chủ đề + 2–3 ý + 1 ví dụ</span></label></li>
+          <li><label><input type="checkbox" id="b2w2-c3"><span>≥ 8 collocation chủ đề</span></label></li>
+          <li><label><input type="checkbox" id="b2w2-c4"><span>Có 1 câu nhượng bộ (However / Admittedly)</span></label></li>
+          <li><label><input type="checkbox" id="b2w2-c5"><span>Không lặp từ "sport" quá 5 lần — thay bằng physical activity / exercise / being active</span></label></li>
+        </ul>
+      </div>
+      <div class="ex-foot"><button class="btn ghost reset" type="button">Làm lại</button><span class="src">Viết 2 đoạn thân bài trên lớp (40'), hoàn thiện ở nhà</span></div>
+    </div>
+  </section>
+</article>
+<!-- ================= SHEET 6: LUYỆN TẬP CHỦ ĐỘNG ================= -->
+<article class="sheet" id="practice" role="tabpanel" data-title="Luyện tập chủ động" hidden>
+  <div class="sheet-head">
+    <div>
+      <span class="eyebrow">Sheet 6 / 7</span>
+      <h2>Luyện tập — 9 bài tương tác</h2>
+    </div>
+    <div class="prog" data-prog>0 bài đã kiểm tra</div>
+  </div>
+
+  <section class="block">
+    <h3 id="x-1">Bài 1 · Verb + noun — chọn động từ đúng</h3>
+    <div class="ex" id="b2-x1">
+      <div class="ex-head"><span class="ex-no">Bài 1</span><h4>Chọn động từ tạo collocation</h4><span class="ex-type">Chọn</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="items two">
+          <div class="it"><span class="lab">1</span><span class="q"><select class="ans" data-a="set" aria-label="1"><option value="">…</option><option>set</option><option>break</option><option>burn</option><option>reach</option></select> a personal best</span></div>
+          <div class="it"><span class="lab">2</span><span class="q"><select class="ans" data-a="reduce" aria-label="2"><option value="">…</option><option>reduce</option><option>relieve</option><option>release</option><option>reach</option></select> the risk of heart disease</span></div>
+          <div class="it"><span class="lab">3</span><span class="q"><select class="ans" data-a="relieve" aria-label="3"><option value="">…</option><option>reduce</option><option>relieve</option><option>release</option><option>burn</option></select> stress after a long shift</span></div>
+          <div class="it"><span class="lab">4</span><span class="q"><select class="ans" data-a="break" aria-label="4"><option value="">…</option><option>set</option><option>break</option><option>win</option><option>make</option></select> a world record</span></div>
+          <div class="it"><span class="lab">5</span><span class="q"><select class="ans" data-a="burn" aria-label="5"><option value="">…</option><option>burn</option><option>lose</option><option>release</option><option>build</option></select> calories</span></div>
+          <div class="it"><span class="lab">6</span><span class="q"><select class="ans" data-a="keep" aria-label="6"><option value="">…</option><option>keep</option><option>make</option><option>do</option><option>take</option></select> fit</span></div>
+          <div class="it"><span class="lab">7</span><span class="q"><select class="ans" data-a="get" aria-label="7"><option value="">…</option><option>get</option><option>go</option><option>keep</option><option>take</option></select> into shape</span></div>
+          <div class="it"><span class="lab">8</span><span class="q"><select class="ans" data-a="take" aria-label="8"><option value="">…</option><option>take</option><option>make</option><option>join</option><option>compete</option></select> part in a tournament</span></div>
+          <div class="it"><span class="lab">9</span><span class="q"><select class="ans" data-a="take" aria-label="9"><option value="">…</option><option>take</option><option>start</option><option>pick</option><option>go</option></select> up a new sport</span></div>
+          <div class="it"><span class="lab">10</span><span class="q"><select class="ans" data-a="release" aria-label="10"><option value="">…</option><option>release</option><option>relieve</option><option>reduce</option><option>boost</option></select> endorphins</span></div>
+          <div class="it"><span class="lab">11</span><span class="q"><select class="ans" data-a="win" aria-label="11"><option value="">…</option><option>win</option><option>get</option><option>break</option><option>reach</option></select> a gold medal</span></div>
+          <div class="it"><span class="lab">12</span><span class="q"><select class="ans" data-a="reach" aria-label="12"><option value="">…</option><option>reach</option><option>arrive</option><option>win</option><option>come</option></select> the final</span></div>
+        </div>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="x-2">Bài 2 · Phân loại danh từ</h3>
+    <div class="ex" id="b2-x2">
+      <div class="ex-head"><span class="ex-no">Bài 2</span><h4>Chạm để xếp vào cột: Người · Nơi · Sự kiện · Đồ dùng</h4><span class="ex-type">Phân loại</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="bins" data-cats="Người|Nơi|Sự kiện|Đồ dùng" data-items="referee:Người,pitch:Nơi,tournament:Sự kiện,kit:Đồ dùng,umpire:Người,court:Nơi,championship:Sự kiện,gear:Đồ dùng,spectator:Người,rink:Nơi,league:Sự kiện,protective equipment:Đồ dùng,opponent:Người,track:Nơi,the final:Sự kiện,trainers:Đồ dùng,physio:Người,stadium:Nơi,marathon:Sự kiện,racket:Đồ dùng,coach:Người,sports hall:Nơi"></div>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="x-3">Bài 3 · Lợi ích sức khoẻ — điền đoạn văn</h3>
+    <div class="ex" id="b2-x3">
+      <div class="ex-head"><span class="ex-no">Bài 3</span><h4>Chọn từ đúng cho 8 chỗ trống</h4><span class="ex-type">Cloze</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <p style="line-height:2.3">Regular physical activity <select class="ans" data-a="reduces" aria-label="1"><option value="">…</option><option>reduces</option><option>increases</option><option>burns</option></select> the risk of heart disease and type 2 diabetes. It also helps people <select class="ans" data-a="control" aria-label="2"><option value="">…</option><option>control</option><option>relieve</option><option>break</option></select> their weight, because exercise <select class="ans" data-a="burns" aria-label="3"><option value="">…</option><option>burns</option><option>boosts</option><option>sets</option></select> calories. Beyond the body, exercise <select class="ans" data-a="releases" aria-label="4"><option value="">…</option><option>releases</option><option>relieves</option><option>reaches</option></select> endorphins, which <select class="ans" data-a="improve" aria-label="5"><option value="">…</option><option>improve</option><option>reduce</option><option>injure</option></select> mood and <select class="ans" data-a="relieve" aria-label="6"><option value="">…</option><option>relieve</option><option>release</option><option>retire</option></select> stress. Doctors therefore recommend at least 150 minutes of <select class="ans" data-a="moderate" aria-label="7"><option value="">…</option><option>moderate</option><option>sedentary</option><option>amateur</option></select> exercise a week. Unfortunately, many office workers lead a <select class="ans" data-a="sedentary" aria-label="8"><option value="">…</option><option>sedentary</option><option>active</option><option>competitive</option></select> lifestyle.</p>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="x-4">Bài 4 · Tần suất — xếp theo mức độ</h3>
+    <div class="ex" id="b2-x4">
+      <div class="ex-head"><span class="ex-no">Bài 4</span><h4>Chạm để xếp cụm vào 3 mức tần suất</h4><span class="ex-type">Phân loại</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="bins" data-cats="Thường xuyên|Thỉnh thoảng|Hiếm khi" data-items="every other day:Thường xuyên,from time to time:Thỉnh thoảng,hardly ever:Hiếm khi,on a regular basis:Thường xuyên,now and then:Thỉnh thoảng,rarely:Hiếm khi,three times a week:Thường xuyên,occasionally:Thỉnh thoảng,seldom:Hiếm khi,daily:Thường xuyên,once in a while:Thỉnh thoảng,once in a blue moon:Hiếm khi"></div>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="x-5">Bài 5 · Nâng cấp B1 → B2 — chọn câu tự nhiên nhất (Sheet 3)</h3>
+    <div class="ex" id="b2-x5">
+      <div class="ex-head"><span class="ex-no">Bài 5</span><h4>Câu nào là bản nâng cấp đúng và tự nhiên?</h4><span class="ex-type">MCQ</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="items two">
+          <div class="mcq" data-a="A"><div class="stem">1 · I like sport very much.</div>
+            <label><input type="radio" name="b2x5-1" value="A"><span><span class="o">A</span> I'm really into sport.</span></label>
+            <label><input type="radio" name="b2x5-1" value="B"><span><span class="o">B</span> I very like sport.</span></label>
+            <label><input type="radio" name="b2x5-1" value="C"><span><span class="o">C</span> Sport is very liked by me.</span></label></div>
+          <div class="mcq" data-a="B"><div class="stem">2 · Sport is good for health.</div>
+            <label><input type="radio" name="b2x5-2" value="A"><span><span class="o">A</span> Sport makes a good health.</span></label>
+            <label><input type="radio" name="b2x5-2" value="B"><span><span class="o">B</span> Regular exercise brings significant health benefits.</span></label>
+            <label><input type="radio" name="b2x5-2" value="C"><span><span class="o">C</span> Sport is very good health.</span></label></div>
+          <div class="mcq" data-a="C"><div class="stem">3 · I do sport sometimes.</div>
+            <label><input type="radio" name="b2x5-3" value="A"><span><span class="o">A</span> I do sport in sometimes.</span></label>
+            <label><input type="radio" name="b2x5-3" value="B"><span><span class="o">B</span> I sometimes am doing sport.</span></label>
+            <label><input type="radio" name="b2x5-3" value="C"><span><span class="o">C</span> I exercise from time to time.</span></label></div>
+          <div class="mcq" data-a="A"><div class="stem">4 · Football is exciting.</div>
+            <label><input type="radio" name="b2x5-4" value="A"><span><span class="o">A</span> What I love about football is the excitement of a close match.</span></label>
+            <label><input type="radio" name="b2x5-4" value="B"><span><span class="o">B</span> Football is very exciting sport.</span></label>
+            <label><input type="radio" name="b2x5-4" value="C"><span><span class="o">C</span> Football is excite.</span></label></div>
+          <div class="mcq" data-a="B"><div class="stem">5 · Many people don't exercise because they are busy.</div>
+            <label><input type="radio" name="b2x5-5" value="A"><span><span class="o">A</span> Many people don't exercise because busy.</span></label>
+            <label><input type="radio" name="b2x5-5" value="B"><span><span class="o">B</span> Many people find it hard to fit exercise into a busy schedule.</span></label>
+            <label><input type="radio" name="b2x5-5" value="C"><span><span class="o">C</span> Many people are busy so no exercise.</span></label></div>
+          <div class="mcq" data-a="A"><div class="stem">6 · I started running last year.</div>
+            <label><input type="radio" name="b2x5-6" value="A"><span><span class="o">A</span> I took up running last year.</span></label>
+            <label><input type="radio" name="b2x5-6" value="B"><span><span class="o">B</span> I take up running last year.</span></label>
+            <label><input type="radio" name="b2x5-6" value="C"><span><span class="o">C</span> I started to running last year.</span></label></div>
+        </div>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="x-6">Bài 6 · Từ lạc nhóm</h3>
+    <div class="ex" id="b2-x6">
+      <div class="ex-head"><span class="ex-no">Bài 6</span><h4>Từ nào không cùng nhóm?</h4><span class="ex-type">MCQ</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="items two">
+          <div class="mcq" data-a="D"><div class="stem">1</div><label><input type="radio" name="b2x6-1" value="A"><span><span class="o">A</span> pitch</span></label><label><input type="radio" name="b2x6-1" value="B"><span><span class="o">B</span> court</span></label><label><input type="radio" name="b2x6-1" value="C"><span><span class="o">C</span> rink</span></label><label><input type="radio" name="b2x6-1" value="D"><span><span class="o">D</span> referee</span></label></div>
+          <div class="mcq" data-a="C"><div class="stem">2</div><label><input type="radio" name="b2x6-2" value="A"><span><span class="o">A</span> sprain</span></label><label><input type="radio" name="b2x6-2" value="B"><span><span class="o">B</span> fracture</span></label><label><input type="radio" name="b2x6-2" value="C"><span><span class="o">C</span> trophy</span></label><label><input type="radio" name="b2x6-2" value="D"><span><span class="o">D</span> strain</span></label></div>
+          <div class="mcq" data-a="C"><div class="stem">3</div><label><input type="radio" name="b2x6-3" value="A"><span><span class="o">A</span> rewarding</span></label><label><input type="radio" name="b2x6-3" value="B"><span><span class="o">B</span> thrilling</span></label><label><input type="radio" name="b2x6-3" value="C"><span><span class="o">C</span> tedious</span></label><label><input type="radio" name="b2x6-3" value="D"><span><span class="o">D</span> satisfying</span></label></div>
+          <div class="mcq" data-a="C"><div class="stem">4</div><label><input type="radio" name="b2x6-4" value="A"><span><span class="o">A</span> amateur</span></label><label><input type="radio" name="b2x6-4" value="B"><span><span class="o">B</span> professional</span></label><label><input type="radio" name="b2x6-4" value="C"><span><span class="o">C</span> spectator</span></label><label><input type="radio" name="b2x6-4" value="D"><span><span class="o">D</span> competitor</span></label></div>
+        </div>
+        <div class="sample" hidden><span class="eyebrow">Vì sao</span><p>1 referee là người, ba từ kia là nơi · 2 trophy là phần thưởng, ba từ kia là chấn thương · 3 tedious tiêu cực, ba từ kia tích cực · 4 spectator chỉ xem, ba từ kia thi đấu.</p></div>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="x-7">Bài 7 · Paraphrase — nối cách nói B1 với cụm B2 (Reading &amp; Listening)</h3>
+    <div class="ex" id="b2-x7">
+      <div class="ex-head"><span class="ex-no">Bài 7</span><h4>Cùng nghĩa, khác cách nói</h4><span class="ex-type">Nối</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="items">
+          <div class="it"><span class="q">I don't have time to exercise.</span><select class="ans" data-a="I can't fit exercise into my schedule." aria-label="1"><option value="">…</option><option>I can't fit exercise into my schedule.</option><option>I gave up football.</option><option>I'm out of shape.</option><option>I'm hooked on swimming.</option><option>Exercise relieves stress.</option><option>Sport carries a risk of injury.</option></select></div>
+          <div class="it"><span class="q">I stopped playing football.</span><select class="ans" data-a="I gave up football." aria-label="2"><option value="">…</option><option>I can't fit exercise into my schedule.</option><option>I gave up football.</option><option>I'm out of shape.</option><option>I'm hooked on swimming.</option><option>Exercise relieves stress.</option><option>Sport carries a risk of injury.</option></select></div>
+          <div class="it"><span class="q">I'm not very fit now.</span><select class="ans" data-a="I'm out of shape." aria-label="3"><option value="">…</option><option>I can't fit exercise into my schedule.</option><option>I gave up football.</option><option>I'm out of shape.</option><option>I'm hooked on swimming.</option><option>Exercise relieves stress.</option><option>Sport carries a risk of injury.</option></select></div>
+          <div class="it"><span class="q">I love swimming.</span><select class="ans" data-a="I'm hooked on swimming." aria-label="4"><option value="">…</option><option>I can't fit exercise into my schedule.</option><option>I gave up football.</option><option>I'm out of shape.</option><option>I'm hooked on swimming.</option><option>Exercise relieves stress.</option><option>Sport carries a risk of injury.</option></select></div>
+          <div class="it"><span class="q">Exercise makes you less stressed.</span><select class="ans" data-a="Exercise relieves stress." aria-label="5"><option value="">…</option><option>I can't fit exercise into my schedule.</option><option>I gave up football.</option><option>I'm out of shape.</option><option>I'm hooked on swimming.</option><option>Exercise relieves stress.</option><option>Sport carries a risk of injury.</option></select></div>
+          <div class="it"><span class="q">Sport can hurt you.</span><select class="ans" data-a="Sport carries a risk of injury." aria-label="6"><option value="">…</option><option>I can't fit exercise into my schedule.</option><option>I gave up football.</option><option>I'm out of shape.</option><option>I'm hooked on swimming.</option><option>Exercise relieves stress.</option><option>Sport carries a risk of injury.</option></select></div>
+        </div>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="x-8">Bài 8 · Sửa lỗi giới từ &amp; dạng từ</h3>
+    <div class="ex" id="b2-x8">
+      <div class="ex-head"><span class="ex-no">Bài 8</span><h4>Câu nào đúng?</h4><span class="ex-type">MCQ</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="items two">
+          <div class="mcq" data-a="B"><div class="stem">1</div><label><input type="radio" name="b2x8-1" value="A"><span><span class="o">A</span> I'm interesting in extreme sports.</span></label><label><input type="radio" name="b2x8-1" value="B"><span><span class="o">B</span> I'm interested in extreme sports.</span></label></div>
+          <div class="mcq" data-a="B"><div class="stem">2</div><label><input type="radio" name="b2x8-2" value="A"><span><span class="o">A</span> She is good in tennis.</span></label><label><input type="radio" name="b2x8-2" value="B"><span><span class="o">B</span> She is good at tennis.</span></label></div>
+          <div class="mcq" data-a="B"><div class="stem">3</div><label><input type="radio" name="b2x8-3" value="A"><span><span class="o">A</span> He took part at the marathon.</span></label><label><input type="radio" name="b2x8-3" value="B"><span><span class="o">B</span> He took part in the marathon.</span></label></div>
+          <div class="mcq" data-a="A"><div class="stem">4</div><label><input type="radio" name="b2x8-4" value="A"><span><span class="o">A</span> Exercise reduces the risk of heart disease.</span></label><label><input type="radio" name="b2x8-4" value="B"><span><span class="o">B</span> Exercise reduces the risk from heart disease.</span></label></div>
+          <div class="mcq" data-a="A"><div class="stem">5</div><label><input type="radio" name="b2x8-5" value="A"><span><span class="o">A</span> Doing sport regularly is beneficial to your health.</span></label><label><input type="radio" name="b2x8-5" value="B"><span><span class="o">B</span> Doing sport regularly is benefit for your health.</span></label></div>
+          <div class="mcq" data-a="B"><div class="stem">6</div><label><input type="radio" name="b2x8-6" value="A"><span><span class="o">A</span> Not only exercise burns calories but also it improves sleep.</span></label><label><input type="radio" name="b2x8-6" value="B"><span><span class="o">B</span> Not only does exercise burn calories, but it also improves sleep.</span></label></div>
+        </div>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="x-9">Bài 9 · Transfer — kê "đơn vận động" cho một bệnh nhân</h3>
+    <div class="ex" id="b2-x9">
+      <div class="ex-head"><span class="ex-no">Bài 9</span><h4>Viết 5 câu tư vấn cho một bệnh nhân 50 tuổi, ít vận động, huyết áp cao</h4><span class="ex-type">Transfer · Free</span></div>
+      <div class="ex-note">Dùng ít nhất:<ul><li>1 cụm (take up / build up)</li><li>2 cụm (lower blood pressure, reduce the risk of…)</li><li>1 cụm (every other day / on a regular basis)</li><li>1 chunk đề xuất (I'd recommend / The best way to…)</li></ul></div>
+      <div class="ex-body">
+        <textarea class="free" id="b2x9-text" style="min-height:160px" placeholder="I'd recommend taking up brisk walking, because …"></textarea>
+        <p style="margin-top:6px;font-size:.9em;color:var(--muted)">Số từ: <span class="wc" data-for="b2x9-text">0</span></p>
+        <div class="sample" hidden><span class="eyebrow">Mẫu</span><p>I'd recommend <b>taking up</b> brisk walking rather than running, because it's <b>low‑impact</b> and safe for your joints. Start with 20 minutes <b>every other day</b> and <b>build up</b> to 150 minutes a week. Done <b>on a regular basis</b>, this will <b>lower your blood pressure</b> and <b>reduce the risk of</b> a heart attack. It also <b>relieves stress</b> and <b>improves sleep quality</b>, which many patients notice within a month. The best way to <b>stick to a routine</b> is to walk with a friend at the same time every day.</p></div>
+      </div>
+      <div class="ex-foot"><button class="btn ghost reveal" type="button">Xem mẫu</button><button class="btn ghost reset" type="button">Làm lại</button></div>
+    </div>
+  </section>
+</article>
+
+<!-- ================= SHEET 7: ÔN TẬP & BẢNG KIỂM ================= -->
+<article class="sheet" id="review" role="tabpanel" data-title="Ôn tập &amp; bảng kiểm" hidden>
+  <div class="sheet-head">
+    <div>
+      <span class="eyebrow">Sheet 7 / 7 · Lịch ôn 1‑3‑7 · Sổ cá nhân · Mastery</span>
+      <h2>Nhớ lại — không nhìn sách</h2>
+    </div>
+    <div class="prog" data-prog>0 bài đã kiểm tra</div>
+  </div>
+
+  <section class="block">
+    <h3 id="v-quiz">Quiz</h3>
+    <div class="ex" id="b2-q1">
+      <div class="ex-head"><span class="ex-no">Quiz</span><h4>Gõ cụm tiếng Anh (chấp nhận các cách nói tương đương)</h4><span class="ex-type">Điền</span><span class="score" data-score></span></div>
+      <div class="ex-body">
+        <div class="items two">
+          <div class="it"><span class="lab">1</span><span class="q">bắt đầu chơi (một môn)</span><input class="ans" data-a="take up" aria-label="1"></div>
+          <div class="it"><span class="lab">2</span><span class="q">giữ dáng / giữ sức khoẻ</span><input class="ans" data-a="keep fit|stay in shape|stay fit|keep in shape" aria-label="2"></div>
+          <div class="it"><span class="lab">3</span><span class="q">giảm nguy cơ (mắc bệnh)</span><input class="ans" data-a="reduce the risk of|reduce the risk|lower the risk of|lower the risk" aria-label="3"></div>
+          <div class="it"><span class="lab">4</span><span class="q">giải toả căng thẳng</span><input class="ans" data-a="relieve stress|reduce stress" aria-label="4"></div>
+          <div class="it"><span class="lab">5</span><span class="q">lối sống ít vận động</span><input class="ans" data-a="sedentary lifestyle|a sedentary lifestyle" aria-label="5"></div>
+          <div class="it"><span class="lab">6</span><span class="q">đối thủ</span><input class="ans" data-a="opponent|rival|an opponent|a rival" aria-label="6"></div>
+          <div class="it"><span class="lab">7</span><span class="q">trọng tài (bóng đá)</span><input class="ans" data-a="referee|a referee" aria-label="7"></div>
+          <div class="it"><span class="lab">8</span><span class="q">phá kỷ lục</span><input class="ans" data-a="break a record|break the record|break a world record" aria-label="8"></div>
+          <div class="it"><span class="lab">9</span><span class="q">hầu như không bao giờ</span><input class="ans" data-a="hardly ever|rarely|seldom" aria-label="9"></div>
+          <div class="it"><span class="lab">10</span><span class="q">bổ ích, xứng đáng công sức</span><input class="ans" data-a="rewarding|worthwhile|satisfying" aria-label="10"></div>
+          <div class="it"><span class="lab">11</span><span class="q">chen tập luyện vào lịch bận</span><input class="ans" data-a="fit exercise into a busy schedule|fit exercise into my schedule|fit exercise into a schedule" aria-label="11"></div>
+          <div class="it"><span class="lab">12</span><span class="q">giảm gánh nặng cho hệ thống y tế</span><input class="ans" data-a="ease the burden on the health system|reduce the burden on the health system|ease the burden on hospitals" aria-label="12"></div>
+        </div>
+      </div>
+      <div class="ex-foot"><button class="btn check" type="button">Kiểm tra</button><button class="btn ghost reveal" type="button">Đáp án</button><button class="btn ghost reset" type="button">Làm lại</button><span class="src">Ngày 1 ___ · Ngày 3 ___ · Ngày 7 ___</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="v-schedule">Lịch ôn 1‑3‑7 và cách ôn</h3>
+    <div class="flow">
+      <div class="step"><span class="k">Ngày 0</span><h4>Học trên lớp</h4><ul><li>10 nhóm, 3 phần Speaking, 2 bài Writing.</li></ul></div>
+      <div class="step"><span class="k">Ngày 1</span><h4>Quiz + nói 2'</h4><ul><li>Quiz 12 cụm; nói lại Part 2 đề A không nhìn dàn ý.</li></ul></div>
+      <div class="step"><span class="k">Ngày 3</span><h4>Che cột nghĩa</h4><ul><li>Mỗi nhóm: nhìn nghĩa → nói cụm; viết lại 5 câu về mình theo trí nhớ.</li></ul></div>
+      <div class="step"><span class="k">Ngày 7</span><h4>Chuyển chủ đề</h4><ul><li>Dùng cùng chunks cho chủ đề khác (health, work‑life balance). Quiz lần 3.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 id="v-bank">Sổ collocation cá nhân</h3>
+    <div class="note info"><span class="tag">Cách dùng</span><p>Ghi tối đa 15 cụm bạn <b>chắc chắn sẽ dùng</b> trong phòng thi, mỗi cụm kèm một câu về chính bạn.</p></div>
+    <textarea class="free" id="b2-bank" style="min-height:200px;margin-top:12px" placeholder="1. fit exercise into a busy schedule — I find it hard to fit exercise into my hospital schedule, so I swim before work.&#10;2. …"></textarea>
+    <div class="chips" style="margin-top:8px"><button class="btn ghost copy sm" type="button" data-for="b2-bank">Sao chép sổ</button></div>
+  </section>
+
+  <section class="block">
+    <h3 id="v-mastery">Mastery checklist</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="bm-1"><span>Tôi phân biệt được <i>play / do / go</i> và dùng đúng <i>take up · keep up · work out · keep fit</i>.</span></label></li>
+      <li><label><input type="checkbox" id="bm-2"><span>Tôi nêu được ≥ 6 lợi ích sức khoẻ của vận động bằng collocation chính xác (lower blood pressure, reduce the risk of…, release endorphins…).</span></label></li>
+      <li><label><input type="checkbox" id="bm-3"><span>Tôi nói được tần suất bằng ≥ 5 cách ngoài always/sometimes/never.</span></label></li>
+      <li><label><input type="checkbox" id="bm-4"><span>Tôi đánh giá một môn thể thao bằng ≥ 5 tính từ B2 và mẫu <i>What I love about … is …</i></span></label></li>
+      <li><label><input type="checkbox" id="bm-5"><span>Tôi trả lời Part 1 bằng 2–3 mệnh đề, không trả lời một từ.</span></label></li>
+      <li><label><input type="checkbox" id="bm-6"><span>Tôi nói được 2 phút theo sơ đồ với đủ 7 bước, có câu nhượng bộ và câu kết.</span></label></li>
+      <li><label><input type="checkbox" id="bm-7"><span>Tôi bảo vệ được quan điểm ở Part 3 với lý do – ví dụ – phản đề – đánh giá.</span></label></li>
+      <li><label><input type="checkbox" id="bm-8"><span>Tôi viết được email 120–150 từ đủ 3 ý với ngôn ngữ khuyên nhủ.</span></label></li>
+      <li><label><input type="checkbox" id="bm-9"><span>Tôi viết được essay ≥ 250 từ dạng nguyên nhân – giải pháp, 4 đoạn.</span></label></li>
+      <li><label><input type="checkbox" id="bm-10"><span>Sau 7 ngày tôi vẫn đạt ≥ 10/12 quiz.</span></label></li>
+    </ul>
+  </section>
+</article>
+
+</main>
+
+<script>
+(function () {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+    del(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  };
+  const lite = s => (s || '').toLowerCase().replace(/[’‘]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim();
+  const norm = s => lite(s).replace(/\s*([.,!?;:])\s*/g, '$1').replace(/[.!?;:]+$/g, '').replace(/\s+/g, ' ').trim();
+
+  /* ---------- rail / sheets ---------- */
+  const sheets = $$('.sheet');
+  const nav = $('#rail-nav');
+  const groups = { 0: 'Bắt đầu', 1: 'Kiến thức', 3: 'Đầu ra VSTEP', 5: 'Luyện & ôn' };
+  sheets.forEach((s, i) => {
+    if (groups[i] !== undefined) { const g = document.createElement('div'); g.className = 'rail-group'; g.textContent = groups[i]; nav.appendChild(g); }
+    const item = document.createElement('div'); item.className = 'rail-item';
+    const subs = $$('section.block > h3[id]', s).map(h => `<li><a href="#${h.id}">${h.textContent.replace(/\s*(Source|Inference|Extension)\s*$/, '')}</a></li>`).join('');
+    item.innerHTML = `<button class="rail-btn" role="tab" type="button" aria-selected="false"><span class="idx">${i + 1}</span><span>${s.dataset.title}</span></button><ul class="sub-outline">${subs}</ul>`;
+    nav.appendChild(item);
+    $('.rail-btn', item).addEventListener('click', () => show(i, true));
+    $$('.sub-outline a', item).forEach(a => a.addEventListener('click', e => {
+      e.preventDefault(); show(i, false);
+      const t = document.getElementById(a.getAttribute('href').slice(1));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+  });
+  function show(i, top) {
+    sheets.forEach((s, j) => { s.hidden = j !== i; });
+    $$('.rail-item').forEach((it, j) => { it.classList.toggle('active', j === i); $('.rail-btn', it).setAttribute('aria-selected', j === i ? 'true' : 'false'); });
+    store.set('b2:sheet', String(i));
+    if (top) window.scrollTo({ top: 0 });
+  }
+  $$('a[data-sheet]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(+a.dataset.sheet, true); }));
+  let start = 0;
+  const hashId = location.hash.slice(1);
+  if (hashId) { const idx = sheets.findIndex(s => s.id === hashId || s.querySelector('#' + CSS.escape(hashId))); if (idx >= 0) start = idx; }
+  else { const saved = +store.get('b2:sheet'); if (!isNaN(saved) && saved >= 0 && saved < sheets.length) start = saved; }
+  show(start, false);
+  if (hashId) { const t = document.getElementById(hashId); if (t && !t.classList.contains('sheet')) setTimeout(() => t.scrollIntoView({ block: 'start' }), 50); }
+
+  /* ---------- bins (select a word, then tap the column to place it) ---------- */
+  $$('.bins').forEach(b => {
+    const cats = b.dataset.cats.split('|');
+    const itemsRaw = b.dataset.items.split(',').map(x => { const i = x.indexOf(':'); return { w: x.slice(0, i).trim(), a: x.slice(i + 1).trim() }; });
+    // deterministic shuffle (seeded by the item list) so the bank isn't a giveaway order
+    let seed = 0; for (const c of b.dataset.items) seed = (seed * 31 + c.charCodeAt(0)) % 2147483647;
+    const rnd = () => { seed = (seed * 48271) % 2147483647; return seed / 2147483647; };
+    const items = itemsRaw.slice();
+    for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
+
+    b.innerHTML = '<div class="bank"></div><div class="cols">' + cats.map(c => `<div class="col" data-cat="${c}" role="button" tabindex="0" aria-label="Xếp vào ${c}"><div class="col-h">${c}</div></div>`).join('') + '</div>';
+    const bank = $('.bank', b);
+    const colOf = cat => cat === '' ? bank : $$('.col', b).find(c => c.dataset.cat === cat);
+    let selected = null;
+    const arm = on => b.classList.toggle('armed', on);
+    const deselect = () => { if (selected) selected.classList.remove('sel'); selected = null; arm(false); };
+    const move = (ch, cat) => { ch.dataset.cat = cat; ch.classList.remove('ok', 'bad'); colOf(cat).appendChild(ch); };
+    items.forEach(it => {
+      const ch = document.createElement('button'); ch.type = 'button'; ch.className = 'chip-w'; ch.textContent = it.w; ch.dataset.a = it.a; ch.dataset.cat = '';
+      ch.title = 'Chạm để chọn, rồi chạm vào cột muốn xếp';
+      ch.addEventListener('click', () => {
+        if (ch.dataset.cat !== '') { move(ch, ''); if (selected === ch) deselect(); return; } // placed chip -> tap to send back
+        if (selected === ch) { deselect(); return; } // tap again to unselect
+        if (selected) selected.classList.remove('sel');
+        selected = ch; ch.classList.add('sel'); arm(true);
+      });
+      bank.appendChild(ch);
+    });
+    $$('.col', b).forEach(col => {
+      const place = () => { if (!selected) return; move(selected, col.dataset.cat); deselect(); };
+      col.addEventListener('click', place);
+      col.addEventListener('keydown', ev => { if (ev.key === ' ' || ev.key === 'Enter') { ev.preventDefault(); place(); } });
+    });
+    b._check = () => { let n = 0, ok = 0; $$('.chip-w', b).forEach(ch => { if (ch.dataset.cat === '') { ch.classList.remove('ok', 'bad'); return; } n++; const good = ch.dataset.a.split('|').includes(ch.dataset.cat); ch.classList.toggle('ok', good); ch.classList.toggle('bad', !good); if (good) ok++; }); return [ok, n]; };
+    b._reveal = (onlyMissing) => { $$('.chip-w', b).forEach(ch => { if (onlyMissing && ch.dataset.cat !== '') return; move(ch, ch.dataset.a.split('|')[0]); ch.classList.add('ok'); }); };
+    b._reset = () => { deselect(); $$('.chip-w', b).forEach(ch => move(ch, '')); };
+  });
+
+  /* ---------- builder (tap words in order) ---------- */
+  $$('.builder').forEach(b => {
+    const ans = b.dataset.a; const toks = ans.split(' ');
+    let seed = 0; for (const c of ans) seed = (seed * 31 + c.charCodeAt(0)) % 2147483647;
+    const rnd = () => { seed = (seed * 48271) % 2147483647; return seed / 2147483647; };
+    const order = toks.map((_, i) => i);
+    for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+    if (order.every((v, i) => v === i)) order.push(order.shift());
+    b.innerHTML = '<div class="hint">Chạm vào từ theo đúng thứ tự:</div><div class="line"></div><div class="bank"></div>';
+    const line = $('.line', b), bank = $('.bank', b);
+    order.forEach(i => {
+      const ch = document.createElement('button'); ch.type = 'button'; ch.className = 'chip-w'; ch.textContent = toks[i]; ch.dataset.i = i;
+      ch.addEventListener('click', () => { b.classList.remove('ok', 'bad'); (ch.parentElement === bank ? line : bank).appendChild(ch); });
+      bank.appendChild(ch);
+    });
+    b._check = () => { const got = $$('.chip-w', line).map(c => c.textContent).join(' '); const good = norm(got) === norm(ans) && $$('.chip-w', bank).length === 0; b.classList.toggle('ok', good); b.classList.toggle('bad', !good); return [good ? 1 : 0, 1]; };
+    b._reveal = () => { toks.forEach((_, i) => { const c = $$('.chip-w', b).find(x => +x.dataset.i === i); if (c) line.appendChild(c); }); b.classList.remove('bad'); b.classList.add('ok'); };
+    b._reset = () => { $$('.chip-w', b).sort((x, y) => order.indexOf(+x.dataset.i) - order.indexOf(+y.dataset.i)).forEach(c => bank.appendChild(c)); b.classList.remove('ok', 'bad'); };
+  });
+
+  /* ---------- gaps (tap the position of the adverb) ---------- */
+  const ADVS = ['never', 'sometimes', 'often', 'usually', 'always'];
+  $$('.gaps').forEach(g => {
+    const words = g.dataset.s.split(' '); const a = +g.dataset.a;
+    let html = `<select class="advsel" aria-label="Trạng từ">${ADVS.map(x => `<option${x === g.dataset.adv ? ' selected' : ''}>${x}</option>`).join('')}</select>`;
+    words.forEach((w, i) => { html += `<button type="button" class="gap" data-i="${i}" aria-label="vị trí ${i}"></button><span class="w">${w}</span>`; });
+    g.innerHTML = html;
+    const clear = () => $$('.gap', g).forEach(x => { x.classList.remove('sel'); x.textContent = ''; });
+    $$('.gap', g).forEach(btn => btn.addEventListener('click', () => { clear(); btn.classList.add('sel'); btn.textContent = $('.advsel', g).value; g.classList.remove('ok', 'bad'); }));
+    $('.advsel', g).addEventListener('change', e => { const s = $('.gap.sel', g); if (s) s.textContent = e.target.value; });
+    g._check = () => { const s = $('.gap.sel', g); const good = !!s && +s.dataset.i === a; g.classList.toggle('ok', good); g.classList.toggle('bad', !good); return [good ? 1 : 0, 1]; };
+    g._reveal = () => { clear(); const t = $$('.gap', g).find(x => +x.dataset.i === a); $('.advsel', g).value = g.dataset.adv; t.classList.add('sel'); t.textContent = g.dataset.adv; g.classList.remove('bad'); g.classList.add('ok'); };
+    g._reset = () => { clear(); g.classList.remove('ok', 'bad'); };
+  });
+
+  /* ---------- evidence (tap phrases) ---------- */
+  $$('.evid').forEach(e => {
+    const a = e.dataset.a.split(',').map(x => x.trim()).sort().join(',');
+    $$('.ev', e).forEach(s => { s.setAttribute('role', 'button'); s.tabIndex = 0; const tog = () => { s.classList.toggle('sel'); e.classList.remove('ok', 'bad'); }; s.addEventListener('click', tog); s.addEventListener('keydown', ev => { if (ev.key === ' ' || ev.key === 'Enter') { ev.preventDefault(); tog(); } }); });
+    e._check = () => { const sel = $$('.ev.sel', e).map(s => s.dataset.k).sort().join(','); const good = sel === a; e.classList.toggle('ok', good); e.classList.toggle('bad', !good); return [good ? 1 : 0, 1]; };
+    e._reveal = () => { const want = a.split(','); $$('.ev', e).forEach(s => s.classList.toggle('sel', want.includes(s.dataset.k))); e.classList.remove('bad'); e.classList.add('ok'); };
+    e._reset = () => { $$('.ev', e).forEach(s => s.classList.remove('sel')); e.classList.remove('ok', 'bad'); };
+  });
+
+  /* ---------- exercise controller ---------- */
+  function isFilled(el) {
+    if (el.classList.contains('ans')) return (el.value || '').trim() !== '';
+    if (el.classList.contains('mcq')) return !!$('input:checked', el);
+    if (el.classList.contains('gaps')) return !!$('.gap.sel', el);
+    if (el.classList.contains('evid')) return $$('.ev.sel', el).length > 0;
+    if (el.classList.contains('builder')) { const bank = $('.bank', el); return !!bank && bank.children.length === 0; }
+    if (el.classList.contains('bins')) return $$('.chip-w', el).every(ch => ch.dataset.cat !== '');
+    return true;
+  }
+  function checkOne(el, skipEmpty) {
+    if (el.classList.contains('bins')) return el._check ? el._check() : [0, 0];
+    if (skipEmpty && !isFilled(el)) { el.classList.remove('ok', 'bad'); return [0, 0]; }
+    if (el.classList.contains('ans')) {
+      if (el.readOnly || (!el.dataset.a && !el.dataset.re)) return [0, 0];
+      const v = el.value || '';
+      const good = el.dataset.re ? new RegExp(el.dataset.re, 'i').test(lite(v)) : el.dataset.a.split('|').map(norm).includes(norm(v));
+      el.classList.toggle('ok', good); el.classList.toggle('bad', !good); return [good ? 1 : 0, 1];
+    }
+    if (el.classList.contains('mcq')) {
+      const r = $('input:checked', el); const good = !!r && r.value === el.dataset.a;
+      el.classList.toggle('ok', good); el.classList.toggle('bad', !good); return [good ? 1 : 0, 1];
+    }
+    return el._check ? el._check() : [0, 0];
+  }
+  function revealOne(el, onlyMissing) {
+    if (el.classList.contains('ans')) { if (el.readOnly || !el.dataset.a) return; if (onlyMissing && isFilled(el)) return; el.value = el.dataset.a.split('|')[0]; el.classList.remove('bad'); el.classList.add('ok'); return; }
+    if (el.classList.contains('mcq')) { if (onlyMissing && isFilled(el)) return; $$('input', el).forEach(r => { r.checked = r.value === el.dataset.a; }); el.classList.remove('bad'); el.classList.add('ok'); return; }
+    if (el.classList.contains('bins')) { if (el._reveal) el._reveal(onlyMissing); return; }
+    if (onlyMissing && isFilled(el)) return;
+    if (el._reveal) el._reveal();
+  }
+  function resetOne(el) {
+    if (el.classList.contains('ans')) { if (!el.readOnly) el.value = ''; el.classList.remove('ok', 'bad'); if (el.tagName === 'SELECT') el.selectedIndex = 0; return; }
+    if (el.classList.contains('mcq')) { $$('input', el).forEach(r => { r.checked = false; }); el.classList.remove('ok', 'bad'); return; }
+    if (el._reset) el._reset();
+  }
+  const parts = ex => $$('.ans, .mcq, .gaps, .builder, .bins, .evid', ex);
+  function updateProgress() {
+    sheets.forEach(s => { const p = $('[data-prog]', s); if (!p) return; const exs = $$('.ex', s).filter(x => $('.check', x)); const done = exs.filter(x => store.get('b2:' + x.id)).length; p.textContent = `${done}/${exs.length} bài đã kiểm tra`; });
+  }
+  $$('.ex').forEach(ex => {
+    const score = $('[data-score]', ex);
+    const saved = store.get('b2:' + ex.id); if (saved && score) { score.textContent = saved; const [a, b] = saved.split('/').map(Number); score.classList.toggle('full', a === b); }
+    const chk = $('.check', ex), rev = $('.reveal', ex), rst = $('.reset', ex);
+    if (chk) chk.addEventListener('click', () => {
+      let ok = 0, n = 0; parts(ex).forEach(el => { const [a, b] = checkOne(el, true); ok += a; n += b; });
+      const complete = parts(ex).every(isFilled);
+      if (n && score) { score.textContent = `${ok}/${n}`; score.classList.toggle('full', complete && ok === n); store.set('b2:' + ex.id, `${ok}/${n}`); updateProgress(); }
+    });
+    if (rev) rev.addEventListener('click', () => {
+      const complete = parts(ex).every(isFilled);
+      parts(ex).forEach(el => revealOne(el, !complete));
+      $$('.sample', ex).forEach(s => { s.hidden = false; });
+    });
+    if (rst) rst.addEventListener('click', () => {
+      parts(ex).forEach(resetOne); $$('textarea.free', ex).forEach(t => { t.value = ''; store.del('b2:f:' + t.id); });
+      $$('input[type=checkbox]', ex).forEach(c => { c.checked = false; store.del('b2:c:' + c.id); });
+      $$('.sample', ex).forEach(s => { if (!s.dataset.keep) s.hidden = true; });
+      if (score) { score.textContent = ''; score.classList.remove('full'); } store.del('b2:' + ex.id); updateProgress();
+      $$('.wc', ex).forEach(w => { w.textContent = '0'; });
+    });
+  });
+  // samples that were visible by default stay visible after reset
+  $$('.sample').forEach(s => { if (!s.hidden) s.dataset.keep = '1'; });
+  updateProgress();
+
+  /* ---------- persist free text, checkboxes ---------- */
+  $$('textarea.free, input.ans[id]').forEach(t => {
+    if (t.readOnly) return;
+    const k = 'b2:f:' + t.id; const v = store.get(k); if (v !== null) t.value = v;
+    t.addEventListener('input', () => store.set(k, t.value));
+  });
+  $$('input[type=checkbox][id]').forEach(c => {
+    const k = 'b2:c:' + c.id; if (store.get(k) === '1') c.checked = true;
+    c.addEventListener('change', () => { if (c.checked) store.set(k, '1'); else store.del(k); });
+  });
+  /* ---------- live score for self-assessment checklists (Speaking/Writing) ---------- */
+  $$('.ex').forEach(ex => {
+    const scoreEl = $('[data-score]', ex);
+    const list = $('.checklist', ex);
+    if (!scoreEl || !list) return;
+    const boxes = () => $$('input[type=checkbox]', list);
+    const update = () => {
+      const bs = boxes(); const n = bs.length; const ok = bs.filter(b => b.checked).length;
+      scoreEl.textContent = n ? `${ok}/${n}` : '';
+      scoreEl.classList.toggle('full', n > 0 && ok === n);
+    };
+    boxes().forEach(b => b.addEventListener('change', update));
+    update();
+  });
+  $$('.wc').forEach(w => {
+    const t = document.getElementById(w.dataset.for); if (!t) return;
+    const upd = () => { w.textContent = String((t.value.match(/[A-Za-z\u00C0-\u1EF90-9']+/g) || []).length); };
+    t.addEventListener('input', upd); upd();
+  });
+  $$('.copy').forEach(b => b.addEventListener('click', () => {
+    const txt = b.dataset.for.split(',').map(id => { const t = document.getElementById(id); return t && t.value ? t.value : ''; }).filter(Boolean).join('\n');
+    const done = () => { const o = b.textContent; b.textContent = 'Đã sao chép'; setTimeout(() => { b.textContent = o; }, 1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, done); else done();
+  }));
+
+  /* ---------- speech (browser TTS) ---------- */
+  const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
+  let voices = [];
+  const loadVoices = () => { if (synth) voices = synth.getVoices(); };
+  if (synth) { loadVoices(); synth.onvoiceschanged = loadVoices; }
+  function speak(text, rate) {
+    if (!synth) return false;
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = rate || 0.92;
+    const v = voices.find(x => /en[-_]GB/i.test(x.lang)) || voices.find(x => /^en/i.test(x.lang));
+    if (v) u.voice = v;
+    synth.speak(u); return true;
+  }
+  $$('.say').forEach(b => b.addEventListener('click', () => {
+    const t = b.dataset.text; if (!t) return;
+    if (!speak(t, +(b.dataset.rate || 0.92))) { b.textContent = 'Trình duyệt không hỗ trợ đọc'; }
+  }));
+  $$('.stop').forEach(b => b.addEventListener('click', () => { if (synth) synth.cancel(); }));
+
+  /* ---------- spelling tool ---------- */
+  const NAMES = { A: 'eɪ', B: 'biː', C: 'siː', D: 'diː', E: 'iː', F: 'ef', G: 'dʒiː', H: 'eɪtʃ', I: 'aɪ', J: 'dʒeɪ', K: 'keɪ', L: 'el', M: 'em', N: 'en', O: 'əʊ', P: 'piː', Q: 'kjuː', R: 'ɑː', S: 'es', T: 'tiː', U: 'juː', V: 'viː', W: 'ˈdʌbljuː', X: 'eks', Y: 'waɪ', Z: 'zed' };
+  const sIn = $('#spell-in'), sOut = $('#spell-out'), sSay = $('#spell-say');
+  if (sIn && sOut) {
+    const strip = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D');
+    const render = () => {
+      const words = strip(sIn.value).toUpperCase().split(/\s+/).filter(Boolean);
+      sOut.innerHTML = words.map(w => Array.from(w).filter(c => NAMES[c]).map(c => `<span class="letter"><b>${c}</b><i class="ipa">/${NAMES[c]}/</i></span>`).join('')).join('<span style="width:14px"></span>');
+      if (sSay) sSay.dataset.text = words.map(w => Array.from(w).filter(c => NAMES[c]).join(', ')).join('. ');
+    };
+    sIn.addEventListener('input', render); render();
+    if (sSay) sSay.addEventListener('click', () => { if (sSay.dataset.text) speak(sSay.dataset.text, 0.75); });
+  }
+
+  /* ---------- timers ---------- */
+  $$('.timer').forEach(t => {
+    const d = $('.tdisp', t); let iv = null, left = 0;
+    const show = () => { d.textContent = Math.floor(left / 60) + ':' + String(left % 60).padStart(2, '0'); };
+    $$('button[data-sec]', t).forEach(b => b.addEventListener('click', () => {
+      clearInterval(iv); left = +b.dataset.sec; t.classList.remove('done'); show();
+      iv = setInterval(() => { left--; if (left <= 0) { clearInterval(iv); left = 0; t.classList.add('done'); d.textContent = 'Hết giờ'; return; } show(); }, 1000);
+    }));
+    const st = $('.tstop', t); if (st) st.addEventListener('click', () => { clearInterval(iv); left = 0; t.classList.remove('done'); show(); });
+  });
+})();
+</script>
+
+</body>
+</html>
