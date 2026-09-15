@@ -147,7 +147,9 @@
   .flow .step li { margin-block: .15em; }
 
   .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid-3 { grid-template-columns: 1fr; } }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
   .card h4 { margin-bottom: 6px; }
   .card .eyebrow { display: block; margin-bottom: 6px; }
@@ -575,11 +577,11 @@
   <section class="block">
     <h3 id="r-method">Cách học một nhóm từ</h3>
     <div class="flow flow5">
-      <div class="step"><span class="k">1</span><h4>Đọc to tầng Core</h4><ul><li>Bạn đã biết những từ này — kiểm tra phát âm, trọng âm.</li></ul></div>
-      <div class="step"><span class="k">2</span><h4>Chọn 5 cụm Nâng cao</h4><ul><li>Không học tất cả. Chọn cụm bạn sẽ dùng khi nói về mình.</li></ul></div>
-      <div class="step"><span class="k">3</span><h4>Che cột nghĩa</h4><ul><li>Nhìn cụm tiếng Anh → nói nghĩa; nhìn nghĩa → nói cụm.</li></ul></div>
-      <div class="step"><span class="k">4</span><h4>Viết một câu về mình</h4><ul><li>Một câu thật về bạn / bệnh viện / bệnh nhân, có 2 cụm vừa học.</li></ul></div>
-      <div class="step"><span class="k">5</span><h4>Nói 30 giây</h4><ul><li>Bấm giờ, nói câu đó + 2 câu nữa. Ghi âm, nghe lại.</li></ul></div>
+      <div class="step"><span class="k">1</span><h4>Đọc to tầng Core</h4><ul><li>Bạn đã biết những từ này</li><li>Kiểm tra phát âm, trọng âm</li></ul></div>
+      <div class="step"><span class="k">2</span><h4>Chọn 5 cụm Nâng cao</h4><ul><li>Không học tất cả</li><li>Chọn cụm bạn sẽ dùng khi nói về mình</li></ul></div>
+      <div class="step"><span class="k">3</span><h4>Che cột nghĩa</h4><ul><li>Nhìn cụm tiếng Anh → nói nghĩa</li><li>Nhìn nghĩa → nói cụm</li></ul></div>
+      <div class="step"><span class="k">4</span><h4>Viết một câu về mình</h4><ul><li>Một câu thật về bạn / bệnh viện / bệnh nhân</li><li>Dùng 2 cụm vừa học trong câu đó</li></ul></div>
+      <div class="step"><span class="k">5</span><h4>Nói 30 giây</h4><ul><li>Bấm giờ, nói câu đó + 2 câu nữa</li><li>Ghi âm lại</li><li>Nghe lại</li></ul></div>
     </div>
   </section>
 </article>
