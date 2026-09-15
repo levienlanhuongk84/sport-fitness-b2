@@ -386,6 +386,13 @@
   .rule-card p { margin: 5px 0 3px; font-size: .87em; color: var(--ink-2); line-height: 1.35; }
   .rule-card i { font-size: .85em; color: var(--ink); }
   @media (max-width: 640px) { .rule-cards { grid-template-columns: 1fr; } }
+  .lead-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0; }
+  .lead-card { background: var(--surface-2); border-radius: 12px; padding: 14px 16px; }
+  .lead-card .ic { display: block; font-size: 2em; line-height: 1; margin-bottom: 8px; }
+  .lead-card b { display: block; font-family: var(--font-cond); font-size: .98em; color: var(--purple-ink); line-height: 1.3; }
+  .lead-card .ask { margin-top: 9px; padding-top: 9px; border-top: 1px dashed var(--line-strong); font-size: .9em; font-style: italic; color: var(--ink); }
+  @media (max-width: 900px) { .lead-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .lead-cards { grid-template-columns: 1fr; } }
   .use { background: linear-gradient(90deg, var(--gold-soft), var(--surface)); border-left: 4px solid var(--gold); padding: 10px 14px; border-radius: 0 10px 10px 0; margin-top: 10px; }
   .use b { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .78em; color: var(--orange-ink); margin-right: 8px; }
   .group-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 10px; }
@@ -450,11 +457,33 @@
 </aside>
 
 <main>
-<!-- ================= SHEET 1: LỘ TRÌNH ================= -->
+<!-- ================= SHEET 1: LEAD-IN ================= -->
+<article class="sheet" id="leadin" role="tabpanel" data-title="Lead-in">
+  <div class="sheet-head">
+    <div>
+      <span class="eyebrow">Sheet 1 / 8 · Lead-in · Trước khi vào bài</span>
+      <h2>Bạn đã gặp những bệnh nhân này chưa?</h2>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="timer"><span class="tdisp">3:00</span><button class="btn sm" type="button" data-sec="180">Thảo luận cặp 3'</button><button class="btn sm stop tstop" type="button">⏹</button><span style="color:var(--muted);font-size:.9em">Nhìn 6 tình huống, trả lời câu hỏi tiếng Anh bên dưới mỗi tình huống.</span></div>
+    <div class="lead-cards">
+      <div class="lead-card"><span class="ic">🪑🤕</span><b>Nhân viên văn phòng, đau lưng vì ngồi cả ngày</b><div class="ask">"What would you ask this patient first?"</div></div>
+      <div class="lead-card"><span class="ic">🏃‍♂️🦵</span><b>Người chạy bộ, đau đầu gối sau khi tập</b><div class="ask">"What advice would you give about their training?"</div></div>
+      <div class="lead-card"><span class="ic">🧓🦯</span><b>Người cao tuổi, cứng khớp, ít vận động</b><div class="ask">"What kind of physical activity is safe for them?"</div></div>
+      <div class="lead-card"><span class="ic">⚖️🍔</span><b>Thừa cân, nguy cơ tiểu đường và tim mạch</b><div class="ask">"How would you explain the benefits of exercise?"</div></div>
+      <div class="lead-card"><span class="ic">🌙🩺</span><b>Bác sĩ / điều dưỡng trực đêm, không có thời gian tập</b><div class="ask">"What would you say about your own exercise routine?"</div></div>
+      <div class="lead-card"><span class="ic">📋💊</span><b>Bác sĩ kê "đơn vận động" thay vì chỉ kê thuốc</b><div class="ask">"How do you usually recommend exercise to a patient?"</div></div>
+    </div>
+    <div class="note info"><span class="tag">Kết nối</span><p>Đau, vận động, lời khuyên — đó chính là ngôn ngữ bạn sẽ nâng cấp lên B2 qua 10 nhóm từ vựng Sport &amp; Fitness tiếp theo.</p></div>
+  </section>
+</article>
+<!-- ================= SHEET 2: LỘ TRÌNH ================= -->
 <article class="sheet" id="route" role="tabpanel" data-title="Lộ trình">
   <div class="sheet-head">
     <div>
-      <span class="eyebrow">Sheet 1 / 7 · Sport · free time · fitness</span>
+      <span class="eyebrow">Sheet 2 / 8 · Sport · free time · fitness</span>
     </div>
   </div>
 
@@ -466,19 +495,19 @@
       <div class="card"><span class="eyebrow">Speaking · Part 3</span><p>Bảo vệ quan điểm về một vấn đề xã hội (PE bắt buộc, lương VĐV, chính sách y tế) với 2 lý do + 1 phản đề.</p></div>
       <div class="card"><span class="eyebrow">Writing · Task 1</span><p>Email 120–150 từ đủ 3 ý, ngôn ngữ khuyên nhủ, 5+ collocation chủ đề.</p></div>
       <div class="card"><span class="eyebrow">Writing · Task 2</span><p>Essay ≥ 250 từ dạng nguyên nhân – giải pháp, 4 đoạn, câu chủ đề rõ, 8+ collocation chủ đề, có câu nhượng bộ.</p></div>
-      <div class="card"><span class="eyebrow">Từ vựng</span><p>Chủ động dùng ≥ 60 cụm từ trong 10 nhóm; nhớ lại được sau 7 ngày (quiz Sheet 7).</p></div>
+      <div class="card"><span class="eyebrow">Từ vựng</span><p>Chủ động dùng ≥ 60 cụm từ trong 10 nhóm; nhớ lại được sau 7 ngày (quiz Sheet 8).</p></div>
     </div>
   </section>
 
   <section class="block">
     <h3 id="r-vstep">Các kiến thức cần nhớ</h3>
     <div class="grid-3">
-      <div class="card"><span class="eyebrow">Speaking Part 1 · giao tiếp xã hội</span><p>Thói quen, tần suất, sở thích, lý do ngắn.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 1 loại hình</span><span class="chip p">Group 2 động từ</span><span class="chip p">Group 7 tần suất</span><span class="chip p">Group 8 thái độ</span><span class="chip o">→ Sheet 4</span></div></div>
-      <div class="card"><span class="eyebrow">Speaking Part 2 · phát triển chủ đề theo sơ đồ</span><p>Mô tả một môn / một thói quen; lợi ích; kỷ niệm; đánh giá.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 2</span><span class="chip p">Group 4</span><span class="chip p">Group 5 lợi ích</span><span class="chip p">Group 8</span><span class="chip p">Group 9 thành tích</span><span class="chip o">→ Sheet 4</span></div></div>
-      <div class="card"><span class="eyebrow">Speaking Part 3 · thảo luận mở rộng</span><p>Nguyên nhân – hệ quả, so sánh, nhượng bộ, đề xuất.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 5</span><span class="chip p">Group 6 mặt trái</span><span class="chip p">Group 10 xã hội &amp; chính sách</span><span class="chip p">chunks Sheet 3</span></div></div>
-      <div class="card"><span class="eyebrow">Writing Task 1 · email</span><p>Khuyên bạn chọn môn, giải thích lợi ích, hướng dẫn bắt đầu.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 2</span><span class="chip p">Group 5</span><span class="chip p">Group 7</span><span class="chip p">ngôn ngữ đề xuất</span><span class="chip o">→ Sheet 5</span></div></div>
-      <div class="card"><span class="eyebrow">Writing Task 2 · essay</span><p>Lý do người ta ít vận động; giải pháp từ nhà nước – cơ quan – ngành y.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 5</span><span class="chip p">Group 6</span><span class="chip p">Group 10</span><span class="chip p">chunks nguyên nhân/giải pháp</span><span class="chip o">→ Sheet 5</span></div></div>
-      <div class="card"><span class="eyebrow">Reading · Listening</span><p>Nhận ra paraphrase của cùng cụm từ (<i>reduce the risk</i> = <i>lower the chance…</i>).</p><div class="chips" style="margin-top:8px"><span class="chip p">cột "Nghĩa / từ đồng nghĩa" mỗi nhóm</span><span class="chip p">Bài 7 Sheet 6</span></div></div>
+      <div class="card"><span class="eyebrow">Speaking Part 1 · giao tiếp xã hội</span><p>Thói quen, tần suất, sở thích, lý do ngắn.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 1 loại hình</span><span class="chip p">Group 2 động từ</span><span class="chip p">Group 7 tần suất</span><span class="chip p">Group 8 thái độ</span><span class="chip o">→ Sheet 5</span></div></div>
+      <div class="card"><span class="eyebrow">Speaking Part 2 · phát triển chủ đề theo sơ đồ</span><p>Mô tả một môn / một thói quen; lợi ích; kỷ niệm; đánh giá.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 2</span><span class="chip p">Group 4</span><span class="chip p">Group 5 lợi ích</span><span class="chip p">Group 8</span><span class="chip p">Group 9 thành tích</span><span class="chip o">→ Sheet 5</span></div></div>
+      <div class="card"><span class="eyebrow">Speaking Part 3 · thảo luận mở rộng</span><p>Nguyên nhân – hệ quả, so sánh, nhượng bộ, đề xuất.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 5</span><span class="chip p">Group 6 mặt trái</span><span class="chip p">Group 10 xã hội &amp; chính sách</span><span class="chip p">chunks Sheet 4</span></div></div>
+      <div class="card"><span class="eyebrow">Writing Task 1 · email</span><p>Khuyên bạn chọn môn, giải thích lợi ích, hướng dẫn bắt đầu.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 2</span><span class="chip p">Group 5</span><span class="chip p">Group 7</span><span class="chip p">ngôn ngữ đề xuất</span><span class="chip o">→ Sheet 6</span></div></div>
+      <div class="card"><span class="eyebrow">Writing Task 2 · essay</span><p>Lý do người ta ít vận động; giải pháp từ nhà nước – cơ quan – ngành y.</p><div class="chips" style="margin-top:8px"><span class="chip p">Group 5</span><span class="chip p">Group 6</span><span class="chip p">Group 10</span><span class="chip p">chunks nguyên nhân/giải pháp</span><span class="chip o">→ Sheet 6</span></div></div>
+      <div class="card"><span class="eyebrow">Reading · Listening</span><p>Nhận ra paraphrase của cùng cụm từ (<i>reduce the risk</i> = <i>lower the chance…</i>).</p><div class="chips" style="margin-top:8px"><span class="chip p">cột "Nghĩa / từ đồng nghĩa" mỗi nhóm</span><span class="chip p">Bài 7 Sheet 7</span></div></div>
     </div>
   </section>
 
@@ -489,16 +518,16 @@
         <div class="tablewrap" style="border:0"><table>
           <tbody>
             <tr><td class="t" style="width:14%">15'</td><td><ul class="substeps"><li>Brainstorm sơ đồ "sport" theo cặp</li><li>Đối chiếu với 10 nhóm</li><li>Chọn 3 nhóm mình yếu</li></ul></td></tr>
-            <tr><td class="t">60'</td><td><ul class="substeps"><li>Nhóm Group 1–Group 5: đọc tầng Core → Nâng cao → Collocations</li><li>Mỗi nhóm viết 1 câu về mình</li><li>Bài 1–4 Sheet 6</li></ul></td></tr>
-            <tr><td class="t">30'</td><td><ul class="substeps"><li>Sheet 3: chunks chức năng + bảng nâng cấp B1 → B2</li><li>Bài 5 (nâng cấp câu)</li></ul></td></tr>
+            <tr><td class="t">60'</td><td><ul class="substeps"><li>Nhóm Group 1–Group 5: đọc tầng Core → Nâng cao → Collocations</li><li>Mỗi nhóm viết 1 câu về mình</li><li>Bài 1–4 Sheet 7</li></ul></td></tr>
+            <tr><td class="t">30'</td><td><ul class="substeps"><li>Sheet 4: chunks chức năng + bảng nâng cấp B1 → B2</li><li>Bài 5 (nâng cấp câu)</li></ul></td></tr>
             <tr><td class="t">60'</td><td><ul class="substeps"><li>Speaking Part 1 theo cặp (bấm giờ 30"/câu)</li><li>Part 2: nói 2' theo sơ đồ, ghi âm, tự chấm checklist</li></ul></td></tr>
-            <tr><td class="t">15'</td><td><ul class="substeps"><li>Retrieval quiz 12 cụm (Sheet 7)</li><li>Ghi 5 cụm vào sổ cá nhân</li></ul></td></tr>
+            <tr><td class="t">15'</td><td><ul class="substeps"><li>Retrieval quiz 12 cụm (Sheet 8)</li><li>Ghi 5 cụm vào sổ cá nhân</li></ul></td></tr>
           </tbody></table></div></div>
       <div class="card"><span class="eyebrow">Buổi 2 · 4 tiết · viết được</span>
         <div class="tablewrap" style="border:0"><table>
           <tbody>
             <tr><td class="t" style="width:14%">10'</td><td>Nhớ lại Group 1–Group 5 không nhìn sách (bạn hỏi – bạn đáp).</td></tr>
-            <tr><td class="t">50'</td><td><ul class="substeps"><li>Nhóm Group 6–Group 10 (mặt trái, tần suất, thái độ, thành tích, chính sách)</li><li>Bài 6–9 Sheet 6</li></ul></td></tr>
+            <tr><td class="t">50'</td><td><ul class="substeps"><li>Nhóm Group 6–Group 10 (mặt trái, tần suất, thái độ, thành tích, chính sách)</li><li>Bài 6–9 Sheet 7</li></ul></td></tr>
             <tr><td class="t">40'</td><td>Speaking Part 3: tranh luận nhóm 3 về 3 câu hỏi, dùng khung Point – Why – Example – Counter – Evaluation.</td></tr>
             <tr><td class="t">30' + 40'</td><td><ul class="substeps"><li>Task 1: viết email 120–150 từ theo planner → đổi bài chấm checklist</li><li>Task 2: lập dàn ý + viết 2 đoạn thân bài; hoàn thiện ở nhà</li></ul></td></tr>
             <tr><td class="t">10'</td><td><ul class="substeps"><li>Bảng kiểm mastery</li><li>Lịch ôn 1‑3‑7 ngày</li></ul></td></tr>
@@ -517,11 +546,11 @@
     </div>
   </section>
 </article>
-<!-- ================= SHEET 2: TỪ VỰNG THEO NHÓM ================= -->
+<!-- ================= SHEET 3: TỪ VỰNG THEO NHÓM ================= -->
 <article class="sheet" id="vocab" role="tabpanel" data-title="Từ vựng theo nhóm" hidden>
   <div class="sheet-head">
     <div>
-      <span class="eyebrow">Sheet 2 / 7 · 10 nhóm từ vựng · Sport &amp; Fitness</span>
+      <span class="eyebrow">Sheet 3 / 8 · 10 nhóm từ vựng · Sport &amp; Fitness</span>
       <h2>Từ vựng chủ đề Sport &amp; Fitness</h2>
     </div>
   </div>
@@ -1061,11 +1090,11 @@
     </div>
   </section>
 </article>
-<!-- ================= SHEET 3: CHUNKS & MẪU CÂU ================= -->
+<!-- ================= SHEET 4: CHUNKS & MẪU CÂU ================= -->
 <article class="sheet" id="chunks" role="tabpanel" data-title="Chunks &amp; mẫu câu" hidden>
   <div class="sheet-head">
     <div>
-      <span class="eyebrow">Sheet 3 / 7 · Ngôn ngữ chức năng</span>
+      <span class="eyebrow">Sheet 4 / 8 · Ngôn ngữ chức năng</span>
       <h2>Chunks nối ý</h2>
     </div>
   </div>
@@ -1141,11 +1170,11 @@
     </table></div>
   </section>
 </article>
-<!-- ================= SHEET 4: SPEAKING ================= -->
+<!-- ================= SHEET 5: SPEAKING ================= -->
 <article class="sheet" id="speaking" role="tabpanel" data-title="Speaking P1–P3" hidden>
   <div class="sheet-head">
     <div>
-      <span class="eyebrow">Sheet 4 / 7 · VSTEP Speaking</span>
+      <span class="eyebrow">Sheet 5 / 8 · VSTEP Speaking</span>
       <h2>Speaking</h2>
     </div>
   </div>
@@ -1287,11 +1316,11 @@
     </div>
   </section>
 </article>
-<!-- ================= SHEET 5: WRITING ================= -->
+<!-- ================= SHEET 6: WRITING ================= -->
 <article class="sheet" id="writing" role="tabpanel" data-title="Writing T1–T2" hidden>
   <div class="sheet-head">
     <div>
-      <span class="eyebrow">Sheet 5 / 7 · VSTEP Writing</span>
+      <span class="eyebrow">Sheet 6 / 8 · VSTEP Writing</span>
       <h2>Writing</h2>
     </div>
   </div>
@@ -1388,11 +1417,11 @@
     </div>
   </section>
 </article>
-<!-- ================= SHEET 6: LUYỆN TẬP CHỦ ĐỘNG ================= -->
+<!-- ================= SHEET 7: LUYỆN TẬP CHỦ ĐỘNG ================= -->
 <article class="sheet" id="practice" role="tabpanel" data-title="Luyện tập chủ động" hidden>
   <div class="sheet-head">
     <div>
-      <span class="eyebrow">Sheet 6 / 7</span>
+      <span class="eyebrow">Sheet 7 / 8</span>
       <h2>Luyện tập — 9 bài tương tác</h2>
     </div>
     <div class="prog" data-prog>0 bài đã kiểm tra</div>
@@ -1456,7 +1485,7 @@
   </section>
 
   <section class="block">
-    <h3 id="x-5">Bài 5 · Nâng cấp B1 → B2 — chọn câu tự nhiên nhất (Sheet 3)</h3>
+    <h3 id="x-5">Bài 5 · Nâng cấp B1 → B2 — chọn câu tự nhiên nhất (Sheet 4)</h3>
     <div class="ex" id="b2-x5">
       <div class="ex-head"><span class="ex-no">Bài 5</span><h4>Câu nào là bản nâng cấp đúng và tự nhiên?</h4><span class="ex-type">MCQ</span><span class="score" data-score></span></div>
       <div class="ex-body">
@@ -1559,11 +1588,11 @@
   </section>
 </article>
 
-<!-- ================= SHEET 7: ÔN TẬP & BẢNG KIỂM ================= -->
+<!-- ================= SHEET 8: ÔN TẬP & BẢNG KIỂM ================= -->
 <article class="sheet" id="review" role="tabpanel" data-title="Ôn tập &amp; bảng kiểm" hidden>
   <div class="sheet-head">
     <div>
-      <span class="eyebrow">Sheet 7 / 7 · Lịch ôn 1‑3‑7 · Sổ cá nhân · Mastery</span>
+      <span class="eyebrow">Sheet 8 / 8 · Lịch ôn 1‑3‑7 · Sổ cá nhân · Mastery</span>
       <h2>Nhớ lại — không nhìn sách</h2>
     </div>
     <div class="prog" data-prog>0 bài đã kiểm tra</div>
@@ -1645,7 +1674,7 @@
   /* ---------- rail / sheets ---------- */
   const sheets = $$('.sheet');
   const nav = $('#rail-nav');
-  const groups = { 0: 'Bắt đầu', 1: 'Kiến thức', 3: 'Đầu ra VSTEP', 5: 'Luyện & ôn' };
+  const groups = { 0: 'Bắt đầu', 2: 'Kiến thức', 4: 'Đầu ra VSTEP', 6: 'Luyện & ôn' };
   sheets.forEach((s, i) => {
     if (groups[i] !== undefined) { const g = document.createElement('div'); g.className = 'rail-group'; g.textContent = groups[i]; nav.appendChild(g); }
     const item = document.createElement('div'); item.className = 'rail-item';
