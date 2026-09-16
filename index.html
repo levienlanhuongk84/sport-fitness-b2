@@ -379,6 +379,11 @@
   .vt i { color: var(--ink-2); }
   .vt tr.cluster td { background: var(--surface-2); font-family: var(--font-cond); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; font-size: .78em; color: var(--purple-ink); padding: 7px 14px; border-top: 1px solid var(--line-strong); }
   .vt tr.cluster:first-child td { border-top: 0; }
+  @media (max-width: 640px) {
+    .vt tr:not(.cluster) { display: flex; flex-direction: column; }
+    .vt tr:not(.cluster) td { display: block; width: 100% !important; border-top: 0; padding: 5px 14px; }
+    .vt tr:not(.cluster) td:first-child { padding-top: 10px; border-top: 1px solid var(--line); }
+  }
   .core-words { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 10px; padding: 10px 14px; }
   .core-words > span { display: block; background: var(--surface-2); border-radius: 7px; padding: 6px 10px; line-height: 1.5; }
   @media (max-width: 640px) { .core-words { grid-template-columns: 1fr; } }
@@ -648,18 +653,18 @@
           <tr><td>racket sports</td><td>môn dùng vợt</td><td><i><mark>Racket sports</mark> like badminton are hugely popular in Vietnam.</i><span class="vi-tr">Các môn thể thao dùng vợt như cầu lông rất phổ biến ở Việt Nam.</span></td></tr>
           <tr><td>water sports</td><td>môn dưới nước</td><td><i>Swimming and surfing are my favourite <mark>water sports</mark>.</i><span class="vi-tr">Bơi lội và lướt sóng là những môn thể thao dưới nước tôi thích nhất.</span></td></tr>
           <tr><td>winter sports</td><td>môn mùa đông</td><td><i>Skiing and snowboarding are popular <mark>winter sports</mark> in Europe.</i><span class="vi-tr">Trượt tuyết và trượt ván tuyết là những môn thể thao mùa đông phổ biến ở châu Âu.</span></td></tr>
-          <tr><td>martial arts<span class="ipa">/ˌmɑːʃl ˈɑːts/</span></td><td>võ thuật</td><td><i>He's been doing <mark>martial arts</mark> since he was six.</i><span class="vi-tr">Anh ấy đã học võ thuật từ năm sáu tuổi.</span></td></tr>
+          <tr><td>martial arts<wbr><span class="ipa">/ˌmɑːʃl ˈɑːts/</span></td><td>võ thuật</td><td><i>He's been doing <mark>martial arts</mark> since he was six.</i><span class="vi-tr">Anh ấy đã học võ thuật từ năm sáu tuổi.</span></td></tr>
           <tr><td>combat sports</td><td>môn đối kháng</td><td><i>Boxing and wrestling are <mark>combat sports</mark>.</i><span class="vi-tr">Quyền anh và đấu vật là những môn thể thao đối kháng.</span></td></tr>
           <tr class="cluster"><td colspan="3">Theo mức độ &amp; tính chất</td></tr>
           <tr><td>extreme sports</td><td>thể thao mạo hiểm</td><td><i><mark>Extreme sports</mark> are thrilling but carry a real risk of injury.</i><span class="vi-tr">Thể thao mạo hiểm rất kịch tính nhưng tiềm ẩn nguy cơ chấn thương thật sự.</span></td></tr>
           <tr><td>adventure sports</td><td>thể thao phiêu lưu, mạo hiểm</td><td><i>Rock climbing is one of the most popular <mark>adventure sports</mark>.</i><span class="vi-tr">Leo núi là một trong những môn thể thao phiêu lưu phổ biến nhất.</span></td></tr>
-          <tr><td>endurance sports<span class="ipa">/ɪnˈdjʊərəns/</span></td><td>môn sức bền (marathon, triathlon)</td><td><i><mark>Endurance sports</mark> test your stamina rather than your speed.</i><span class="vi-tr">Các môn thể thao sức bền thử thách sức bền hơn là tốc độ của bạn.</span></td></tr>
+          <tr><td>endurance sports<wbr><span class="ipa">/ɪnˈdjʊərəns/</span></td><td>môn sức bền (marathon, triathlon)</td><td><i><mark>Endurance sports</mark> test your stamina rather than your speed.</i><span class="vi-tr">Các môn thể thao sức bền thử thách sức bền hơn là tốc độ của bạn.</span></td></tr>
           <tr><td>a contact sport</td><td>môn có va chạm</td><td><i>Rugby is <mark>a contact sport</mark>, so injuries are common.</i><span class="vi-tr">Bóng bầu dục là môn có va chạm, nên chấn thương là chuyện thường gặp.</span></td></tr>
           <tr><td>a non‑contact sport</td><td>môn không va chạm</td><td><i>Badminton is <mark>a non‑contact sport</mark>, so it's safer for beginners.</i><span class="vi-tr">Cầu lông là môn không va chạm, nên an toàn hơn cho người mới chơi.</span></td></tr>
-          <tr><td>a spectator sport<span class="ipa">/spekˈteɪtə/</span></td><td>môn để xem</td><td><i>Football is the biggest <mark>spectator sport</mark> in the world.</i><span class="vi-tr">Bóng đá là môn thể thao để xem lớn nhất thế giới.</span></td></tr>
+          <tr><td>a spectator sport<wbr><span class="ipa">/spekˈteɪtə/</span></td><td>môn để xem</td><td><i>Football is the biggest <mark>spectator sport</mark> in the world.</i><span class="vi-tr">Bóng đá là môn thể thao để xem lớn nhất thế giới.</span></td></tr>
           <tr class="cluster"><td colspan="3">Hoạt động nói chung</td></tr>
-          <tr><td>recreational activities<span class="ipa">/ˌrekriˈeɪʃənl/</span></td><td>hoạt động giải trí</td><td><i>Hiking is one of my favourite <mark>recreational activities</mark>.</i><span class="vi-tr">Đi bộ đường dài là một trong những hoạt động giải trí tôi thích nhất.</span></td></tr>
-          <tr><td>outdoor pursuits<span class="ipa">/pəˈsjuːts/</span></td><td>hoạt động ngoài trời</td><td><i>Camping and cycling are popular <mark>outdoor pursuits</mark>.</i><span class="vi-tr">Cắm trại và đạp xe là những hoạt động ngoài trời phổ biến.</span></td></tr>
+          <tr><td>recreational activities<wbr><span class="ipa">/ˌrekriˈeɪʃənl/</span></td><td>hoạt động giải trí</td><td><i>Hiking is one of my favourite <mark>recreational activities</mark>.</i><span class="vi-tr">Đi bộ đường dài là một trong những hoạt động giải trí tôi thích nhất.</span></td></tr>
+          <tr><td>outdoor pursuits<wbr><span class="ipa">/pəˈsjuːts/</span></td><td>hoạt động ngoài trời</td><td><i>Camping and cycling are popular <mark>outdoor pursuits</mark>.</i><span class="vi-tr">Cắm trại và đạp xe là những hoạt động ngoài trời phổ biến.</span></td></tr>
           <tr><td>physical activity</td><td>vận động thể chất</td><td><i>Any <mark>physical activity</mark> is better than none.</i><span class="vi-tr">Vận động thể chất dù ít cũng còn tốt hơn là không vận động.</span></td></tr>
           <tr><td>exercise (U)</td><td>tập thể dục (không đếm được)</td><td><i>I try to get some <mark>exercise</mark> every day.</i><span class="vi-tr">Tôi cố gắng tập thể dục mỗi ngày.</span></td></tr>
           <tr><td>competitive</td><td>có tính thi đấu</td><td><i>I'm quite <mark>competitive</mark> when I play tennis.</i><span class="vi-tr">Tôi khá máu ăn thua khi chơi tennis.</span></td></tr>
@@ -718,7 +723,7 @@
           <tr><td>do sit‑ups</td><td>gập bụng</td><td><i>He does a hundred <mark>sit‑ups</mark> every night.</i><span class="vi-tr">Tối nào anh ấy cũng gập bụng một trăm cái.</span></td></tr>
           <tr><td>do press‑ups</td><td>chống đẩy</td><td><i>We did <mark>press‑ups</mark> during the warm‑up.</i><span class="vi-tr">Chúng tôi chống đẩy trong lúc khởi động.</span></td></tr>
           <tr class="cluster"><td colspan="3">Nỗ lực &amp; mục tiêu</td></tr>
-          <tr><td>build up stamina<span class="ipa">/ˈstæmɪnə/</span></td><td>tăng sức bền</td><td><i>Start slowly and <mark>build up your stamina</mark>.</i><span class="vi-tr">Hãy bắt đầu từ từ rồi tăng dần sức bền.</span></td></tr>
+          <tr><td>build up stamina<wbr><span class="ipa">/ˈstæmɪnə/</span></td><td>tăng sức bền</td><td><i>Start slowly and <mark>build up your stamina</mark>.</i><span class="vi-tr">Hãy bắt đầu từ từ rồi tăng dần sức bền.</span></td></tr>
           <tr><td>build up strength</td><td>tăng sức mạnh</td><td><i>Lifting weights helps <mark>build up strength</mark>.</i><span class="vi-tr">Tập tạ giúp tăng sức mạnh.</span></td></tr>
           <tr><td>push yourself</td><td>ép bản thân cố gắng</td><td><i>You need to <mark>push yourself</mark> in the last kilometre.</i><span class="vi-tr">Bạn cần ép bản thân cố gắng ở km cuối cùng.</span></td></tr>
           <tr><td>be out of breath</td><td>hụt hơi</td><td><i>I was completely <mark>out of breath</mark> after 2 km.</i><span class="vi-tr">Tôi hụt hơi hoàn toàn sau 2 km.</span></td></tr>
@@ -749,15 +754,15 @@
       <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
         <table class="vt"><tbody>
           <tr class="cluster"><td colspan="3">Trình độ &amp; huấn luyện</td></tr>
-          <tr><td>amateur<span class="ipa">/ˈæmətə/</span></td><td>nghiệp dư</td><td><i>He plays at <mark>amateur</mark> level.</i><span class="vi-tr">Anh ấy chơi ở trình độ nghiệp dư.</span></td></tr>
+          <tr><td>amateur<wbr><span class="ipa">/ˈæmətə/</span></td><td>nghiệp dư</td><td><i>He plays at <mark>amateur</mark> level.</i><span class="vi-tr">Anh ấy chơi ở trình độ nghiệp dư.</span></td></tr>
           <tr><td>professional</td><td>chuyên nghiệp</td><td><i>She turned <mark>professional</mark> at eighteen.</i><span class="vi-tr">Cô ấy chuyển sang chuyên nghiệp năm mười tám tuổi.</span></td></tr>
           <tr><td>coach</td><td>huấn luyện viên</td><td><i>A good <mark>coach</mark> pushes you without injuring you.</i><span class="vi-tr">Một huấn luyện viên giỏi thúc đẩy bạn cố gắng mà không để bạn bị chấn thương.</span></td></tr>
           <tr><td>trainer</td><td>huấn luyện viên (thể hình)</td><td><i>My <mark>trainer</mark> designed a new programme for me.</i><span class="vi-tr">Huấn luyện viên của tôi đã thiết kế một chương trình tập mới.</span></td></tr>
           <tr><td>personal trainer</td><td>huấn luyện viên cá nhân</td><td><i>I hired a <mark>personal trainer</mark> to prepare for the race.</i><span class="vi-tr">Tôi thuê một huấn luyện viên cá nhân để chuẩn bị cho cuộc đua.</span></td></tr>
           <tr class="cluster"><td colspan="3">Trọng tài &amp; đối thủ</td></tr>
-          <tr><td>referee<span class="ipa">/ˌrefəˈriː/</span> (football)</td><td>trọng tài (bóng đá)</td><td><i>The <mark>referee</mark> gave a penalty.</i><span class="vi-tr">Trọng tài đã thổi phạt đền.</span></td></tr>
-          <tr><td>umpire<span class="ipa">/ˈʌmpaɪə/</span> (tennis)</td><td>trọng tài (quần vợt)</td><td><i>The <mark>umpire</mark> called the ball out.</i><span class="vi-tr">Trọng tài xác nhận bóng ra ngoài.</span></td></tr>
-          <tr><td>opponent<span class="ipa">/əˈpəʊnənt/</span></td><td>đối thủ</td><td><i>My <mark>opponent</mark> was much taller than me.</i><span class="vi-tr">Đối thủ của tôi cao hơn tôi nhiều.</span></td></tr>
+          <tr><td>referee<wbr><span class="ipa">/ˌrefəˈriː/</span> (football)</td><td>trọng tài (bóng đá)</td><td><i>The <mark>referee</mark> gave a penalty.</i><span class="vi-tr">Trọng tài đã thổi phạt đền.</span></td></tr>
+          <tr><td>umpire<wbr><span class="ipa">/ˈʌmpaɪə/</span> (tennis)</td><td>trọng tài (quần vợt)</td><td><i>The <mark>umpire</mark> called the ball out.</i><span class="vi-tr">Trọng tài xác nhận bóng ra ngoài.</span></td></tr>
+          <tr><td>opponent<wbr><span class="ipa">/əˈpəʊnənt/</span></td><td>đối thủ</td><td><i>My <mark>opponent</mark> was much taller than me.</i><span class="vi-tr">Đối thủ của tôi cao hơn tôi nhiều.</span></td></tr>
           <tr><td>rival</td><td>đối thủ cạnh tranh lâu năm</td><td><i>She beat her main <mark>rival</mark> in the final.</i><span class="vi-tr">Cô ấy đã đánh bại đối thủ chính của mình ở trận chung kết.</span></td></tr>
           <tr><td>competitor</td><td>đối thủ, người dự thi</td><td><i>There were fifty <mark>competitors</mark> in the race.</i><span class="vi-tr">Có năm mươi người dự thi trong cuộc đua.</span></td></tr>
           <tr class="cluster"><td colspan="3">Đồng đội &amp; khán giả</td></tr>
@@ -770,10 +775,10 @@
           <tr><td>sponsor</td><td>nhà tài trợ</td><td><i>A major bank <mark>sponsors</mark> the national team.</i><span class="vi-tr">Một ngân hàng lớn tài trợ cho đội tuyển quốc gia.</span></td></tr>
           <tr><td>role model</td><td>hình mẫu</td><td><i>Athletes are <mark>role models</mark> for young people.</i><span class="vi-tr">Vận động viên là hình mẫu cho giới trẻ.</span></td></tr>
           <tr class="cluster"><td colspan="3">Chuyên gia &amp; mức độ đam mê</td></tr>
-          <tr><td>physiotherapist<span class="ipa">/ˌfɪziəʊˈθerəpɪst/</span> (physio)</td><td>chuyên gia vật lý trị liệu</td><td><i>The <mark>physio</mark> got him back on the pitch in two weeks.</i><span class="vi-tr">Chuyên gia vật lý trị liệu đã giúp anh ấy trở lại sân sau hai tuần.</span></td></tr>
+          <tr><td>physiotherapist<wbr><span class="ipa">/ˌfɪziəʊˈθerəpɪst/</span> (physio)</td><td>chuyên gia vật lý trị liệu</td><td><i>The <mark>physio</mark> got him back on the pitch in two weeks.</i><span class="vi-tr">Chuyên gia vật lý trị liệu đã giúp anh ấy trở lại sân sau hai tuần.</span></td></tr>
           <tr><td>sports doctor</td><td>bác sĩ thể thao</td><td><i>A <mark>sports doctor</mark> examined his injured knee.</i><span class="vi-tr">Một bác sĩ thể thao đã khám đầu gối bị chấn thương của anh ấy.</span></td></tr>
           <tr><td>a keen runner</td><td>người ham chạy</td><td><i>My father is a <mark>keen cyclist</mark>.</i><span class="vi-tr">Bố tôi là người rất ham đạp xe.</span></td></tr>
-          <tr><td>an avid<span class="ipa">/ˈævɪd/</span> runner</td><td>người mê chạy bộ</td><td><i>She's <mark>an avid runner</mark> who never misses a day.</i><span class="vi-tr">Cô ấy là người mê chạy bộ, không bỏ ngày nào.</span></td></tr>
+          <tr><td>an avid<wbr><span class="ipa">/ˈævɪd/</span> runner</td><td>người mê chạy bộ</td><td><i>She's <mark>an avid runner</mark> who never misses a day.</i><span class="vi-tr">Cô ấy là người mê chạy bộ, không bỏ ngày nào.</span></td></tr>
           <tr><td>a couch potato <i>(informal)</i></td><td>người lười vận động</td><td><i>I used to be a real <mark>couch potato</mark>.</i><span class="vi-tr">Trước đây tôi từng là người lười vận động thứ thiệt.</span></td></tr>
         </tbody></table></div>
       <div class="tier col"><div class="tier-h">Collocations</div>
@@ -862,16 +867,16 @@
         <table class="vt"><tbody>
           <tr class="cluster"><td colspan="3">Cường độ tập luyện</td></tr>
           <tr><td>regular exercise</td><td>tập luyện đều đặn</td><td><i><mark>Regular exercise</mark> is one of the best things you can do for your health.</i><span class="vi-tr">Tập luyện đều đặn là một trong những điều tốt nhất bạn có thể làm cho sức khoẻ.</span></td></tr>
-          <tr><td>moderate exercise<span class="ipa">/ˈmɒdərət/</span></td><td>tập vừa phải</td><td><i>Doctors recommend <mark>moderate exercise</mark> most days.</i><span class="vi-tr">Bác sĩ khuyên nên tập vừa phải hầu hết các ngày trong tuần.</span></td></tr>
-          <tr><td>vigorous exercise<span class="ipa">/ˈvɪɡərəs/</span></td><td>tập mạnh, cường độ cao</td><td><i><mark>Vigorous exercise</mark> burns more calories in less time.</i><span class="vi-tr">Tập luyện cường độ cao đốt nhiều calo hơn trong thời gian ngắn hơn.</span></td></tr>
+          <tr><td>moderate exercise<wbr><span class="ipa">/ˈmɒdərət/</span></td><td>tập vừa phải</td><td><i>Doctors recommend <mark>moderate exercise</mark> most days.</i><span class="vi-tr">Bác sĩ khuyên nên tập vừa phải hầu hết các ngày trong tuần.</span></td></tr>
+          <tr><td>vigorous exercise<wbr><span class="ipa">/ˈvɪɡərəs/</span></td><td>tập mạnh, cường độ cao</td><td><i><mark>Vigorous exercise</mark> burns more calories in less time.</i><span class="vi-tr">Tập luyện cường độ cao đốt nhiều calo hơn trong thời gian ngắn hơn.</span></td></tr>
           <tr><td>aerobic exercise</td><td>tập ưa khí</td><td><i><mark>Aerobic exercise</mark> like swimming is great for the heart.</i><span class="vi-tr">Các bài tập ưa khí như bơi lội rất tốt cho tim.</span></td></tr>
-          <tr><td>cardiovascular fitness<span class="ipa">/ˌkɑːdiəʊˈvæskjələ/</span></td><td>thể lực tim mạch</td><td><i>Swimming improves <mark>cardiovascular fitness</mark>.</i><span class="vi-tr">Bơi lội cải thiện thể lực tim mạch.</span></td></tr>
+          <tr><td>cardiovascular fitness<wbr><span class="ipa">/ˌkɑːdiəʊˈvæskjələ/</span></td><td>thể lực tim mạch</td><td><i>Swimming improves <mark>cardiovascular fitness</mark>.</i><span class="vi-tr">Bơi lội cải thiện thể lực tim mạch.</span></td></tr>
           <tr class="cluster"><td colspan="3">Lợi ích tim mạch &amp; cân nặng</td></tr>
           <tr><td>lower blood pressure</td><td>hạ huyết áp</td><td><i>A daily walk can <mark>lower blood pressure</mark>.</i><span class="vi-tr">Đi bộ hằng ngày có thể giúp hạ huyết áp.</span></td></tr>
           <tr><td>improve heart health</td><td>cải thiện sức khoẻ tim</td><td><i>Cycling regularly <mark>improves heart health</mark>.</i><span class="vi-tr">Đạp xe đều đặn cải thiện sức khoẻ tim.</span></td></tr>
           <tr><td>reduce the risk of heart disease</td><td>giảm nguy cơ bệnh tim</td><td><i>Exercise <mark>reduces the risk of heart disease</mark>.</i><span class="vi-tr">Tập thể dục giảm nguy cơ mắc bệnh tim.</span></td></tr>
           <tr><td>reduce the risk of type 2 diabetes</td><td>giảm nguy cơ tiểu đường tuýp 2</td><td><i>Losing weight <mark>reduces the risk of type 2 diabetes</mark>.</i><span class="vi-tr">Giảm cân giúp giảm nguy cơ tiểu đường tuýp 2.</span></td></tr>
-          <tr><td>reduce the risk of obesity<span class="ipa">/əʊˈbiːsəti/</span></td><td>giảm nguy cơ béo phì</td><td><i>Staying active <mark>reduces the risk of obesity</mark> in children.</i><span class="vi-tr">Duy trì vận động giúp giảm nguy cơ béo phì ở trẻ em.</span></td></tr>
+          <tr><td>reduce the risk of obesity<wbr><span class="ipa">/əʊˈbiːsəti/</span></td><td>giảm nguy cơ béo phì</td><td><i>Staying active <mark>reduces the risk of obesity</mark> in children.</i><span class="vi-tr">Duy trì vận động giúp giảm nguy cơ béo phì ở trẻ em.</span></td></tr>
           <tr><td>control weight</td><td>kiểm soát cân nặng</td><td><i>Exercise helps you <mark>control your weight</mark>.</i><span class="vi-tr">Tập thể dục giúp bạn kiểm soát cân nặng.</span></td></tr>
           <tr><td>burn calories</td><td>đốt calo</td><td><i>Cycling <mark>burns a lot of calories</mark>.</i><span class="vi-tr">Đạp xe đốt rất nhiều calo.</span></td></tr>
           <tr><td>lose weight</td><td>giảm cân</td><td><i>She started running to <mark>lose weight</mark>.</i><span class="vi-tr">Cô ấy bắt đầu chạy bộ để giảm cân.</span></td></tr>
@@ -884,7 +889,7 @@
           <tr class="cluster"><td colspan="3">Tinh thần &amp; cảm xúc</td></tr>
           <tr><td>relieve stress</td><td>giảm căng thẳng</td><td><i>Swimming really helps me <mark>relieve stress</mark>.</i><span class="vi-tr">Bơi lội thực sự giúp tôi giảm căng thẳng.</span></td></tr>
           <tr><td>reduce stress</td><td>giảm stress</td><td><i>Regular exercise can <mark>reduce stress</mark> at work.</i><span class="vi-tr">Tập luyện đều đặn có thể giảm căng thẳng trong công việc.</span></td></tr>
-          <tr><td>release endorphins<span class="ipa">/ˈendɔːfɪnz/</span></td><td>giải phóng endorphin</td><td><i>Exercise <mark>releases endorphins</mark>, which improve mood.</i><span class="vi-tr">Tập thể dục giải phóng endorphin, giúp cải thiện tâm trạng.</span></td></tr>
+          <tr><td>release endorphins<wbr><span class="ipa">/ˈendɔːfɪnz/</span></td><td>giải phóng endorphin</td><td><i>Exercise <mark>releases endorphins</mark>, which improve mood.</i><span class="vi-tr">Tập thể dục giải phóng endorphin, giúp cải thiện tâm trạng.</span></td></tr>
           <tr><td>mental well‑being</td><td>sức khoẻ tinh thần</td><td><i>Sport does wonders for <mark>mental well‑being</mark>.</i><span class="vi-tr">Thể thao có tác dụng kỳ diệu đối với sức khoẻ tinh thần.</span></td></tr>
           <tr><td>improve mood</td><td>cải thiện tâm trạng</td><td><i>A short run always <mark>improves my mood</mark>.</i><span class="vi-tr">Một buổi chạy ngắn luôn cải thiện tâm trạng của tôi.</span></td></tr>
           <tr><td>take your mind off work</td><td>quên chuyện công việc</td><td><i>Playing badminton <mark>takes my mind off work</mark>.</i><span class="vi-tr">Chơi cầu lông giúp tôi quên đi chuyện công việc.</span></td></tr>
@@ -894,9 +899,9 @@
           <tr><td>develop teamwork</td><td>rèn tinh thần đồng đội</td><td><i>Team sports <mark>develop teamwork</mark>.</i><span class="vi-tr">Thể thao đồng đội rèn luyện tinh thần đồng đội.</span></td></tr>
           <tr><td>develop discipline</td><td>rèn kỷ luật</td><td><i>Martial arts <mark>develop discipline</mark>.</i><span class="vi-tr">Võ thuật rèn luyện tính kỷ luật.</span></td></tr>
           <tr><td>develop leadership</td><td>rèn khả năng lãnh đạo</td><td><i>Being team captain <mark>develops leadership skills</mark>.</i><span class="vi-tr">Làm đội trưởng giúp rèn luyện kỹ năng lãnh đạo.</span></td></tr>
-          <tr><td>prevent chronic disease<span class="ipa">/ˈkrɒnɪk/</span></td><td>phòng bệnh mạn tính</td><td><i>Regular exercise helps <mark>prevent chronic disease</mark>.</i><span class="vi-tr">Tập luyện đều đặn giúp phòng ngừa bệnh mạn tính.</span></td></tr>
+          <tr><td>prevent chronic disease<wbr><span class="ipa">/ˈkrɒnɪk/</span></td><td>phòng bệnh mạn tính</td><td><i>Regular exercise helps <mark>prevent chronic disease</mark>.</i><span class="vi-tr">Tập luyện đều đặn giúp phòng ngừa bệnh mạn tính.</span></td></tr>
           <tr><td>prolong life expectancy</td><td>kéo dài tuổi thọ</td><td><i>Active people tend to have <mark>a longer life expectancy</mark>.</i><span class="vi-tr">Người vận động thường xuyên có xu hướng sống thọ hơn.</span></td></tr>
-          <tr><td>a sedentary lifestyle<span class="ipa">/ˈsedntri/</span></td><td>lối sống ít vận động</td><td><i><mark>A sedentary lifestyle</mark> is a major risk factor.</i><span class="vi-tr">Lối sống ít vận động là một yếu tố nguy cơ lớn.</span></td></tr>
+          <tr><td>a sedentary lifestyle<wbr><span class="ipa">/ˈsedntri/</span></td><td>lối sống ít vận động</td><td><i><mark>A sedentary lifestyle</mark> is a major risk factor.</i><span class="vi-tr">Lối sống ít vận động là một yếu tố nguy cơ lớn.</span></td></tr>
           <tr><td>physical inactivity</td><td>sự ít vận động thể chất</td><td><i><mark>Physical inactivity</mark> is linked to many chronic diseases.</i><span class="vi-tr">Sự ít vận động thể chất có liên quan đến nhiều bệnh mạn tính.</span></td></tr>
         </tbody></table></div>
       <div class="tier col"><div class="tier-h">Collocations</div>
@@ -922,7 +927,7 @@
       <div class="tier adv"><div class="tier-h">Nâng cao · B2</div>
         <table class="vt"><tbody>
           <tr class="cluster"><td colspan="3">Chấn thương</td></tr>
-          <tr><td>injury<span class="ipa">/ˈɪndʒəri/</span></td><td>chấn thương</td><td><i>A knee <mark>injury</mark> can take months to heal.</i><span class="vi-tr">Một chấn thương đầu gối có thể mất hàng tháng mới lành.</span></td></tr>
+          <tr><td>injury<wbr><span class="ipa">/ˈɪndʒəri/</span></td><td>chấn thương</td><td><i>A knee <mark>injury</mark> can take months to heal.</i><span class="vi-tr">Một chấn thương đầu gối có thể mất hàng tháng mới lành.</span></td></tr>
           <tr><td>get an injury</td><td>bị chấn thương</td><td><i>He <mark>got an injury</mark> during the warm‑up.</i><span class="vi-tr">Anh ấy bị chấn thương trong lúc khởi động.</span></td></tr>
           <tr><td>suffer an injury</td><td>chịu một chấn thương</td><td><i>She <mark>suffered a serious injury</mark> last season.</i><span class="vi-tr">Cô ấy đã chịu một chấn thương nặng ở mùa giải trước.</span></td></tr>
           <tr><td>pick up an injury</td><td>gặp phải chấn thương</td><td><i>He <mark>picked up a knee injury</mark> in training.</i><span class="vi-tr">Anh ấy gặp phải chấn thương đầu gối trong lúc tập luyện.</span></td></tr>
@@ -951,10 +956,10 @@
           <tr><td>cheating</td><td>gian lận</td><td><i><mark>Cheating</mark> damages the spirit of the sport.</i><span class="vi-tr">Gian lận làm tổn hại tinh thần thể thao.</span></td></tr>
           <tr><td>doping</td><td>dùng chất cấm (doping)</td><td><i>The athlete failed a <mark>doping</mark> test.</i><span class="vi-tr">Vận động viên đó đã không vượt qua bài kiểm tra doping.</span></td></tr>
           <tr><td>performance‑enhancing drugs</td><td>chất kích thích thành tích</td><td><i><mark>Performance‑enhancing drugs</mark> are banned in professional sport.</i><span class="vi-tr">Chất kích thích thành tích bị cấm trong thể thao chuyên nghiệp.</span></td></tr>
-          <tr><td>commercialisation<span class="ipa">/kəˌmɜːʃəlaɪˈzeɪʃn/</span></td><td>thương mại hoá</td><td><i><mark>Commercialisation</mark> has changed football.</i><span class="vi-tr">Thương mại hoá đã làm thay đổi bóng đá.</span></td></tr>
+          <tr><td>commercialisation<wbr><span class="ipa">/kəˌmɜːʃəlaɪˈzeɪʃn/</span></td><td>thương mại hoá</td><td><i><mark>Commercialisation</mark> has changed football.</i><span class="vi-tr">Thương mại hoá đã làm thay đổi bóng đá.</span></td></tr>
           <tr><td>sponsorship deals</td><td>hợp đồng tài trợ</td><td><i>Top clubs sign huge <mark>sponsorship deals</mark>.</i><span class="vi-tr">Các câu lạc bộ hàng đầu ký những hợp đồng tài trợ khổng lồ.</span></td></tr>
           <tr><td>aggressive behaviour</td><td>hành vi hung hăng</td><td><i>The referee punished his <mark>aggressive behaviour</mark>.</i><span class="vi-tr">Trọng tài đã xử phạt hành vi hung hăng của anh ta.</span></td></tr>
-          <tr><td>hooliganism<span class="ipa">/ˈhuːlɪɡənɪzəm/</span></td><td>hành vi quấy phá</td><td><i><mark>Hooliganism</mark> is rare at Vietnamese matches.</i><span class="vi-tr">Hành vi quấy phá hiếm khi xảy ra ở các trận đấu tại Việt Nam.</span></td></tr>
+          <tr><td>hooliganism<wbr><span class="ipa">/ˈhuːlɪɡənɪzəm/</span></td><td>hành vi quấy phá</td><td><i><mark>Hooliganism</mark> is rare at Vietnamese matches.</i><span class="vi-tr">Hành vi quấy phá hiếm khi xảy ra ở các trận đấu tại Việt Nam.</span></td></tr>
           <tr><td>the downside of</td><td>mặt trái của</td><td><i>The <mark>downside of</mark> professional sport is the pressure.</i><span class="vi-tr">Mặt trái của thể thao chuyên nghiệp là áp lực.</span></td></tr>
           <tr><td>the drawback of</td><td>hạn chế của</td><td><i>The main <mark>drawback</mark> is the cost.</i><span class="vi-tr">Hạn chế chính là chi phí.</span></td></tr>
         </tbody></table></div>
@@ -1031,14 +1036,14 @@
           <tr><td>worthwhile</td><td>đáng công sức</td><td><i>Early morning training is <mark>worthwhile</mark> in the long run.</i><span class="vi-tr">Tập luyện sớm vào buổi sáng là đáng công sức về lâu dài.</span></td></tr>
           <tr><td>challenging</td><td>thử thách</td><td><i>Rock climbing is <mark>challenging</mark> but rewarding.</i><span class="vi-tr">Leo núi là môn thử thách nhưng bổ ích.</span></td></tr>
           <tr><td>demanding</td><td>đòi hỏi cao</td><td><i>It's a physically <mark>demanding</mark> sport.</i><span class="vi-tr">Đây là môn thể thao đòi hỏi thể lực cao.</span></td></tr>
-          <tr><td>gruelling<span class="ipa">/ˈɡruːəlɪŋ/</span></td><td>vắt kiệt sức</td><td><i>A marathon is <mark>gruelling</mark> but worth it.</i><span class="vi-tr">Một cuộc marathon vắt kiệt sức nhưng xứng đáng.</span></td></tr>
+          <tr><td>gruelling<wbr><span class="ipa">/ˈɡruːəlɪŋ/</span></td><td>vắt kiệt sức</td><td><i>A marathon is <mark>gruelling</mark> but worth it.</i><span class="vi-tr">Một cuộc marathon vắt kiệt sức nhưng xứng đáng.</span></td></tr>
           <tr><td>exhausting</td><td>làm kiệt sức</td><td><i>The training session was <mark>exhausting</mark>.</i><span class="vi-tr">Buổi tập đó khiến kiệt sức.</span></td></tr>
           <tr><td>thrilling</td><td>hồi hộp, kịch tính</td><td><i>The final match was absolutely <mark>thrilling</mark>.</i><span class="vi-tr">Trận chung kết thực sự vô cùng kịch tính.</span></td></tr>
           <tr><td>addictive</td><td>gây nghiện</td><td><i>Running can become surprisingly <mark>addictive</mark>.</i><span class="vi-tr">Chạy bộ có thể trở nên gây nghiện một cách bất ngờ.</span></td></tr>
-          <tr><td>exhilarating<span class="ipa">/ɪɡˈzɪləreɪtɪŋ/</span></td><td>phấn khích tột độ</td><td><i>Skiing down the mountain was <mark>exhilarating</mark>.</i><span class="vi-tr">Trượt tuyết xuống núi thật phấn khích tột độ.</span></td></tr>
+          <tr><td>exhilarating<wbr><span class="ipa">/ɪɡˈzɪləreɪtɪŋ/</span></td><td>phấn khích tột độ</td><td><i>Skiing down the mountain was <mark>exhilarating</mark>.</i><span class="vi-tr">Trượt tuyết xuống núi thật phấn khích tột độ.</span></td></tr>
           <tr class="cluster"><td colspan="3">Thư giãn &amp; tiêu cực</td></tr>
           <tr><td>relaxing</td><td>thư giãn</td><td><i>A gentle swim is very <mark>relaxing</mark>.</i><span class="vi-tr">Một buổi bơi nhẹ nhàng rất thư giãn.</span></td></tr>
-          <tr><td>therapeutic<span class="ipa">/ˌθerəˈpjuːtɪk/</span></td><td>có tính chữa lành</td><td><i>Swimming is almost <mark>therapeutic</mark> after a shift.</i><span class="vi-tr">Bơi lội gần như có tính chữa lành sau một ca trực.</span></td></tr>
+          <tr><td>therapeutic<wbr><span class="ipa">/ˌθerəˈpjuːtɪk/</span></td><td>có tính chữa lành</td><td><i>Swimming is almost <mark>therapeutic</mark> after a shift.</i><span class="vi-tr">Bơi lội gần như có tính chữa lành sau một ca trực.</span></td></tr>
           <tr><td>sociable</td><td>có tính giao lưu</td><td><i>Badminton is a <mark>sociable</mark> way to stay active.</i><span class="vi-tr">Cầu lông là cách vận động mang tính giao lưu.</span></td></tr>
           <tr><td>tedious</td><td>nhàm chán</td><td><i>I find long‑distance running a bit <mark>tedious</mark>.</i><span class="vi-tr">Tôi thấy chạy đường dài hơi nhàm chán.</span></td></tr>
           <tr><td>overrated</td><td>được đánh giá quá cao</td><td><i>Some people think golf is <mark>overrated</mark>.</i><span class="vi-tr">Một số người nghĩ golf được đánh giá quá cao.</span></td></tr>
@@ -1129,7 +1134,7 @@
           <tr><td>free access to</td><td>tiếp cận miễn phí</td><td><i><mark>Free access to</mark> public pools would help many families.</i><span class="vi-tr">Tiếp cận miễn phí với bể bơi công cộng sẽ giúp ích cho nhiều gia đình.</span></td></tr>
           <tr><td>affordable access to</td><td>tiếp cận với giá phải chăng</td><td><i><mark>Affordable access</mark> is the biggest barrier for many people.</i><span class="vi-tr">Tiếp cận với giá phải chăng là rào cản lớn nhất với nhiều người.</span></td></tr>
           <tr><td>sports facilities</td><td>cơ sở vật chất thể thao</td><td><i>The city needs more <mark>sports facilities</mark>.</i><span class="vi-tr">Thành phố cần thêm cơ sở vật chất thể thao.</span></td></tr>
-          <tr><td>compulsory PE<span class="ipa">/kəmˈpʌlsəri/</span> (physical education)</td><td>thể dục bắt buộc</td><td><i>PE should be <mark>compulsory</mark> up to the age of eighteen.</i><span class="vi-tr">Thể dục nên là môn bắt buộc đến năm mười tám tuổi.</span></td></tr>
+          <tr><td>compulsory PE<wbr><span class="ipa">/kəmˈpʌlsəri/</span> (physical education)</td><td>thể dục bắt buộc</td><td><i>PE should be <mark>compulsory</mark> up to the age of eighteen.</i><span class="vi-tr">Thể dục nên là môn bắt buộc đến năm mười tám tuổi.</span></td></tr>
           <tr class="cluster"><td colspan="3">Khuyến khích cộng đồng</td></tr>
           <tr><td>encourage people to</td><td>khuyến khích mọi người</td><td><i>Doctors can <mark>encourage people to</mark> exercise more.</i><span class="vi-tr">Bác sĩ có thể khuyến khích mọi người tập thể dục nhiều hơn.</span></td></tr>
           <tr><td>motivate people to</td><td>tạo động lực cho mọi người</td><td><i>The campaign aims to <mark>motivate people to</mark> walk more.</i><span class="vi-tr">Chiến dịch nhằm tạo động lực cho mọi người đi bộ nhiều hơn.</span></td></tr>
@@ -1137,11 +1142,11 @@
           <tr><td>host major sporting events</td><td>đăng cai các sự kiện thể thao lớn</td><td><i>Vietnam has <mark>hosted several major sporting events</mark>.</i><span class="vi-tr">Việt Nam đã đăng cai một số sự kiện thể thao lớn.</span></td></tr>
           <tr><td>national pride</td><td>niềm tự hào dân tộc</td><td><i>Winning the tournament brought huge <mark>national pride</mark>.</i><span class="vi-tr">Chiến thắng giải đấu mang lại niềm tự hào dân tộc to lớn.</span></td></tr>
           <tr><td>boost tourism</td><td>thúc đẩy du lịch</td><td><i>Major events <mark>boost tourism</mark> significantly.</i><span class="vi-tr">Các sự kiện lớn thúc đẩy du lịch đáng kể.</span></td></tr>
-          <tr><td>generate revenue<span class="ipa">/ˈrevənjuː/</span></td><td>tạo doanh thu</td><td><i>Hosting the SEA Games <mark>generated revenue</mark> but cost taxpayers a lot.</i><span class="vi-tr">Đăng cai SEA Games tạo ra doanh thu nhưng cũng tốn nhiều tiền thuế của dân.</span></td></tr>
+          <tr><td>generate revenue<wbr><span class="ipa">/ˈrevənjuː/</span></td><td>tạo doanh thu</td><td><i>Hosting the SEA Games <mark>generated revenue</mark> but cost taxpayers a lot.</i><span class="vi-tr">Đăng cai SEA Games tạo ra doanh thu nhưng cũng tốn nhiều tiền thuế của dân.</span></td></tr>
           <tr class="cluster"><td colspan="3">Nguồn lực &amp; lối sống hiện đại</td></tr>
           <tr><td>cost taxpayers</td><td>tốn tiền thuế của dân</td><td><i>The new stadium <mark>cost taxpayers</mark> a great deal.</i><span class="vi-tr">Sân vận động mới đã tốn rất nhiều tiền thuế của dân.</span></td></tr>
           <tr><td>allocate resources</td><td>phân bổ nguồn lực</td><td><i>The government must <mark>allocate resources</mark> carefully.</i><span class="vi-tr">Chính phủ phải phân bổ nguồn lực một cách cẩn trọng.</span></td></tr>
-          <tr><td>prioritise<span class="ipa">/praɪˈɒrətaɪz/</span></td><td>ưu tiên</td><td><i>Governments should <mark>prioritise</mark> grassroots sport.</i><span class="vi-tr">Chính phủ nên ưu tiên thể thao phong trào.</span></td></tr>
+          <tr><td>prioritise<wbr><span class="ipa">/praɪˈɒrətaɪz/</span></td><td>ưu tiên</td><td><i>Governments should <mark>prioritise</mark> grassroots sport.</i><span class="vi-tr">Chính phủ nên ưu tiên thể thao phong trào.</span></td></tr>
           <tr><td>sedentary jobs</td><td>công việc ít vận động</td><td><i><mark>Sedentary jobs</mark> are becoming more common.</i><span class="vi-tr">Công việc ít vận động ngày càng phổ biến.</span></td></tr>
           <tr><td>screen time</td><td>thời gian dùng màn hình</td><td><i><mark>Screen time</mark> has replaced outdoor play.</i><span class="vi-tr">Thời gian dùng màn hình đã thay thế các hoạt động ngoài trời.</span></td></tr>
           <tr><td>modern lifestyles</td><td>lối sống hiện đại</td><td><i><mark>Modern lifestyles</mark> leave little room for exercise.</i><span class="vi-tr">Lối sống hiện đại để lại rất ít chỗ cho việc tập luyện.</span></td></tr>
